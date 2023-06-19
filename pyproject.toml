@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "tacviewstats"
+version = "0.1.0"
+description = ""
+authors = ["George Eismark"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+# TacView Verified Versions:
+# FileType == "text/acmi/tacview"
+# FileVersion == "2.2"
+# DataRecorder == "DCS2ACMI 1.8.6.201"
+# DataSource = "^DCS 2.8.3.38090"
