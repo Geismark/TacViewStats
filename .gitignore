@@ -3,5 +3,4 @@ dev/
 TVFiles/
 outputs/*
 !outputs/.gitkeep
-main_b.py
 *.acmi
