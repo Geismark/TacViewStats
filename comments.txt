@@ -1,0 +1,21 @@
+Some code asserts whether the base folder is TacViewStats, thus will become a problem is a user renames it (needs to be changed)
+
+
+Will add command line arguments to alter program function
+Will add user GUI in the distant future for ease-of-use
+
+Future functions:
+	- write logs to file
+	- process and output data to a file/database for broader data analysis
+	- be able to output data to google.docs
+	- determine whether whole/part of a file is already contained within database
+	- allow error 'holding'/'skipping' to prevent process stopping halfway through
+		- gather logs from files and print at the end
+
+Future args:
+	- choose which objects to gather data from (from any attribute)
+	- choose specific time-frames or conditions to gather data at
+	- choose how to output the data
+	- write between reading files or only at the end
+	- max time/files for process to run
+	- hide units from data (e.g.: any units from 'coalition' that did not interact during mission)

@@ -1,11 +1,20 @@
 import logging
 import zipfile
+import os
 from src.utils.fileUtils import FileData, DCSObject, coords_to_distance
-from src.lineHandler import global_line, object_line, time_line, obj_removed_line
+from src.managers.lineHandler import (
+    global_line,
+    object_line,
+    time_line,
+    obj_removed_line,
+)
 from src.utils.performance import get_timer
 
 
-def is_zip(file):  # FUTUREDO do all zip checks before starting any reading?
+# FUTUREDO do all zip checks before starting any reading?
+def is_zip(file: str) -> bool:
+    if not os.path.isfile(file):
+        raise FileNotFoundError(f"{file=}")
     if ".zip" in file:
         if zipfile.is_zipfile(file):
             return True
@@ -14,8 +23,23 @@ def is_zip(file):  # FUTUREDO do all zip checks before starting any reading?
     return False
 
 
+# def print_file_logs(logs):
+#     for type, error_msg in logs:
+#         match type:
+#             case "info":
+#                 logging.info(error_msg)
+#             case "debug":
+#                 logging.debug(error_msg)
+#             case "warning":
+#                 logging.warning(error_msg)
+#             case "error":
+#                 logging.error(error_msg)
+#             case _:
+#                 raise NotImplementedError(f"{type=}\n{error_msg=}")
+
+
 def read_files(files: list[str], AuthorIsUser: bool):
-    files_logs = []  # TODO re-implement async logs
+    # files_logs = []  # TODO re-implement async logs
     files_data = {}
     logging.info(f"Total files: {len(files)}   -   {get_timer()}")
     for index, file in enumerate(files):
@@ -55,7 +79,7 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
     if file_data.is_zip:
         file_start = "∩╗┐FileType="
     else:
-        file_start = "ï»¿FileType="  # I have no ideo what these characters are, I assume same as the .zip just extracted
+        file_start = "ï»¿FileType="  # I have no idea what these characters are, I assume same as the .zip just extracted
     line_continued = False  # FUTUREDO distinguish between comments/briefing/debriefing
     for index, line in enumerate(file):
         line = line.rstrip("\n")
@@ -73,7 +97,7 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
             or line.startswith("0,Comments=")
             or line.startswith("0,Briefing=")
             or line.startswith("0,Debriefing=")
-        ):  # TODO seperate
+        ):  # TODO separate
             if line.endswith("\\"):
                 line_continued = True
             else:

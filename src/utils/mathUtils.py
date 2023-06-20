@@ -1,4 +1,4 @@
-def is_float(string: str) -> bool:
+def str_is_float(string: str) -> bool:
     try:
         float(string)
         return True

@@ -130,7 +130,7 @@ def coords_to_distance(point1: list, point2: list, meters=True):
 
 
 def is_unit(obj_data, ignore_types=[], ground=True, air=True):
-    # unit_types = ["Air", "Ground"]
+    unit_types = ["Air", "Ground", "Sea"]
     non_units = [
         "Decoy",
         "Flare",

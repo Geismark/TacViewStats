@@ -5,20 +5,26 @@ import tkinter as tk
 from tkinter import filedialog
 
 
-def directory_dialog(dialog_single_file):
+def directory_dialog(dialog_single_file, init_dir=None, init_file=None):
     # https://stackoverflow.com/questions/9319317/quick-and-easy-file-dialog-in-python
     root = tk.Tk()
     root.withdraw()  # required - hides the root window
     if dialog_single_file:
-        dir_path = filedialog.askopenfilename()
+        dir_path = filedialog.askopenfilename(
+            initialdir=init_dir, initialfile=init_file
+        )
     else:
-        dir_path = filedialog.askdirectory()
+        dir_path = filedialog.askdirectory(initialdir=init_dir)
     return dir_path
 
 
-def get_directory(dir_path=None, dialog_single_file=False):
+def get_directory(
+    dir_path=None, dialog_single_file=False, init_dir=None, init_file=None
+):
     if not dir_path:
-        dir_path = directory_dialog(dialog_single_file)
+        dir_path = directory_dialog(
+            dialog_single_file, init_dir=init_dir, init_file=init_file
+        )
     if os.path.isdir(dir_path):
         return str(dir_path)
     elif os.path.isfile(dir_path):
@@ -27,7 +33,7 @@ def get_directory(dir_path=None, dialog_single_file=False):
         raise FileNotFoundError(f"Directory not found\n\t{dir_path=}")
 
 
-def get_files(folder_dir: str):
+def get_files(folder_dir: str, _TESTING=False):  # better name for _TESTING?
     if os.path.isfile(folder_dir):
         files_any = [folder_dir]
     else:
@@ -38,10 +44,13 @@ def get_files(folder_dir: str):
         f_acmi += file.count(".acmi")
         f_txt += file.count(".txt")
         f_mod += file.count(".mod")
-    logging.debug(
-        f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
-    )
-    return files_any
+    if _TESTING == False:
+        logging.debug(
+            f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
+        )
+        return files_any
+    elif _TESTING:
+        return files_any, [f_zip, f_acmi, f_txt, f_mod]
 
 
 if __name__ == "__main__":
@@ -50,5 +59,5 @@ if __name__ == "__main__":
         format=f"%(asctime)s %(levelname)s - %(message)s",
         datefmt="%H:%M:%S",
     )
-    dir = get_directory(dialog_single_file=True)
+    dir = get_directory()
     print(get_files(dir))
