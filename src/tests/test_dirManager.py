@@ -63,12 +63,14 @@ class TestDirManager(unittest.TestCase):
         test_dir_file = "TEST_DIR.txt.acmi"
 
         files_any, counters = get_files(cwd_to_test_data, _TESTING=True)
-        self.assertEqual(counters, [1, 2, 1, 1], msg=f"{counters=}")
-        self.assertEqual(len(files_any), 2)
-        file0_name = "\\TEST_DIR.txt.acmi"
-        file1_name = "\\TEST_ZIP_TRIMMED.mod.zip.acmi"
+        self.assertEqual(counters, [2, 3, 1, 1], msg=f"{counters=}")
+        self.assertEqual(len(files_any), 3)
+        file0_name = "\\Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi"
+        file1_name = "\\TEST_DIR.txt.acmi"
+        file2_name = "\\TEST_ZIP_TRIMMED.mod.zip.acmi"
         self.assertIn(file0_name, files_any[0], msg=f"{files_any=}")
         self.assertIn(file1_name, files_any[1], msg=f"{files_any=}")
+        self.assertIn(file2_name, files_any[2], msg=f"{files_any=}")
 
 
 if __name__ == "__main__":

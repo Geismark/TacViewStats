@@ -4,3 +4,4 @@ TVFiles/
 outputs/*
 !outputs/.gitkeep
 *.acmi
+!src/tests/test_data/*

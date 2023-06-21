@@ -1,0 +1,672 @@
+﻿FileType=text/acmi/tacview
+FileVersion=2.1
+0,ReferenceLongitude=34
+0,ReferenceLatitude=40
+0,ReferenceTime=2021-12-03T09:41:58Z
+0,RecordingTime=2021-12-03T16:35:47.6Z
+0,Title=Georgia At War v3.0.24_afternoon
+0,DataRecorder=DCS2ACMI 1.8.6.201
+0,DataSource=DCS 2.7.8.16140
+0,Author=Spirit 1-1 | Zen
+0,Comments=Additional Information available at https://wiki.hoggitworld.com/view/Georgia_At_War\
+\
+---------------------------------------------------------\
+Please take a few minutes to read the briefing once you select a slot\, it  contains critical information regarding supplies at airbases and mission objectives.  If you can't spawn in a certain slot it's probably because there's none of those aircraft avaialble at that airfield at that time.  Anapa will ALWAYS have unlimited aircraft\
+----------------------------------------------------------\
+\
+Russian forces has engaged in a sustained campaign pushing west toward Ukraine after a successful occupation of Georgia.  A coalition of US\, French\, Ukrainian and Georgian insurgents has formed to stem the expansion and push Russian forces back to the northeast.\
+\
+MAGIC_IFF\
+\
+ATIS Anapa-Vityazevo 249.000\
+\
+OverlordBot provides ATC and AWACS functionality over SRS\
+See https://gitlab.com/overlord-bot/srs-bot/-/wikis/Interaction for instructions on how to use this bot and supported radio calls. See briefing  for frequencies
+40000001,T=5.057945|5.0749486|2000|377316.5|11042.85,Type=Navaid+Static+Bullseye,Color=Blue,Coalition=Enemies
+40000002,T=0.2668065|5.1303829|2000|100|100,Type=Navaid+Static+Bullseye,Color=Grey,Coalition=Neutrals
+40000003,T=5.2931062|5.0000222|2000|396475.69|4137.63,Type=Navaid+Static+Bullseye,Color=Red,Coalition=Allies
+#1204.02
+0,Category=CAP
+0,Briefing=Additional information available at https://wiki.hoggitworld.com/view/Georgia_At_War\
+\
+THIS MISSION RELIES ON PLAYERS UTILIZING THE F10 MENU AS FOLLOWS: \
+\
+"Get Current Missions" -> Get Current Targets in Theater.  Eliminating these targets will create opprotunities to exploit in the Russian frontline.\
+\
+"Deploy Airport Security Forces" -> Send a C-130 to capture an airfield.  Make sure you've cleared out the area of hostiles\, and protect it on it's way in.  When it arrives it will deploy Anti air assets to hold the territory.\
+\
+"Deploy FARP/WAREHOUSE Security Forces" -> Send a Blackhawk to one of the FARPs near the center of the theater.  If there are no players running transport helos this will be needed to capture the FARPS which will resupply your airfields.\
+Ensure the area around the FARP is clear of hostiles and escort the chopper to ensure he arrives.\
+\
+CTLD is enabled and will need to be used to ensure your airbases are resupplied.    Transport helos must deploy troops to the FARPS listed in the briefing and the F10 menu option "Get Warehouse Status".  At least one of these FARPs must be under blue control to resupply blue airbases.\
+\
+\
+COMMS:\
+------------------------------------------------\
+ATC/AIRFIELD TRAFFIC: 249.500\
+CARRIER TRAFFIC: 127.500\
+COMMON: 253.000\
+AI AWACS: OVERLORD 133.000\
+HUMAN AWACS: 134.000\
+\
+Anapa TCN: 70X\
+\
+TEXACO: KC-135 131AM - TCN: 11X\
+SHELL: KC-135MPRS\, 132AM - TCN: 12X\
+CVN-74: 127.5AM - TCN: 74X - ICLS: Chan 17\
+CVN-71: 127.5AM - TCN: 71X - ICLS: Chan 1\
+LHD: TCN: 131.5AM 75X\
+\
+OVERLORDBOT ATC: 249.700\
+OVERLORDBOT AWACS: 136.000\
+\
+FARP/WAREHOUSE LOCATIONS:\
+--------------------------------------------\
+NW FARP: 45 12'10"N 38 4'45" E\
+SW FARP: 44 55'45"N 38 5'17" E\
+NE FARP: 45 10'4" N 38 55'22"E\
+SE FARP: 44 50'7" N 38 46'34"E\
+MAYKOP AREA: 44 42' 24" N 39 33' 58" E\
+\
+WAYPOINTS\
+-----------------------------------------------\
+ALL FIXED WING\
+WP1: Anapa\
+WP2: Krysmk\
+WP3: NW FARM\
+WP4: SW FARP\
+WP5: NE FARP\
+WP6: SE FARP\
+WP7: KRASNODAR AREA (Bullseye)\
+WP8: MAYKOP AREA FARP\
+MP9: MAYKOP
+102,T=4.0785362|5.2035301|5|||3.6|299326.25|20005.17|,Type=Ground+Static+Aerodrome,Color=Blue,Coalition=Enemies,Name=FARP,Country=ru
+202,T=4.9264442|5.1676448|25.07|||4.2|366208.5|20570.89|,Type=Ground+Static+Aerodrome,Color=Blue,Coalition=Enemies,Name=FARP,Country=ru
+302,T=4.0907666|4.9281377|21.82|||3.6|302216.09|-10526.84|,Type=Ground+Static+Aerodrome,Color=Blue,Coalition=Enemies,Name=FARP,Country=ru
+402,T=4.776536|4.835576|54.14|||4.1|357067.22|-17173.75|,Type=Ground+Static+Aerodrome,Color=Red,Coalition=Allies,Name=FARP,Country=ru
+502,T=5.5674331|4.7087216|111.97|||4.7|420724.31|-26499|,Type=Ground+Static+Aerodrome,Color=Blue,Coalition=Enemies,Name=FARP,Country=ru
+602,T=3.642438|4.9701506|443.65|||3.3|266568.75|-7987.14|,Type=Ground+Static+Aerodrome,Color=Blue,Coalition=Enemies,Name=FARP,Country=us
+702,T=3.6765489|4.9686405|327.01|||3.3|269268.31|-7999.96|,Type=Ground+Static+Aerodrome,Color=Blue,Coalition=Enemies,Name=FARP,Country=us
+802,T=6.5869716|2.774945|0.03|||279.8|521276.47|-234292.91|274.6,Type=Sea+Watercraft+AircraftCarrier,Color=Red,Coalition=Allies,Name=KUZNECOW,Country=ru,Group=New Ship Group #001
+80a,T=4.8005719|4.5197721|7752.73|12|10.5|84.2|361472.91|-52119.65|80.1,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=us,Group=Stennis F/A-18C - 3,Pilot=snowfield 1-1 | spokky
+812,T=3.3411407|5.0048826|44.89|0.3|3.7|134.4|242602.44|-5447.99|131.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=Su-25T,Country=ge,Group=Chevy 1,Pilot=Sabalete
+813,T=3.2660326|4.2302061|21.98|-0.2|-1.3|359.1|241191.91|-91817.2|356.1,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=us,Group=F-18 -1 - CVN-71 #001,Pilot=Smokey 1-1: Duff
+815,T=5.3322858|4.6093348|10176.18|0.7|2.7|86.7|402957.63|-39021.18|82.2,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-16C_50,Country=us,Group=Dodge 3,Pilot=Clincher 1-2 | Hemi
+818,T=3.3413196|5.0050098|44.91|0.4|4.3|134.4|242615.78|-5433.1|131.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=Su-25T,Country=ge,Group=Chevy 1,Pilot=DP 1-1 | Dipirona537
+902,T=6.390345|2.8182834|-0.01|||278.4|504756.66|-230914.34|273.3,Type=Sea+Watercraft+Warship,Color=Red,Coalition=Allies,Name=PIOTR,Country=ru,Group=Kuz-Escort
+a02,T=3.1760557|4.498904|-0.03|||90.2|232481.67|-62339.79|87.2,Type=Sea+Watercraft+AircraftCarrier,Color=Blue,Coalition=Enemies,Name=LHA_Tarawa,Country=us,Group=LHA-1 BattleGroup
+b02,T=3.8692512|4.1756191||||90.7|289731.34|-95195.97|87.3,Type=Sea+Watercraft+AircraftCarrier,Color=Blue,Coalition=Enemies,Name=Stennis,Country=us,Group=Stennis
+b0f,T=5.1543079|5.0074361|2350.25|0.9|-1.5|291.8|385473.56|4117.64|287.4,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-16C_50,Country=us,Group=Dodge 4,Pilot=Beast 1-1 | Slithy
+d02,T=3.2661646|4.2305133||||89|241200.67|-91782.53|86,Type=Sea+Watercraft+AircraftCarrier,Color=Blue,Coalition=Enemies,Name=CVN_71,Country=us,Group=CVN-71 Theodore Roosevelt
+1017,T=3.8739671|4.9670346|2331.57|0.2|6|99.8|284847.19|-7259.24|96.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=A-10C_2,Country=us,Group=Tusk 1,Pilot=mojo
+1309,T=5.7265547|4.4734395|9801.65|-2.6|2.8|67|435493.88|-51602.79|62.2,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=us,Group=F-18- 2- CVN-71,Pilot=Spirit 1-1 | Zen,Importance=1,IAS=164.4,AOA=3.4,Throttle=0.76,AirBrakes=0,Flaps=0.11,LandingGear=0,HDM=54.6,RollControlPosition=0,PitchControlPosition=0.12,YawControlPosition=0,PilotHeadRoll=1.12,PilotHeadPitch=-19.55,PilotHeadYaw=-0.52
+1405,T=4.7305088|4.3936938|8962.42|1|2.9|46.5|356888.84|-66519.51|42.4,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=us,Group=Stennis F/A-18C - 2,Pilot=Adler
+1611,T=3.8686941|4.1757959|20.88||-1.6|86.4|289685.63|-95178.97|83,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=us,Group=Stennis F/A-18C - 1,Pilot=RIJSTBOI
+3706,T=5.0849903|4.4941391|10206.87||3.5|73.7|384290.59|-53317.28|69.4,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=us,Group=F-18 -1 - CVN-71,Pilot=Caveman 1-1 | Ryan
+3a16,T=3.7307707|4.6282706|1838.28|-25.4|25.5|199.7|275748.97|-45561.68|196.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-16C_50,Country=us,Group=Dodge 5,Pilot=Cash 1-1 | c0smik
+5b14,T=3.5761738|5.3637314|118.95|-1.3|4.1|211|258861.64|35437.43|207.7,Type=Air+Rotorcraft,Color=Blue,Coalition=Enemies,Name=Ka-50,Country=ge,Group=Krymsk Springfield 1,Pilot=Gurkenlaster 1-1 | Khamy
+710c,T=4.0793192|5.2036979|8||0.2|190.6|299386.56|20027.68|187,Type=Air+Rotorcraft,Color=Blue,Coalition=Enemies,Name=Ka-50,Country=us,Group=NWFARP KA50,Pilot=CoNDoR
+bf0e,T=3.9370912|4.7365155|1679.12|-10|-1.7|254.2|291385.31|-32564.85|250.7,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-14B,Country=us,Group=F-14 -1 -CVN-71,Pilot=Broadside 3-2 | Leverian
+d202,T=6.0415669|4.6760932|180.01|||263.4|458599.25|-26970.61|258.4,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Red Airfield Defense Maykop 1
+d302,T=6.0557199|4.6875354|180.01|||287.4|459610.44|-25601.98|282.4,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Red Airfield Defense Maykop 1
+d402,T=6.0169418|4.6708469|179.65|-3|-0.6|301.5|456697.81|-27722.64|296.5,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Red Airfield Defense Maykop 1
+d502,T=6.0167704|4.6693817|175.25|-1.3|-1.9|271.8|456698.31|-27886.58|266.8,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-10M3,Country=ru,Group=Red Airfield Defense Maykop 1
+d602,T=6.0502806|4.6799228|180.01|||274.7|459252.94|-26485.16|269.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=Red Airfield Defense Maykop 1
+d702,T=6.0415183|4.676002|180.01|||5|458596.28|-26981.08|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=Red Airfield Defense Maykop 1
+d802,T=6.0314087|4.6676276|180.01|||5|457875.63|-27980.92|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Red Airfield Defense Maykop 1
+d902,T=5.998847|4.682017|166.26|0.1|-0.1|301.4|455156.31|-26605.73|296.5,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Red Airfield Defense Maykop 1
+da02,T=5.9392267|4.715832|143.8|0.3|-0.1|301.4|450109.5|-23255.44|296.5,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Red Airfield Defense Maykop 1
+db02,T=5.9701388|4.657261|166.29|-0.1|-0.1|301.4|453117.41|-29551.85|296.5,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Red Airfield Defense Maykop 1
+11002,T=6.0390035|4.673799|180.01|||5|458418.19|-27243.11|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Russia-Airfield-Def
+11102,T=6.0216489|4.6929278|169.81|0.1|-0.3|287.3|456858.5|-25237.41|282.4,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Russia-Airfield-Def
+11202,T=6.0371681|4.6799004|180.01|||5|458213.88|-26577.95|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=Russia-Airfield-Def
+11302,T=6.0319089|4.6680005|180.01|||5|457911.69|-27936.06|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-10M3,Country=ru,Group=Russia-Airfield-Def
+11402,T=6.0191423|4.6732966|177.47|1.3|-0.7|253.5|456848.69|-27435.41|248.5,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=Russia-Airfield-Def
+11502,T=6.0505149|4.680179|180.01|||5|459269.03|-26455.09|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=Russia-Airfield-Def
+11602,T=5.9995285|4.682439|166.11|||5|455206.28|-26554.19|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=Russia-Airfield-Def
+11702,T=5.9396208|4.7169748|143|||4.9|450129.84|-23125.81|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=Russia-Airfield-Def
+11802,T=5.9724052|4.6563203|166.9|||5|453306.09|-29640.91|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=Russia-Airfield-Def
+11902,T=6.0386122|4.6705826|180.12|-0.2||5|458418.19|-27603.11|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Group=Russia-Airfield-Def
+11a02,T=6.0385687|4.6702252|180.14|-0.2||5|458418.19|-27643.11|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SNR_75V,Country=ru,Group=Russia-Airfield-Def
+11b02,T=6.0385252|4.6698679|180.16|||5|458418.19|-27683.11|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SNR_75V,Country=ru,Group=Russia-Airfield-Def
+1480d,T=3.3350214|5.0030852|44.81||-1.2|191.1|242130.89|-5673.52|188,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=us,Group=Uzi 4,Pilot=ItsFalcon
+17002,T=3.6819155|4.9818131|174.49|0.8|-3.4|3.3|269606.81|-6512.18|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=logistic4
+17102,T=3.6819085|4.9815859|175.99|0.8|-3.4|3.3|269607.72|-6537.45|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=logistic4
+17202,T=3.6457453|4.9707277|444.61|-0.7|1.5|210.8|266825.88|-7908.07|207.5,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=BLUEFARP DEF
+17302,T=3.6420755|4.9682698|426.59|0.2|-6|210.8|266552.16|-8197.73|207.5,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=BLUEFARP DEF
+17402,T=3.6457059|4.9691435|438.32|3.9|1.4|76.7|266832.88|-8084.23|73.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=BLUEFARP DEF
+17502,T=3.6787881|4.9707347|279.85|-4.6|6.7|210.9|269431.44|-7757.11|207.5,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=BLUEFARP DEF #001
+17602,T=3.6780241|4.9669903|305.13|-6.1|3.8|210.9|269395.25|-8176.54|207.5,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=BLUEFARP DEF #001
+17702,T=3.6756983|4.9671154|328.22|1.5|-7|76.7|269211.03|-8173.25|73.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=BLUEFARP DEF #001
+17802,T=3.6763181|4.9709351|301.05|-3.3|-6.5|76.7|269235.38|-7746.11|73.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=BLUEFARP DEF #001
+17f02,T=3.6438455|4.9703116|445.48|-2.1|2.6|3.3|266678.72|-7962.89|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=FARP Support West #001
+18002,T=3.6439222|4.9701425|444.9|-2.1|2.6|3.3|266685.84|-7981.33|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=FARP Support West #001
+18102,T=3.6437344|4.9700205|443.74|-2.1|2.6|3.3|266671.81|-7995.73|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=FARP Support West #001
+18202,T=3.6439484|4.9699913|443.94|-0.3|4.2|3.3|266688.88|-7998.01|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=FARP Support West #001
+18302,T=3.6434312|4.9700738|444.2|||3.3|266647.56|-7991.19|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=FARP Support West #001
+18402,T=3.6436285|4.9701954|444.26|-2.1|2.6|3.3|266662.34|-7976.78|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=FARP Support West #001
+18502,T=3.6778185|4.9689896|322.43|26.2|-1.5|3.3|269366.19|-7955.38|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=FARP Support West #002
+18602,T=3.6778946|4.9688246|319.42|26.2|-1.5|3.3|269373.25|-7973.37|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=FARP Support West #002
+18702,T=3.6777072|4.9686986|326.67|22.9|-1.4|3.3|269359.28|-7988.23|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=FARP Support West #002
+19702,T=3.3516592|4.9982666|39.99|-1.1|-0.2|185.2|243470.94|-6138.39|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=Anapa Defense
+19802,T=3.3758777|5.0088517|43.91|1.2|-0.4|185.2|245316.16|-4859.52|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=Anapa Defense
+19902,T=3.3562243|4.9875275|50.84|0.7|-0.1|185.2|243895|-7311.99|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=Anapa Defense
+19a02,T=3.3574208|4.9899597|51.09|0.7|0.4|185.2|243974.77|-7036.72|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=Anapa Defense
+19b02,T=3.3527514|4.989779|47.7|0.4|0.5|185.2|243607.77|-7076.61|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=Anapa Defense
+19c02,T=3.3383702|4.9941523|42.58|-0.3||185.2|242448.05|-6651.71|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Anapa Defense
+19d02,T=3.347945|4.9894444|45.3|0.4||185.2|243230.88|-7134.17|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Anapa Defense
+19e02,T=3.3725053|5.0077552|43|||185.2|245056.98|-4995.7|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Anapa Defense
+19f02,T=3.3581178|4.9951511|39.18|-0.6||185.2|243998.64|-6457.07|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Anapa Defense
+1a002,T=3.3652313|5.0004462|43|||185.2|244527.59|-5838.61|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Anapa Defense
+1a102,T=3.3520964|5.0018487|42.06|0.3||185.2|243483.98|-5738.6|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Group=Anapa Defense
+1a202,T=3.3605444|4.9986635|43|||185.2|244168.88|-6056.58|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Group=Anapa Defense
+1a302,T=3.3652863|4.9975338|45.94|1.2||185.2|244549.39|-6161.9|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Group=Anapa Defense
+1a402,T=3.3616757|4.9925644|56.49|1.2||185.2|244294.58|-6729.29|182.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Group=Anapa Defense
+1a502,T=3.3448621|4.9980465|43.42|0.1||96.3|242936.52|-6191.64|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Group=Anapa Defense #001
+1a602,T=3.3336292|5.0002866|43|||86.4|242037.83|-5990.3|83.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Group=Anapa Defense #001
+1a702,T=3.342226|4.9963297|42.92|0.1||96.3|242738.98|-6393.51|93.2,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Patriot cp,Country=us,Group=Anapa Defense #001
+1a802,T=3.3496375|5.0013389|42.27|-0.2||96.3|243293.23|-5805.66|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot str,Country=us,Group=Anapa Defense #001
+1a902,T=3.3416622|4.996463|42.94|0.1||96.3|242693.75|-6381.09|93.2,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Patriot EPP,Country=us,Group=Anapa Defense #001
+1aa02,T=3.342494|4.9973698|43.14|0.1||96.3|242753.91|-6276.83|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ECS,Country=us,Group=Anapa Defense #001
+1ab02,T=3.3420401|4.996952|43.05|0.1||96.3|242720.63|-6325.17|93.2,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Patriot AMG,Country=us,Group=Anapa Defense #001
+1ac02,T=3.3476788|4.996892|44.21||0.3|96.3|243165.42|-6307.96|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M6 Linebacker,Country=us,Group=Anapa Defense #001
+1ad02,T=3.3379384|5.0024974|43|||96.3|242364.28|-5726.5|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Group=Anapa Defense #001
+1ae02,T=3.3454411|5.0079351|43|||96.3|242923.13|-5090.69|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Group=Anapa Defense #001
+1af02,T=3.336306|5.0016859|43|||96.3|242240.47|-5823.54|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Group=Anapa Defense #001
+1b002,T=3.3631148|5.0181552|43|||96.3|244254.63|-3880.37|93.2,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Roland Radar,Country=us,Group=Anapa Defense #001
+1b102,T=3.3458187|5.0055675|43|||3.1|242967.02|-5352.1|,Type=Ground+Static+Building,Color=Blue,Coalition=Enemies,Name=TACAN_beacon,Country=us,Group=Ground-1
+1b202,T=4.002736|4.5760275|39.28|-0.7|-0.9|189.9|297679.84|-50074.63|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 1
+1b302,T=4.0026568|4.5688968|21.95|||189.9|297722.22|-50867.13|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M249,Country=us,Group=USA gnd 1
+1b402,T=4.0059351|4.5840083|53.88|-4|-2.7|189.9|297879.34|-49172.47|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 1
+1b502,T=4.0079969|4.575976|24.98|||189.9|298097.91|-50054.68|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M4,Country=us,Group=USA gnd 1
+1b602,T=3.9961305|4.5765177|33.02|1.5|-1.4|189.9|297152.03|-50052.38|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 1
+1b702,T=3.9945942|4.5736319|20|1.7|-3.1|189.9|297049.72|-50380.43|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=USA gnd 1
+1b802,T=4.0027449|4.5825594|70.14|-6.9|-0.9|189.9|297635.97|-49348.98|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 1
+1b902,T=4.0076892|4.5757155|24.99|-3.9|-2.7|189.9|298075.25|-50085.12|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 1
+1ba02,T=4.010488|4.5746007|22.01|||280.3|298305.09|-50195.28|276.7,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=USA gnd 1
+1bb02,T=4.0048747|4.5768787|40.03|2.5|1.9|3.5|297843.84|-49969.63|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 2
+1bc02,T=4.0047182|4.5825002|51.55|7|1.8|3.5|297793.03|-49345.93|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 2
+1bd02,T=4.0142396|4.5786722|22.01|||3.6|298575.13|-49724.66|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 2
+1be02,T=3.9977053|4.582042|76.06|-1.1|3.8|3.5|297239.41|-49431.04|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 2
+1bf02,T=4.0113853|4.5817578|32.11|0.4|-0.4|3.6|298327.41|-49395.85|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 2
+1c002,T=4.0012463|4.5755513|38.8|-0.7|1.6|3.5|297564.81|-50134.8|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 2
+1c102,T=4.9245642|5.0949978|26.18|0.1|-0.1|190.6|366654.31|12489.91|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 3
+1c202,T=4.9151627|5.0935306|25.43|||170.8|365926.53|12272.6|166.6,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M249,Country=us,Group=USA gnd 3
+1c302,T=4.9252275|5.0990657|26.57|0.1||190.6|366673.28|12945.64|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 3
+1c402,T=4.9133687|5.0922372|25.38|||190.6|365795.91|12118.56|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M4,Country=us,Group=USA gnd 3
+1c602,T=4.927511|5.090929|28.32|0.2|0.5|190.6|366919.41|12054.98|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=USA gnd 3
+1c902,T=4.9181625|5.0972863|25.79|-0.1||327.5|366131.94|12707.13|323.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=USA gnd 3
+1ca02,T=4.9271242|5.0961517|26.58|-0.1|0.1|4.2|366846.31|12632.91|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 4
+1cb02,T=4.9297384|5.097953|26.92|-0.1||4.2|367037.28|12848.14|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 4
+1cc02,T=4.9352578|5.0999259|27.53|-0.1||4.2|367455.41|13099.26|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 4
+1ce02,T=4.9326211|5.0918069|27.82|-0.1|-0.4|4.2|367314.34|12182.08|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 4
+1cf02,T=4.9278986|5.0918128|27.48|-0.1|-0.5|4.2|366942.69|12155.39|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 4
+1d002,T=3.9844065|4.9700357|16.23|-0.5|0.3|189.9|293535.97|-6395.03|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 5
+1d102,T=3.9901547|4.9679841|17.2|||189.9|294003.31|-6594.98|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M249,Country=us,Group=USA gnd 5
+1d202,T=3.9854073|4.9693808|15.71|-0.5|0.3|189.9|293619.38|-6462.91|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 5
+1d302,T=3.9834102|4.9670308|18.17|||189.9|293477.97|-6733.68|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M4,Country=us,Group=USA gnd 5
+1d402,T=3.9911952|4.9697744|14.88|1.4|0.9|189.9|294073.09|-6391.04|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 5
+1d502,T=3.9896561|4.9757747|11.56|-0.6|0.3|189.9|293910.59|-5731.97|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=USA gnd 5
+1d602,T=3.9837321|4.9700361|16.72|-0.3|0.3|189.9|293482.78|-6398.26|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 5
+1d702,T=3.9813941|4.9733434|15.95|-0.1|0.3|189.9|293275.78|-6042.23|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 5
+1d802,T=3.9780018|4.9719236|17.96|-0.2|0.4|189.9|293018|-6216.42|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=USA gnd 5
+1d902,T=3.9862702|4.9710523|14.46|0.5|-0.2|3.6|293675.97|-6273.03|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 6
+1da02,T=3.993632|4.9746485|8.63|0.5||3.6|294231.81|-5837.72|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 6
+1db02,T=3.9818803|4.9716448|16.7|0.2|-0.3|3.6|293325.75|-6228.56|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 6
+1dc02,T=3.9929808|4.9775722|8.69|0.4|-0.2|3.6|294160.41|-5516.11|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 6
+1dd02,T=3.9943222|4.9710713|17.03|-1.3|-2.3|3.6|294310.78|-6231.74|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 6
+1de02,T=3.9907217|4.9724281|11.03|0.4|-0.2|3.6|294017.56|-6098.55|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 6
+1df02,T=5.5672162|4.7085901|113.18|||191|420708.31|-26515|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 7
+1e002,T=5.5753073|4.7130208|112.53|||191|421309.34|-25970.86|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M249,Country=us,Group=USA gnd 7
+1e102,T=5.5735415|4.7040635|105.15|-1.4|-0.2|191|421250.16|-26977.24|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 7
+1e202,T=5.5560883|4.7068397|113.16|||191|419842.5|-26780.78|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M4,Country=us,Group=USA gnd 7
+1e302,T=5.5646301|4.7058808|110.28|0.6|0.2|191|420527.81|-26832.56|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 7
+1e402,T=5.5769699|4.7099266|106.1|-1.2|-0.7|191|421468.94|-26303.9|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=USA gnd 7
+1e502,T=5.5766896|4.7045106|101.19|-0.7|0.4|191|421495.53|-26907.35|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 7
+1e602,T=5.5602202|4.7116815|112.51|-1|-0.1|191|420126.31|-26216.44|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 7
+1e702,T=5.5747834|4.7089529|107.35|-0.9|0.9|261.6|421304.5|-26426.12|256.9,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=USA gnd 7
+1e802,T=5.5666399|4.7090735|112.52|||4.7|420658.31|-26465|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 8
+1e902,T=5.5667106|4.7089034|112.52|||4.7|420665.44|-26483.43|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 8
+1ea02,T=5.56652|4.7087848|112.52|||4.7|420651.41|-26497.84|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 8
+1eb02,T=5.5667316|4.7087521|112.52|||4.7|420668.47|-26500.11|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 8
+1ec02,T=5.5662205|4.708843|112.52|||4.7|420627.16|-26493.29|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 8
+1ed02,T=5.5664205|4.7089612|112.52|||4.7|420641.94|-26478.88|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 8
+1ee02,T=4.0907051|4.9281584|22.37|||190|302211.09|-10524.84|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 9
+1ef02,T=4.087256|4.9325173|16.24|||190|301908.47|-10057.74|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M249,Country=us,Group=USA gnd 9
+1f002,T=4.0862803|4.9213305|20.9|-0.6|-0.8|190|301909.59|-11305.29|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 9
+1f102,T=4.0880141|4.9259381|23|||190|302014.25|-10784.85|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M4,Country=us,Group=USA gnd 9
+1f202,T=4.0798524|4.9286292|20.99|0.5||190|301351.38|-10526.36|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 9
+1f302,T=4.0933797|4.933325|14.24|0.1|0.1|190|302386.03|-9937.61|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=USA gnd 9
+1f402,T=4.0980634|4.9347563|14.6|0.1||190|302745.59|-9755.34|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 9
+1f502,T=4.0987836|4.9327313|14.86|-0.2|0.2|190|302816.59|-9976.71|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 9
+1f602,T=4.1000628|4.9290454|13.96|-0.1|-0.2|190|302943.34|-10379.8|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=USA gnd 9
+1f702,T=4.0901137|4.928635|22.37|||3.6|302161.09|-10474.84|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 10
+1f802,T=4.090189|4.9284656|22.37|||3.6|302168.22|-10493.27|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 10
+1f902,T=4.0900004|4.9283444|22.37|||3.6|302154.19|-10507.68|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 10
+1fa02,T=4.090214|4.9283143|22.37|||3.6|302171.25|-10509.95|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 10
+1fb02,T=4.089698|4.9283988|22.37|||3.6|302129.94|-10503.13|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 10
+1fc02,T=4.089896|4.9285197|22.37|||3.6|302144.72|-10488.72|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 10
+1fd02,T=4.9264619|5.1678149|25.62|||190.6|366208.5|20589.89|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 11
+1fe02,T=4.9277702|5.1732394|25.26|||190.6|366266.94|21200.05|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M249,Country=us,Group=USA gnd 11
+1ff02,T=4.9358445|5.1648042|25.52|||190.6|366970.47|20309.76|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 11
+20002,T=4.9220053|5.1719997|24.64|||190.6|365824.09|21029|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M4,Country=us,Group=USA gnd 11
+20102,T=4.9325186|5.1615211|25.9|||190.6|366735.97|19925.79|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 11
+20202,T=4.9316988|5.1640734|25.58||0.2|190.6|366650.66|20204.57|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=USA gnd 11
+20302,T=4.9335213|5.1707412|25.61|0.1|0.2|190.6|366739.28|20955.82|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 11
+20402,T=4.9350004|5.1621758|25.87|||190.6|366925.66|20012.89|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 11
+20502,T=4.9364035|5.1670575|25.43|-0.1||323.3|366995.94|20563.31|319.1,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=USA gnd 11
+20602,T=4.9258756|5.1682955|25.62|||4.2|366158.5|20639.89|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 12
+20702,T=4.9259486|5.1681258|25.62|||4.2|366165.63|20621.46|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 12
+20802,T=4.9257576|5.168006|25.62|||4.2|366151.59|20607.05|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 12
+20902,T=4.9259714|5.1679744|25.62|||4.2|366168.66|20604.78|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 12
+20a02,T=4.9254549|5.1680627|25.62|||4.2|366127.34|20611.6|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 12
+20b02,T=4.9256554|5.168182|25.62|||4.2|366142.13|20626.01|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 12
+20c02,T=4.0786788|5.2034158|6.22|||190|299338.25|19993.17|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 13
+20d02,T=4.0703984|5.1977706|5|||190|298727.44|19325.07|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M249,Country=us,Group=USA gnd 13
+20e02,T=4.0873409|5.1980299|5|||190|300056.31|19437.8|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 13
+20f02,T=4.0711607|5.2005981|5|||190|298767.53|19642.95|186.4,Type=Ground+Light+Human+Infantry,Color=Blue,Coalition=Enemies,Name=Soldier M4,Country=us,Group=USA gnd 13
+21002,T=4.0723195|5.2100146|5|||190|298792.66|20694.74|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 13
+21102,T=4.0859107|5.2094426|5|||190|299863.91|20698.53|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=HEMTT TFFT,Country=us,Group=USA gnd 13
+21202,T=4.0812445|5.2034952|5|||190|299539.19|20014.7|186.4,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 13
+21302,T=4.0832368|5.2073485|5|||190|299668.63|20452.64|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Vulcan,Country=us,Group=USA gnd 13
+21402,T=4.0750372|5.2064565|5|||190|299030.97|20312.93|186.4,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=USA gnd 13
+21502,T=4.0780847|5.2038923|5.55|||3.6|299288.25|20043.17|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Group=USA gnd 14
+21602,T=4.0781603|5.203723|5.55|||3.6|299295.38|20024.73|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 14
+21702,T=4.0779708|5.2036018|5.55|||3.6|299281.34|20010.33|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 14
+21802,T=4.0781854|5.2035717|5.55|||3.6|299298.41|20008.05|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=USA gnd 14
+21902,T=4.0776669|5.2036563|5.55|||3.6|299257.09|20014.88|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 14
+21a02,T=4.0778659|5.2037771|5.55|||3.6|299271.88|20029.28|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=USA gnd 14
+21b02,T=5.4077017|4.6009736|212.69|1.3|-0.4|4.5|409015.5|-39480.8|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 15
+21c02,T=5.416454|4.5954888|213|-1.5|-2.3|4.6|409758.25|-40035.29|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 15
+21d02,T=5.4043332|4.6019185|207.33|-2.7|-0.5|4.5|408739.88|-39396.91|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 15
+21e02,T=5.4093067|4.6070835|200.82|2.6|-0.5|4.5|409089.34|-38792.02|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 15
+21f02,T=5.4043815|4.6073784|193.49|-3.3|-1.2|4.5|408695.91|-38790.08|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 15
+22002,T=5.4044821|4.5985713|218.58|-1.7||4.5|408781|-39767.81|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6M tr,Country=ru,Group=RUSSIA gnd 15
+22102,T=5.411918|4.6031919|199.7|2.1|-1.7|4.6|409330.69|-39207.98|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6MD sr,Country=ru,Group=RUSSIA gnd 15
+22202,T=5.4142257|4.6047588|194.23|-2.4|-0.7|4.6|409500.09|-39019.46|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 54K6 cp,Country=ru,Group=RUSSIA gnd 15
+22402,T=5.4084283|4.60411|205.96|1.4|-1.8|4.5|409045.69|-39127.84|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-4331,Country=ru,Group=RUSSIA gnd 15
+22502,T=5.3980191|4.5968177|209.78|-5.3|-0.8|4.5|408283.38|-40003.04|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 15
+22602,T=5.4172821|4.5966263|211.77|-3.2|-1|4.6|409814|-39903.74|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 15
+22702,T=5.407578|4.6032946|210.54|1.5|-1.9|4.5|408985.34|-39223.74|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 15
+22802,T=5.4061124|4.5992269|219.34|1.9|-1.3|4.5|408904.66|-39684.79|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 15
+22902,T=5.412363|4.6081287|189.43|0.8|0.4|4.6|409322.72|-38656.77|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 15
+2290b,T=4.255637|4.4663772|1873.22|150.7|-27.5|63.3|318545.56|-60990.15|59.6,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot,Country=us
+22a02,T=5.58537|4.8886555|53.03|-0.2|-0.2|4.7|420519.25|-6395.37|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 16
+22a0b,T=4.2557895|4.4663078|1876.05|146|-28.4|62.7|318558.19|-60997.08|59,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot,Country=us
+22b02,T=5.5938745|4.8888764|53.15|-0.2|-0.2|4.7|421188.84|-6316.08|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 16
+22c02,T=5.5883357|4.8837178|54.64||-0.1|4.7|420798.16|-6924.8|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 16
+22f02,T=5.5969917|4.8870637|53.46|0.1|0.2|4.7|421451.44|-6497.35|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Osa 9A33 ln,Country=ru,Group=RUSSIA gnd 16
+23002,T=5.5813861|4.8927072|53.07|||4.7|420168|-5970.91|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 16
+23102,T=5.5875363|4.8823984|54.95|0.2|-0.2|4.7|420746.97|-7076.51|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 16
+23202,T=5.583292|4.8909033|53.13|0.6|-0.2|4.7|420334.81|-6159.04|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 16
+23302,T=5.5888581|4.8884365|53.13|0.2|-0.2|4.7|420796.69|-6397.25|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 16
+23402,T=5.5761405|4.8861798|56.3|-0.2|-0.1|4.7|419812.78|-6729.73|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 16
+23502,T=5.5931276|4.8867848|53.66||-0.3|4.7|421148.81|-6553.24|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 16
+23602,T=5.5973585|4.8895203|53.21||-0.3|4.7|421458.13|-6222.1|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 16
+23702,T=5.9006057|4.8599099|109.98|0.3|-0.9|4.9|445685.75|-7511.4|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 17
+23802,T=5.9002213|4.862445|107.29|0.1|-0.5|4.9|445631.34|-7232.38|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 17
+23902,T=5.9003443|4.8635151|106.58|-0.7|0.4|4.9|445630.91|-7112.67|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 17
+23a02,T=5.9074497|4.8581305|111.33|-0.8|0.2|4.9|446243.38|-7662.88|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 1S91 str,Country=ru,Group=RUSSIA gnd 17
+23b02,T=5.9058459|4.8578017|111.52||-0.4|4.9|446119.78|-7710.23|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 1S91 str,Country=ru,Group=RUSSIA gnd 17
+23c02,T=5.8986526|4.855948|112.91|-0.3|-0.4|4.9|445569|-7964.68|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Osa 9A33 ln,Country=ru,Group=RUSSIA gnd 17
+23d02,T=5.9062329|4.8527851|115.02|||4.9|446197.97|-8264.91|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 17
+23e02,T=5.8883162|4.8599912|114.85|-0.1|0.2|4.9|444714|-7585.19|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 17
+23f02,T=5.8987638|4.8596993|110.42|-0.6|-0.2|4.9|445542.22|-7547.21|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Group=RUSSIA gnd 17
+24002,T=5.8946508|4.8670777|107.12|0.5|-0.4|4.9|445147.34|-6755.3|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 17
+24102,T=5.9013373|4.8554179|114.44|-0.6|-0.2|4.9|445786.16|-8005.47|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 17
+24202,T=5.9000033|4.8688436|104.53|-0.9|0.3|4.9|445553.44|-6523.04|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 17
+24302,T=5.896904|4.8658181|106.39|0.5|-0.4|4.9|445337.28|-6880.04|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 17
+24402,T=5.3787924|4.5676363|256.66|-5.3|-1.1|4.5|407011.69|-43364.71|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 18
+24502,T=5.3884492|4.5692508|251.1|-2.7|-1.8|4.5|407764.47|-43125.15|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 18
+24602,T=5.388119|4.5618312|269.95|2.5|-0.7|4.5|407803|-43951.45|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 18
+24702,T=5.3712361|4.5717967|232.58|4.8|-0.6|4.5|406375.41|-42949.59|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 18
+24802,T=5.3817526|4.5623478|277.4|-0.6|-0.9|4.5|407292.88|-43933.75|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 18
+24902,T=5.3764897|4.5702098|234.8|-5||4.5|406806.41|-43093.17|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6M tr,Country=ru,Group=RUSSIA gnd 18
+24a02,T=5.3853559|4.5677445|249.89|1.2|-1.1|4.5|407531.97|-43311.78|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6MD sr,Country=ru,Group=RUSSIA gnd 18
+24b02,T=5.3716243|4.5663347|249.25|2.7|-1|4.5|406453.78|-43553.93|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 54K6 cp,Country=ru,Group=RUSSIA gnd 18
+24d02,T=5.3878186|4.5677813|255.71|-2|-2.6|4.5|407727.22|-43292.33|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-4331,Country=ru,Group=RUSSIA gnd 18
+25102,T=5.3848593|4.5605797|278.6|0.4|-0.2|4.5|407555.03|-44110.8|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 18
+25202,T=5.3791516|4.5748956|236.03|-4.6|-0.8|4.5|406976.94|-42556.05|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 18
+25302,T=5.7373408|4.1457958|1054.09|-4.6|-6.4|4.7|439355.5|-87930.12|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 19
+25402,T=5.746481|4.1498953|1104.26|-9.7|-4.6|4.8|440049.13|-87414.49|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 19
+25502,T=5.73821|4.1458743|1058.65|-8.1|-6.2|4.7|439424.31|-87915.68|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 19
+25602,T=5.7354369|4.1526811|979.62|-5.9|-1.1|4.7|439140.28|-87177.74|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 19
+25702,T=5.7364825|4.1433712|1083.25|-6.8|-4|4.7|439309|-88205.13|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 19
+25802,T=5.7368513|4.1417817|1105.39|-7.8||4.7|439353.03|-88379.28|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6M tr,Country=ru,Group=RUSSIA gnd 19
+25902,T=5.7445509|4.1447687|1133.29|-6.6|-4.7|4.8|439941.66|-87996.74|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6MD sr,Country=ru,Group=RUSSIA gnd 19
+25a02,T=5.7282973|4.1513062|972.08|3.3|-2.9|4.7|438581.78|-87377.44|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 54K6 cp,Country=ru,Group=RUSSIA gnd 19
+25b02,T=5.7403293|4.1473465|1061.91|-10.7|-4|4.7|439580.38|-87738.18|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 19
+25c02,T=5.7448685|4.1513901|1091.08|-5.1|1.4|4.8|439906.47|-87259.06|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-4331,Country=ru,Group=RUSSIA gnd 19
+25e02,T=5.7458686|4.1506685|1097.02|-5.1|1.4|4.8|439993.06|-87332.63|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 19
+25f02,T=5.7376556|4.1544712|988.66|-10.4|-6|4.7|439301.38|-86964.27|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 19
+26002,T=5.7304913|4.1482935|993.85|-1.5|-7.8|4.7|438784.78|-87697.7|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 19
+26102,T=5.735809|4.1503397|992.39|-5.8|-2.3|4.7|439191.44|-87435.41|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 19
+26202,T=6.4049035|4.637014|269.15|1|-1|5.3|487795.25|-28745.46|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 20
+26302,T=6.3977558|4.6424708|271.32|0.9|-0.8|5.3|487173|-28191.01|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 20
+26402,T=6.4061145|4.6366529|268.11|0.9|-1|5.3|487894.97|-28776.8|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Group=RUSSIA gnd 20
+26502,T=6.3956786|4.6340143|280.7|-1.4|1.1|5.3|487093.94|-29145.47|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 20
+26602,T=6.3929034|4.6388731|274.88|-2.2|-0.7|5.3|486824.59|-28625.78|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Group=RUSSIA gnd 20
+26702,T=6.4007526|4.6370547|275.92|1.2||5.3|487465.59|-28771|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6M tr,Country=ru,Group=RUSSIA gnd 20
+26802,T=6.4099093|4.6369144|263.35|0.7|-0.6|5.3|488193.31|-28720.25|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6MD sr,Country=ru,Group=RUSSIA gnd 20
+26902,T=6.4061569|4.6392323|265.17|0.9|-0.8|5.3|487872.16|-28489.95|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 54K6 cp,Country=ru,Group=RUSSIA gnd 20
+26a02,T=6.4042255|4.6308897|283.04|0.8|-0.5|5.3|487803.59|-29430.71|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 20
+26b02,T=6.4020146|4.6407257|268.34|0.9|-0.9|5.3|487528.47|-28354.05|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-4331,Country=ru,Group=RUSSIA gnd 20
+26c02,T=6.4091678|4.6311662|273.46|1.3|-1|5.3|488192.84|-29364.19|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 20
+26d02,T=6.4131767|4.6323241|268.65|0.1|-0.7|5.3|488499.09|-29206.5|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 20
+26e02,T=6.4014515|4.6344166|280.17|0.9|-1.3|5.3|487547.78|-29059|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 20
+26f02,T=6.4057011|4.6375695|267.34|0.8|-0.5|5.3|487852.88|-28677.97|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 20
+27002,T=6.3954411|4.6403105|275.53|-1|-0.8|5.3|487011.31|-28447.75|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 20
+27102,T=6.0640451|4.5241191|281.46|0.6|0.3|5|461849.97|-43698.36|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=SKP-11,Country=ru,Group=RUSSIA gnd 21
+27202,T=6.0534832|4.5251223|296.87|1.7|-0.4|5|461000.91|-43659.79|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=SKP-11,Country=ru,Group=RUSSIA gnd 21
+27302,T=6.0524625|4.5209724|301.33|1.9|-0.7|5|460959.78|-44127.84|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-375 PBU,Country=ru,Group=RUSSIA gnd 21
+27402,T=6.0545501|4.5265591|292.97|||5|461071.84|-43492.82|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 21
+27502,T=6.0670202|4.5213366|279.57|0.3|0.1|5|462113.28|-43986.91|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 21
+27602,T=6.066704|4.5309306|282.88|0.2|1|5|461995.5|-42923.3|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 21
+27702,T=6.0556906|4.5186057|298.49|1.7|-1.3|5|461239.16|-44368.5|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 21
+27802,T=6.0722043|4.5257458|276.6|0.4||5|462482.69|-43461.27|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Osa 9A33 ln,Country=ru,Group=RUSSIA gnd 21
+27902,T=6.052099|4.5214248|301.92|1.7|-0.4|5|460926.53|-44080.09|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 21
+27a02,T=6.0677641|4.531217|283.26|0.2|1|5|462076.97|-42884.15|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 21
+27b02,T=6.061799|4.5244357|283.36|0.8|0.2|5|461668.41|-43678.69|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 21
+27c02,T=5.8942642|5.6073357|58.92|-0.1||5|438057.13|75472.66|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=SKP-11,Country=ru,Group=RUSSIA gnd 22
+27d02,T=5.9018941|5.6057603|61.6|0.2|-0.9|5|438667.13|75349.09|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=SKP-11,Country=ru,Group=RUSSIA gnd 22
+27e02,T=5.9011676|5.6141794|67.69|-0.4|0.6|5|438529.59|76279.39|,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-375 PBU,Country=ru,Group=RUSSIA gnd 22
+27f02,T=5.8900802|5.6131261|59.81|||5|437675.38|76087.69|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 22
+28002,T=5.889402|5.6071969|60.06|0.3|-0.5|5|437679.38|75424.5|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 22
+28102,T=5.9065174|5.6082242|62.83|-0.2|0.4|5|439003.91|75653.97|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 22
+28202,T=5.9042935|5.6076314|61.61|-0.2|0.4|5|438836.22|75573.12|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 22
+28302,T=5.8911927|5.6113326|58.08|-0.4|0.7|5|437779.31|75895.95|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Osa 9A33 ln,Country=ru,Group=RUSSIA gnd 22
+28402,T=5.8965657|5.6111571|61.5|-0.4|0.7|5|438199.88|75912.65|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 22
+28502,T=5.8847929|5.605416|65.9|0.5|-1.1|5|437337.09|75195.66|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 22
+28602,T=5.8952371|5.5997149|71.12|-0.1|-0.3|5|438206.13|74632.69|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Tor 9A331,Country=ru,Group=RUSSIA gnd 22
+28802,T=4.4025139|5.1845338|17.64|0.2|0.2|32.1|324910.88|19550.93|28.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 23
+28902,T=4.4079376|5.1776154|17.44|-0.2|0.1|337.1|325388.56|18810.97|333.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 23
+28a02,T=4.4087114|5.187436|17.13||-0.5|337.1|325376.09|19906|333.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 23
+28b02,T=4.3931479|5.1897621|19.13|0.1|-0.2|337|324136.19|20082.4|333.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 23
+28c02,T=4.4026443|5.1893674|16.86|0.5|-0.4|337|324885.09|20088.56|333.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 23
+28d02,T=4.3973459|5.1910231|18.22|||337|324456.56|20244.58|333.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 23
+28e02,T=4.4072287|5.1775638|17.23|-0.2|0.1|337.1|325333.25|18801.5|333.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-10M3,Country=ru,Group=RUSSIA gnd 23
+28f02,T=4.4000154|5.1801585|15.78|0.1||32.1|324747.19|19051.72|28.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 23
+29002,T=4.4101208|5.1830929|19.8|0.1|0.3|32.1|325519.22|19430.98|28.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 23
+29102,T=5.373711|5.1397557|49.19|0.3|0.1|4.6|401600.94|20158.67|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 24
+29202,T=5.3663606|5.1443037|50.24|-0.1||4.6|400983.09|20618.16|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 24
+29502,T=5.3745047|5.1475914|51.35||-0.1|4.6|401594.41|21034.04|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 24
+29602,T=5.3773429|5.1335038|46.9|-0.1|0.2|4.6|401941.5|19486.79|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 24
+29702,T=5.3835805|5.134946|48.08|||4.6|402419.25|19685.87|,Type=Ground+Light+Human+Infantry,Color=Red,Coalition=Allies,Name=Infantry AK,Country=ru,Group=RUSSIA gnd 24
+29802,T=5.3753404|5.1342481|47.03|||4.6|401777.5|19557|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S comm,Country=ru,Group=RUSSIA gnd 24
+29902,T=5.3758998|5.1351061|47.42|||4.6|401813.94|19655.79|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 24
+29a02,T=5.3664185|5.1460094|50.18|-0.1||4.6|400972.66|20807.99|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=RUSSIA gnd 24
+29b02,T=5.3631445|5.1411414|48.83|-0.2|0.3|4.6|400758.03|20246.87|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 24
+29c02,T=5.3787647|5.1367792|48.34|-0.1|0.2|4.6|402024.47|19859.5|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 24
+29e02,T=5.3655442|5.1436572|50.16|||4.6|400924.59|20541.26|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 24
+29f02,T=5.3735726|5.1354099|47.28|||4.6|401628.28|19675.06|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 24
+2a102,T=4.2893361|4.4790939|165.11|-4.6|-1.9|225.4|321134.69|-59404.21|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2a202,T=4.2842975|4.4869714|261.94|-10.9|-5.1|235.3|320677.25|-58555.12|231.5,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2a302,T=4.2939064|4.4729568|265.25|6.9|-0.1|225.4|321542.44|-60062.36|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2a402,T=4.2968954|4.4810114|155.79|-9.9|-7.8|225.4|321722.06|-59152.18|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMD-1,Country=ru,Group=RUSSIA gnd 25
+2a502,T=4.294416|4.4865962|320.13|-17.3|8.1|225.4|321484.59|-58544.59|221.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=RUSSIA gnd 25
+2a702,T=4.294042|4.4763024|175.64|2.5|10.1|216.9|321529.09|-59690.02|213.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2a802,T=4.2920976|4.4796411|161.89|-4.9|-2.7|221.2|321350.38|-59329.18|217.4,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2a902,T=4.2984283|4.4752756|207.51|10.6|9|233.9|321885.38|-59781.42|230.1,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2ab02,T=4.2970277|4.4817852|174.56|2.3|12.3|3.7|321727|-59065.54|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=2S6 Tunguska,Country=ru,Group=RUSSIA gnd 25
+2ac02,T=4.2963308|4.4850219|252.08|-17.1|6.8|233.9|321648.22|-58709.58|230.1,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2ad02,T=4.2940054|4.4785762|157.24|-0.3|0.9|235.3|321509.78|-59437.62|231.5,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 25
+2ae02,T=4.2939371|4.4829274|263.56|||225.4|321472.97|-58954.62|221.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 25
+2b002,T=4.2836386|4.4807474|181.9|1.5|-7.3|233.9|320669.66|-59249.91|230.1,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Dog Ear radar,Country=ru,Group=RUSSIA gnd 25
+2b202,T=4.7526363|4.8482166|59.58|0.3|0.4|225.7|355078.38|-15904.01|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2b302,T=4.7484701|4.8505292|57.86|0.2|0.3|235.6|354730.91|-15670.5|231.5,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2b402,T=4.7413376|4.8497919|56.23|1.6|-0.1|225.7|354173.09|-15792.4|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2b502,T=4.7609739|4.8513208|53.32||0.5|225.8|355712.72|-15512.33|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMD-1,Country=ru,Group=RUSSIA gnd 26
+2b602,T=4.752492|4.8569792|52.21|0.2|0.5|225.7|354997.81|-14931.42|221.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=RUSSIA gnd 26
+2b702,T=4.744918|4.848875|59.67|||224.3|354463.25|-15874.18|220.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S comm,Country=ru,Group=RUSSIA gnd 26
+2b802,T=4.7643211|4.8515417|51.38|-0.1|0.5|217.3|355975.47|-15468.97|213.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2b902,T=4.7486732|4.8456539|62.03|0.5|0.3|221.5|354785.41|-16210.94|217.4,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2ba02,T=4.7532029|4.841849|64.27|-0.1|0.6|234.2|355173.41|-16608.19|230.1,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2bb02,T=4.7470023|4.8555633|54.06|0.3|-0.3|4.1|354575.22|-15119.52|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=RUSSIA gnd 26
+2bd02,T=4.7543494|4.8568296|51.9|0.3|0.4|234.2|355145.75|-14937.61|230.1,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2be02,T=4.7622466|4.8448985|57.34||0.7|235.6|355864.06|-16218.62|231.5,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 26
+2bf02,T=4.763914|4.8481066|53.56|||225.8|355970.47|-15852.85|221.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 26
+2c002,T=4.7618766|4.8482993|54.62||0.6|222.9|355807.94|-15842.91|218.8,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 26
+2c302,T=5.2510275|5.1946827|33.79|-0.2|-0.2|226.1|391481.53|25503.96|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2c402,T=5.2449912|5.1978941|35.18||0.4|236|390979.72|25823.88|231.5,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2c502,T=5.2429671|5.1941897|37.42|-0.3|0.3|226.1|390852.69|25400.03|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2c602,T=5.2508192|5.1964937|33.61|0.1|0.1|226.1|391449.53|25703.87|221.6,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMD-1,Country=ru,Group=RUSSIA gnd 27
+2c702,T=5.2589205|5.1926446|36.12|0.4|-0.2|226.1|392119.09|25325.77|221.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=RUSSIA gnd 27
+2c802,T=5.2549452|5.2025779|34.35|||224.7|391721.03|26404.93|220.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S comm,Country=ru,Group=RUSSIA gnd 27
+2c902,T=5.2562032|5.1903198|35.25|0.3|-0.2|217.7|391925.75|25050.92|213.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2ca02,T=5.2409172|5.1956242|37.32|0.1|0.1|221.9|390679.31|25546.88|217.4,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2cb02,T=5.2549496|5.1922078|34.21|0.3|-0.2|234.6|391810.97|25252.98|230.1,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2cc02,T=5.2585366|5.1886823|36.62|-0.4||4.5|392123.19|24883.27|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=RUSSIA gnd 27
+2ce02,T=5.2524494|5.1978958|33.22|0.2|0.1|234.6|391565.47|25869.58|230.1,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2cf02,T=5.2487978|5.1876674|33.92|0.3||236|391366.94|24711.05|231.5,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 27
+2d002,T=5.2410645|5.198293|36.99|||226.1|390667.88|25844.25|221.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 27
+2d102,T=5.256912|5.1960432|34.1|0.4|-0.1|223.3|391931.97|25691.03|218.8,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZSU-23-4 Shilka,Country=ru,Group=RUSSIA gnd 27
+2d302,T=5.248902|5.2006307|33.43|-0.2||226.1|391263.25|26151.72|221.6,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Osa 9A33 ln,Country=ru,Group=RUSSIA gnd 27
+2d402,T=3.5982876|5.3653496|5|||3.3|260583.13|35716.07|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2d502,T=3.5903777|5.3627392|5|||3.3|259980.27|35390.66|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2d602,T=3.5969916|5.3651545|5|||3.3|260482.88|35688.59|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2d702,T=3.6005123|5.3658344|5|||3.3|260754.25|35779.89|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2d802,T=3.5938874|5.3729153|5|||3.3|260190.48|36536.83|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2d902,T=3.6058966|5.3693569|5|||3.3|261153.45|36195.38|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2da02,T=3.606913|5.3703498|5|||3.3|261226.72|36310.23|,Type=Ground+Light+Human+Infantry,Color=Red,Coalition=Allies,Name=Infantry AK,Country=ru,Group=RUSSIA gnd 28
+2db02,T=3.6014692|5.3632187|5|||3.3|260845.83|35493.61|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S comm,Country=ru,Group=RUSSIA gnd 28
+2dc02,T=3.594962|5.3706903|5|||3.3|260288.77|36294.46|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 28
+2dd02,T=3.5996788|5.3728251|5|||3.3|260644.52|36552.76|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-1 9P31,Country=ru,Group=RUSSIA gnd 28
+2de02,T=3.6044485|5.3613879|5|||3.3|261090.8|35303.59|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2df02,T=3.6074189|5.3660127|5|||3.3|261293.97|35830.7|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 28
+2e002,T=3.5950771|5.370293|5|||3.3|260300.3|36250.85|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 28
+2e102,T=3.6009847|5.3595956|5|||3.3|260830.94|35088.95|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 28
+2e202,T=3.6086542|5.3683737|5|||3.3|261375.66|36098.53|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 28
+2e302,T=3.606672|5.3609559|5|||3.3|261267.69|35265.59|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Osa 9A33 ln,Country=ru,Group=RUSSIA gnd 28
+2e402,T=4.3046252|4.4599707|278.87|-6.3|7.5|32|322488.84|-61449.53|28.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 29
+2e502,T=4.3072397|4.4554053|243.85|-8.9|-3.2|336.9|322729.84|-61943.15|333.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 29
+2e702,T=4.3110268|4.4613422|286.21|18.5|0.3|336.9|322988.22|-61264.04|333.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Ural-375 ZU-23,Country=ru,Group=RUSSIA gnd 29
+2e902,T=4.3031718|4.4649368|279.65|||336.9|322337.34|-60905.39|333.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 29
+2eb02,T=4.3161356|4.4569704|244.28|9.6|-7.8|32|323426.31|-61723.2|28.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 29
+2ec02,T=4.3018965|4.4669162|282.3|-5.5|1.6|32|322221.59|-60692.1|28.2,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=SAU Msta,Country=ru,Group=RUSSIA gnd 29
+2ed02,T=3.7757857|4.6777219|41.09|0.2|0.3|3.4|278997.28|-39859.77|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=CTLD_M818 #1
+2ee02,T=3.7805689|4.6712225|40.01|||3.4|279418.84|-40559.47|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=CTLD_M818 #2
+2ef02,T=3.774858|4.6786664|43.66|2|0.6|3.4|278917.59|-39759.17|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=CTLD_M818 #3
+2f002,T=3.9981481|4.9694516|20.16|-0.2|-0.2|3.6|294623.59|-6393.03|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=CTLD_Chaparral #1
+2f302,T=4.9281296|5.0862266|30.01|||4.2|367006.5|11536.18|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=CTLD_M818 #4
+2f502,T=4.8983386|5.0929081|25.07||-0.1|4.2|364607.78|12106.44|,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=CTLD_M818 #6
+2f602,T=4.900234|5.0936599|24.94|||57.9|364750.81|12200.87|53.6,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=CTLD_M818 #7
+2f802,T=3.9847344|4.9729029|14.92|0.3||38.9|293542.19|-6074.93|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=ge,Group=Hawk pcp #2
+2f902,T=3.9849488|4.9738291|14.41|0.3||38.9|293552.75|-5971|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=ge,Group=Hawk pcp #2
+2fa02,T=3.9857047|4.974128|13.75|0.3||38.9|293610.31|-5934.12|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #2
+2fb02,T=3.9858424|4.9740473|13.69|0.3||38.9|293621.72|-5942.41|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #2
+2fc02,T=3.9857771|4.9739294|13.78|0.3||38.9|293617.38|-5955.82|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #2
+2fd02,T=3.9855986|4.9739372|13.9|0.3||38.9|293603.25|-5955.82|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #2
+2fe02,T=3.9855542|4.97406|13.89|0.3||38.9|293598.91|-5942.41|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #2
+2ff02,T=3.9861354|4.9724522|14.07|0.3||38.9|293655.75|-6118.18|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=ge,Group=Hawk pcp #2
+30002,T=3.9866639|4.9733938|13.35|0.3||38.9|293690.97|-6011.01|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=ge,Group=Hawk pcp #2
+30202,T=3.7816898|4.6726304|40.01|||38.7|279498.5|-40397.85|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=ge,Group=Hawk pcp #3
+30302,T=3.7807622|4.6710475|40.01|||38.7|279435.31|-40578.01|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=ge,Group=Hawk pcp #3
+30402,T=3.7792876|4.6723949|40.01|||38.7|279309.63|-40435.21|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #3
+30502,T=3.7794249|4.6723145|40.01|||38.7|279321.03|-40443.5|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #3
+30602,T=3.7793603|4.6721964|40.01|||38.7|279316.69|-40456.92|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #3
+30702,T=3.7791827|4.6722039|40.01|||38.7|279302.56|-40456.92|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #3
+30802,T=3.779138|4.6723265|40.01|||38.7|279298.22|-40443.5|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #3
+30902,T=3.7812083|4.6721843|40.01|||38.7|279463.25|-40449.65|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=ge,Group=Hawk pcp #3
+30a02,T=3.7810958|4.671249|40.01|||38.7|279460.44|-40554.07|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=ge,Group=Hawk pcp #3
+32002,T=4.9004154|5.0920797|25.07|||39.5|364777.94|12026.38|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=ge,Group=Hawk pcp #6
+32202,T=4.8985247|5.092918|25.06|||39.5|364622.34|12108.62|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #6
+32502,T=4.8984153|5.0927282|25.08|||39.5|364615.28|12086.91|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #6
+32602,T=4.8983728|5.0928512|25.07|||39.5|364610.94|12100.32|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #6
+32c02,T=4.9304374|5.0861336|30.01|||39.5|367188.88|11539.21|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #7
+32f02,T=4.930328|5.0859439|30.01|||39.5|367181.81|11517.5|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #7
+33002,T=4.9302855|5.0860669|30.01|||39.5|367177.47|11530.91|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #7
+33402,T=3.7789379|4.6795446|40.54|0.3||38.7|279235.22|-39642.61|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=ge,Group=Hawk pcp #8
+33502,T=3.7778454|4.6799582|41.05|0.3||38.7|279145.94|-39601.76|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=ge,Group=Hawk pcp #8
+33602,T=3.7760895|4.679305|41.53|0.3||38.7|279011.03|-39682.49|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #8
+33702,T=3.7762268|4.6792246|41.45|0.3||38.7|279022.44|-39690.79|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #8
+33802,T=3.7761623|4.6791066|41.44|0.3||38.7|279018.09|-39704.2|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #8
+33902,T=3.7759847|4.679114|41.52|0.3||38.7|279003.97|-39704.2|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #8
+33a02,T=3.77594|4.6792366|41.67|2||38.7|278999.63|-39690.79|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=ge,Group=Hawk pcp #8
+33b02,T=3.7792843|4.6788064|40.25|0.3||38.7|279267.5|-39723|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=ge,Group=Hawk pcp #8
+33c02,T=3.7783727|4.6781933|40.22|0.3||38.7|279199.25|-39795.35|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=ge,Group=Hawk pcp #8
+33d02,T=5.6562382|4.9820261|66.98|-0.2|-0.5|4.8|425260.69|4435.28|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 47
+33e02,T=5.6554451|4.9814571|67.37|-0.2|-0.5|4.8|425203.38|4366.92|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 47
+33f02,T=5.6532203|4.9819722|66.83|-0.1|-0.3|4.8|425023.25|4409.67|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 47
+34002,T=5.6574827|4.9805075|68.91|-0.2|-0.5|4.8|425372.72|4274.68|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 47
+34102,T=5.656036|4.9787141|69.8|-0.4||4.8|425275.09|4066.05|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 47
+34202,T=5.6565164|4.9801702|69|-0.2||4.8|425299.63|4230.93|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 47
+34302,T=5.6509947|4.9807575|67.81|||4.8|424858.91|4260.27|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 47
+34402,T=5.6564232|4.9793687|69.72|-0.2||4.8|425299.63|4141.29|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 47
+34502,T=5.6527009|4.9787845|68.21|||4.8|425011.5|4052.18|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 47
+34602,T=5.6579512|4.9800102|69.5|-0.2||4.8|425414.22|4222.48|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 47
+34702,T=5.6516726|4.9814273|67.38|0.1||4.8|424906.22|4339.08|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 47
+34802,T=5.6514449|4.9791665|68|||4.8|424908.97|4086.45|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 47
+34902,T=5.6554951|4.9797791|69.11|-0.3||4.8|425222.69|4180.84|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=snr s-125 tr,Country=ru,Group=RUSSIA gnd 47
+34a02,T=5.4410943|4.5914595|198.2|3.8|0.1|4.6|411749.53|-40328.17|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 48
+34b02,T=5.440309|4.5908885|200.14|1.4|0.5|4.6|411692.22|-40396.54|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 48
+34c02,T=5.4380964|4.5913986|206.3|2|1.9|4.6|411512.09|-40353.79|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 48
+34d02,T=5.4423374|4.5899433|190.5|2.7|-0.9|4.6|411861.56|-40488.78|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 48
+34e02,T=5.4409083|4.5881462|193.94|1||4.6|411763.94|-40697.41|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 48
+34f02,T=5.441379|4.5896037|195.16|3.8||4.6|411788.47|-40532.53|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 48
+35002,T=5.4358908|4.5901786|206.27|||4.6|411347.75|-40503.18|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 48
+35102,T=5.44129|4.5888018|194.87|2.4||4.6|411788.47|-40622.17|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 48
+35202,T=5.4375948|4.588209|195.05|||4.6|411500.34|-40711.28|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 48
+35302,T=5.4428051|4.5894469|189.33|2.7||4.6|411903.06|-40540.98|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 48
+35402,T=5.4365613|4.59085|208.53|2.1||4.6|411395.06|-40424.38|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 48
+35502,T=5.4363452|4.5885882|197.69|0.2||4.6|411397.81|-40677|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 48
+35602,T=5.4403661|4.5892102|197.52|0.9||4.6|411711.53|-40582.62|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=snr s-125 tr,Country=ru,Group=RUSSIA gnd 48
+35702,T=5.9939606|4.8362702|136.58|0.5|-0.2|312.8|453288.81|-9503.5|307.8,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 49
+35802,T=5.9943215|4.8350497|137.46|0.1|-0.3|312.8|453329.06|-9636.61|307.8,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 49
+35902,T=5.9925699|4.8362485|136.48|0.2||312.8|453179.09|-9515.4|307.8,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement,Country=ru,Group=RUSSIA gnd 49
+35a02,T=5.9960457|4.8355481|136.82|0.5||312.8|453460.56|-9569.45|307.8,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement,Country=ru,Group=RUSSIA gnd 49
+35b02,T=5.9920551|4.8351976|137.01|0.2||312.7|453148.5|-9635.67|307.8,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement,Country=ru,Group=RUSSIA gnd 49
+35c02,T=5.9951115|4.8365009|136.11|0.5|-0.2|312.8|453377.56|-9469.99|307.8,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-10M3,Country=ru,Group=RUSSIA gnd 49
+35d02,T=5.5461609|4.8643222|62.58|-0.1|-0.3|4.7|417641.81|-9349.99|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 50
+35e02,T=5.5453706|4.8637523|62.83|-0.1|-0.3|4.7|417584.5|-9418.36|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 50
+35f02,T=5.5431489|4.8642651|62.94|0.3|-0.5|4.7|417404.38|-9375.6|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=T-72B,Country=ru,Group=RUSSIA gnd 50
+36002,T=5.5474062|4.8628048|63.27|0.5|-0.4|4.7|417753.84|-9510.59|,Type=Ground+Heavy+Armor+Vehicle+Tank,Color=Red,Coalition=Allies,Name=BMP-2,Country=ru,Group=RUSSIA gnd 50
+36102,T=5.5459662|4.8610096|65.05|0.6||4.7|417656.22|-9719.22|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 50
+36202,T=5.5464425|4.8624664|64.14|0.5||4.7|417680.75|-9554.35|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 50
+36302,T=5.5409303|4.8630478|65.23|0.4||4.7|417240.03|-9525|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 50
+36402,T=5.5463512|4.8616647|64.72|0.5||4.7|417680.75|-9643.99|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=ZU-23 Emplacement Closed,Country=ru,Group=RUSSIA gnd 50
+36502,T=5.5426374|4.8610763|66.81|||4.7|417392.63|-9733.09|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-18 Igla-S manpad,Country=ru,Group=RUSSIA gnd 50
+36602,T=5.5478749|4.8623079|63.27|0.5||4.7|417795.34|-9562.79|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 50
+36702,T=5.5416054|4.8637183|64.25|0.3||4.7|417287.34|-9446.2|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 50
+36802,T=5.541383|4.8614571|66.77|0.2||4.7|417290.09|-9698.82|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Group=RUSSIA gnd 50
+36902,T=5.545424|4.8620742|64.84|-0.1||4.7|417603.81|-9604.43|,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=snr s-125 tr,Country=ru,Group=RUSSIA gnd 50
+36a02,T=3.6050006|4.5265573|5486|-22.6|4.3|19.4|266410.78|-57432.72|16.1,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=KC-135,Country=us,Pilot=USA air 1 unit1
+36d02,T=6.5079512|5.5450485|7620.42|-24.4|10.8|56.6|486553.63|72873.82|51.2,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=A-50,Country=ru,Pilot=RUSSIA air 4 unit1
+46207,T=5.1334324|5.0080417|659.08|5.6|-5.2|56.3|383823.34|4059.69|51.9,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-16C_50,Country=us,Group=Dodge 5,Pilot=Tats
+55103,T=3.7762229|4.6714793|41.83|0.1|0.4|307.4|279072.69|-40551.19|304,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-16C_50,Country=us,Group=Dodge 4,Pilot=Knight 1-1 | Kestrel
+6be08,T=3.7779076|4.6720624|41.85|0.1|0.6|306.3|279202.41|-40478.57|302.9,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-16C_50,Country=us,Group=Dodge 3,Pilot=Beatty
+85b02,T=3.5328277|4.9588309|9144|-25|9.2|195.5|257995.72|-9734.79|192.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=E-3A,Country=us,Pilot=USA air 23 unit1
+99210,T=5.5553051|4.6957114|112.33|2.9|12.4|131.7|419880.38|-28022.02|127.1,Type=Air+Rotorcraft,Color=Blue,Coalition=Enemies,Name=UH-1H,Country=us,Group=MKFARP Huey 1,Pilot=Overlord
+aff04,T=4.0088036|4.5707297|46.17|-0.4|11.4|222|298197.78|-50633.52|218.4,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-16C_50,Country=us,Group=Dodge 6,Pilot=UltraX013
+be402,T=5.5602317|4.7015845|114.02|-0.4|-0.3|40|420217.97|-27338.02|35.3,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Group=M978 HEMTT Tanker #10
+cbb02,T=5.5600019|4.7016664|113.92|-0.4|-0.3|40|420199.03|-27330.39|35.3,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Group=M 818 #11
+126e02,T=5.5614222|4.7024025|114.26|-0.4||40|420304.94|-27239.52|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_C,Country=us,Group=NASAMS_LN_C #18
+126f02,T=5.5615344|4.702234|114.33|-0.4||40|420315.34|-27257.52|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_C,Country=us,Group=NASAMS_LN_C #18
+127002,T=5.5612734|4.7022491|114.15|-0.4||40|420294.53|-27257.52|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_C,Country=us,Group=NASAMS_LN_C #18
+127102,T=5.5617216|4.7018358|114.43|-0.4||40|420333.75|-27300.55|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Command_Post,Country=us,Group=NASAMS_LN_C #18
+127202,T=5.5621835|4.7025803|114.8|-0.4||40|420363.66|-27214.89|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Radar_MPQ64F1,Country=us,Group=NASAMS_LN_C #18
+12a602,T=5.5604125|4.7013358|114.29|||40|420234.53|-27364.49|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Soldier stinger,Country=us,Group=Soldier stinger #19
+12f502,T=5.558906|4.7028821|112.02|-0.6|-0.3|40|420101.28|-27202.37|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Roland ADS,Country=us,Group=Roland ADS #20
+130902,T=0.2654979|5.129493|89.31|||0.9|-1.35|-0.47|,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot
+132402,T=5.5611626|4.7033493|112.8|-1||40|420275.84|-27136.01|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M48 Chaparral,Country=us,Group=M48 Chaparral #21
+138a02,T=5.1483132|4.2270788|646.13|-1.1|60|266.3|391560.09|-82606.42|262,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot
+140a02,T=5.4698509|4.2816691|1391.58|10.1|59|258.7|416764.63|-74561.22|254.2,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot
+146402,T=5.4809524|4.6138496|163.46|||329.3|414715.06|-37589.33|324.7,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot,Country=ru
+147802,T=3.6888179|4.6341144|5486|-22.6|3.9|348.6|272383.56|-45105.13|345.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=KC135MPRS,Country=us,Pilot=USA air 54 unit1
+149002,T=5.5607778|4.7040762|111.65|-0.7||40|420238.84|-27057.73|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Group=Hawk pcp #22
+149102,T=5.5592053|4.7030793|111.88|-0.6||40|420123.22|-27178.55|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Group=Hawk pcp #22
+149202,T=5.5599929|4.7023241|113.1|-0.6||40|420192.41|-27257.39|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Hawk pcp #22
+149302,T=5.5601275|4.7022417|113.25|-0.6||40|420203.81|-27265.68|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Hawk pcp #22
+149402,T=5.5600595|4.7021248|113.37|-0.6||40|420199.47|-27279.1|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Hawk pcp #22
+149502,T=5.5598823|4.7021351|113.3|-0.6||40|420185.34|-27279.1|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Hawk pcp #22
+149602,T=5.5598415|4.7022582|113.13|-0.6||40|420181|-27265.68|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Group=Hawk pcp #22
+149702,T=5.5624544|4.703661|113.1|-0.7||40|420375.41|-27093.1|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Group=Hawk pcp #22
+149802,T=5.5615683|4.7030262|113.67|-1||40|420310.91|-27169.3|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Group=Hawk pcp #22
+14b702,T=6.3219908|3.712314|2308.54|-7.9|60.4|269.4|490417.41|-132072.39|264.3,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot
+151102,T=5.4555959|4.6828469|755.57|-100.3|-33.5|245.6|412093.56|-30084.77|241,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot,Country=ru
+151502,T=5.6114364|4.452091|283.15|||334.7|426529.56|-54724.48|330,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot,Country=ru
+151602,T=5.5602361|4.7038076|111.61|-0.7|-0.1|40|420198.34|-27091.03|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Roland ADS,Country=us,Group=Roland ADS #23
+153402,T=5.5808151|4.4576219|178.58|-0.1|-0.2|190.3|424043.31|-54307.38|185.6,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot,Country=ir
+153c02,T=5.2690975|4.503921|767.16,Type=Misc+Shrapnel,Color=Red,Coalition=Allies,Name=MIG-21_PILOT,Country=ru
+154902,T=5.3069137|4.4531817|3138.94,Type=Misc+Shrapnel,Color=Violet,Coalition=Neutral,Name=MIG-21_PILOT
+155102,T=6.2895087|4.6602974|4999.98||3.1|275.1|478409.84|-26988.15|269.9,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=Su-25T,Country=ru,Pilot=RUSSIA air 58 unit1
+155202,T=6.3629971|4.6938093|5686.99|13.7|16.9|310.8|483898.16|-22738.77|305.5,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=Su-25T,Country=ru,Pilot=RUSSIA air 58 unit2
+155b02,T=5.5591533|4.7009549|114.51|-0.4|-0.3|40|420138.19|-27414.87|35.3,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Roland ADS,Country=us,Group=Roland ADS #24
+158402,T=6.9399018|2.8801833|2000||6.7|322.3|549059.13|-219923.47|316.8,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=Su-33,Country=ru,Pilot=RUSSIA air 59 unit1
+158502,T=6.9545929|2.8816499|1999.31||6.3|322.3|550244.19|-219646.44|316.8,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=Su-33,Country=ru,Pilot=RUSSIA air 59 unit2
+15a202,T=5.9293524|4.7510854|4763.95|2.4|59.4|261|448992.38|-19406.13|256.1,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot
+15a302,T=5.9173004|4.6184425|4864.02||59.2|265.9|449295.47|-34222.79|261,Type=Ground+Light+Human+Air+Parachutist,Name=Pilot
+3015109,T=5.5650627|4.4802648|1842.06,Type=Misc+Shrapnel,Color=Violet,Coalition=Neutral
+301d309,T=5.9284174|4.7486642|2590.59,Type=Misc+Shrapnel,Color=Violet,Coalition=Neutral
+3101902,T=5.9171898|4.6184369|4171.19,Type=Misc+Shrapnel,Color=Red,Coalition=Allies,Name=PILOT_SU27_SEAT,Country=ru
+#1204.06
+1309,T=5.7266905|4.473481|9801.54|435504.28|-51597.28,Flaps=0.1,PilotHeadRoll=1.11,PilotHeadPitch=-19.44,PilotHeadYaw=-0.53
+#1204.12
+80a,T=4.8007657|4.5197884|7754.31|12.1|10.4|84.3|361488.19|-52116.74|80.2
+813,T=3.2660466|4.2302063|||-1.3||241193.02|-91817.13|
+815,T=5.3329118|4.6093612|10176.21|0.1|||403007.06|-39014.38|
+b0f,T=5.1539388|5.0075386|2349.01|0.9|||385443.59|4126.81|
+1017,T=3.8741671|4.9670092|2332.19|284863.13|-7261.11
+1405,T=4.7307726|4.3938766|8962.26|0.9|||356908.44|-66497.73|
+1611,T=3.8687066|4.1757958||289686.63|-95178.92
+3706,T=5.0853375|4.4942124||384317.59|-53307.07
+3a16,T=3.7306712|4.6280966|1846.67||25.5|199.6|275742.19|-45581.46|196.2
+5b14,T=3.5761327|5.3636968|118.77|-1.5|4.6||258858.64|35433.4|
+bf0e,T=3.9369069|4.7364801|1678.14|-10.1|-1.9|254.2|291370.97|-32569.67|250.7
+36a02,T=3.6050794|4.5267096||||19.3|266416.09|-57415.44|16
+36d02,T=6.5080934|5.5451042|7620.41|||56.4|486564.16|72881.05|51
+46207,T=5.1335687|5.0081109|657.97|4.8|-5.4|56.2|383833.5|4068.19|51.8
+85b02,T=3.5327661|4.9587172||||195.3|257991.56|-9747.69|192.1
+99210,T=5.5553084|4.6957089|112.17|1.5|11.7|130.8|419880.66|-28022.27|126.2
+aff04,T=4.0086855|4.5706391|47.51||11.4||298189.03|-50644.16|
+147802,T=3.6887706|4.6342943||||348.5|272378.66|-45085.36|345.2
+155102,T=6.289231|4.6603143||478387.66|-26988.25
+155202,T=6.362796|4.6939258|5691.63|13.7||310.9|483881.06|-22727.28|305.6
+158402,T=6.9397856|2.8802896||549048.5|-219912.56
+158502,T=6.9544769|2.881756|1999.59|550233.63|-219635.55
+802,T=6.5869643|2.7749459|0.03|521275.88|-234292.86
+80a,T=4.800776|4.5197892|7754.4|12.1|10.4|84.3|361489|-52116.59|80.2
+812,T=3.3411407||
+813,T=3.2660473|4.2302063||241193.08|-91817.13
+815,T=5.3329452|4.6093626|10176.21|0.1||86.7|403009.69|-39014.02|82.2
+818,T=||||4.3|
+902,T=6.3903349|2.8182845|-0.01|504755.81|-230914.3
+a02,T=3.1760698|4.498904|-0.03|232482.8|-62339.73
+b02,T=3.8692638|4.175619||289732.34|-95195.92
+b0f,T=5.1539192|5.007544|2348.94|0.9|||385442|4127.3|287.4
+d02,T=3.2661787|4.2305135||241201.8|-91782.45
+1017,T=3.8741778|4.9670078|2332.22|284863.97|-7261.21
+1309,T=5.726908|4.4735475|9801.37|435520.97|-51588.46
+1405,T=4.7307867|4.3938863|8962.25|0.9|||356909.47|-66496.57|
+1611,T=3.8687073|4.1757958|||-1.6||289686.69||
+3706,T=5.085356|4.4942163||384319.03|-53306.53
+3a16,T=3.730666|4.6280873|1847.12|||199.6|275741.84|-45582.52|196.2
+5b14,T=3.5761305|5.363695|118.76|-1.5|4.6||258858.48|35433.18|
+710c,T=|5.2036979|
+bf0e,T=3.9368971|4.7364782|1678.09|-10.1|-1.9||291370.22|-32569.93|250.7
+1480d,T=||
+2290b,T=4.2556329|4.4663769|1872.72|318545.25|-60990.2
+22a0b,T=4.2557854|4.4663075|1875.55|318557.88|-60997.13
+36a02,T=3.6050835|4.5267177||||19.3|266416.38|-57414.52|16
+36d02,T=6.5081009|5.5451072||-24.4||56.4|486564.72|72881.44|51
+46207,T=5.1335759|5.0081146|657.9|4.8|-5.4||383834.03|4068.64|
+55103,T=||||0.4|
+6be08,T=|4.6720624|
+85b02,T=3.5327629|4.9587111||||195.3|257991.34|-9748.38|192.1
+99210,T=5.5553086|4.6957088|112.16|1.4|11.6|130.7||-28022.28|126.1
+aff04,T=4.0086791|4.5706342|47.59|-0.4||222|298188.56|-50644.73|218.4
+138a02,T=5.148305|4.2270782|645.66|391559.44|-82606.54
+140a02,T=5.4698463|4.2816687|1391.09|416764.25|-74561.28
+147802,T=3.688768|4.6343039||||348.5|272378.38|-45084.31|345.2
+14b702,T=6.3219868|3.7123138|2308.02|490417.09|-132072.45
+151102,T=5.4555876|4.6828464|755.1|412092.91|-30084.88
+153c02,T=5.2690893|4.5039204|766.69
+154902,T=5.3069096|4.4531814|3138.4
+155102,T=6.2892162|4.6603152||478386.47|-26988.26
+155202,T=6.3627853|4.693932|5691.88||16.9|310.9|483880.16|-22726.66|305.6
+158402,T=6.9397794|2.8802953||549047.94|-219911.98
+158502,T=6.9544707|2.8817617|1999.61|550233.06|-219634.97
+15a202,T=5.9293483|4.7510851|4763.37|448992.06|-19406.19
+15a302,T=5.9172969|4.6184423|4863.43|449295.19|-34222.84
+3015109,T=||1841.97
+301d309,T=||2584.4
+3101902,T=5.9171857|4.6184367|4156.17
