@@ -18,9 +18,9 @@ except ImportError:
 if __name__ == "__main__":
     get_timer()
     logging.basicConfig(
-        level=config["LOGGING"]["level"],
-        format=config["LOGGING"]["format"],
-        datefmt=config["LOGGING"]["datefmt"],
+        level=config.logging.level,
+        format=config.logging.format,
+        datefmt=config.logging.datefmt,
     )
     # files_dir = get_directory(dir_path=None, dialog_single_file=False)
     files_dir = get_directory(dir_path=input_dir, dialog_single_file=False)
