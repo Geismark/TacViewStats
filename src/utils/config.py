@@ -1,9 +1,13 @@
 class Config:
-    def __init__(self, config_file="config.ini"):
+    def __init__(self, config_file_or_string="config.ini"):
         import configparser
 
         self.config = configparser.RawConfigParser()
-        self.config.read(config_file)
+
+        try:
+            self.config.read_string(config_file_or_string)
+        except configparser.MissingSectionHeaderError:
+            self.config.read(config_file_or_string)
 
         class Section:
             def add(self, key, value):
@@ -26,6 +30,8 @@ class Config:
                     temp_section.add(key, self.config[section][key])
 
             setattr(self, section, temp_section)
+
+        del self.config
 
 
 config = Config("config.ini")
