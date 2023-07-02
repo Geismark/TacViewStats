@@ -3,7 +3,6 @@ from math import radians, cos, sin, asin, sqrt
 from statistics import fmean
 from src.classes.FileData import FileData
 from src.classes.DCSObject import DCSObject
-from src.classes.DCSEvent import DCSEvent
 from src.utils.coordUtils import coords_to_euclidean_distance
 
 # https://www.tacview.net/documentation/acmi/en/

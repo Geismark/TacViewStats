@@ -1,8 +1,6 @@
 import os
 import logging
 
-# from src.utils.fileUtils import FileData, DCSObject, DCSEvent
-
 
 def write_outcome(files_data: dict):
     logging.info(f"\n\n{' Data Output '.center(128, '~')}\n")
