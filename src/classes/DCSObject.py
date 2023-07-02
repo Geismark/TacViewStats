@@ -5,40 +5,57 @@ class DCSObject:
     def __init__(self, file_obj, id: str):
         if not isinstance(id, str):
             raise TypeError(f"DCSObject init id is not string: {id=} {type(id)=}")
-        self.file_obj = file_obj
-        self.id = str(id)
-        self.lat = None  # actual -> includes reference
-        self.long = None  # actual -> includes reference
-        self.alt = 0  # MSL in meters // naval units are blank -> 0 is default
-        self.lat_old = None
-        self.long_old = None
-        self.alt_old = None
-        self.type = None
+        self.file_obj = (
+            file_obj  # FileData object of the TacView file this object belongs to
+        )
+        self.id = str(id)  # the ID of this object (same as the one used in the TV file)
+        self.lat = (
+            None  # the most recent latitude of this object (doesn't include reference)
+        )
+        self.long = (
+            None  # the most recent latitude of this object (doesn't include reference)
+        )
+        self.alt = 0  # the most recent altitude in meters MSL // some naval units are never updated -> 0 is default
+        self.lat_old = (
+            None  # the latitude value at the previous coordinate update of this object
+        )
+        self.long_old = (
+            None  # the longitude value at the previous coordinate update of this object
+        )
+        self.alt_old = (
+            None  # the altitude value at the previous coordinate update of this object
+        )
+        self.type = (
+            None  # the assigned type(s) of this object (e.g.: fixed-wing / projectile)
+        )
         # self.U = None # native x (2D world - unsure if used in DCS TV)
         # self.V = None # native y (2D world - unsure if used in DCS TV)
-        self.coalition = None
-        self.name = None
-        self.pilot = None
-        self.group = None
-        self.group_members = []
-        self.color = None  # using American spelling for consistency
+        self.coalition = None  # coalition this object was assigned to
+        self.name = None  # name of this object (i.e.: the name set in the mission editor for objects)
+        self.pilot = None  # the name of the pilot (what about AI, WSO, and RIOs?)
+        self.group = None  # the name of the group the object was assigned to in the mission editor
+        # self.group_members = [] # the other members of the group this object was assigned
+        self.color = (
+            None  # colour used in TacView (using American spelling for consistency)
+        )
         self.country = None
         self.state = None  # None, Alive, Killed, Dead, Dying (checking for any weapons)
-        self.launches = []  # id of all munitions
+        self.launches = []  # id of all munitions launched by this object
         self.kills = []  # [weapon, victim]
-        self.killer = None
-        self.killer_weapon = None
+        self.killer = None  # which 'launcher' this object was killed by
+        self.killer_weapon = None  # the munition this object was killed by
         self.landed = None  # boolean
-        self.obj_events = []
-        self.carrier = None  # boolean
+        # self.obj_events = []
+        # self.carrier = None  # boolean
         self.player = None  # boolean
-        self.difficulty = (
-            None  # FUTUREDO will need to get information on a server basis
-        )
+        # self.difficulty = (
+        #     None  # FUTUREDO will need to get information on a server basis
+        # )
         self.spawn_time_stamp = (
             file_obj.time_stamp
         )  # uses acmi time stamp, not recording/mission time
         self.death_time_stamp = None  # uses acmi time stamp, not recording/mission time
+        self.death_position = None
         self.origin = []  # lat, long, alt at spawn
         self.launcher = None  # only for munitions
 
@@ -47,8 +64,8 @@ class DCSObject:
         check_list = [
             c for c in num_check if c != ""
         ]  # often only a single unit is updated
-        for var in check_list:
-            if not str_is_float(var):
+        for value in check_list:
+            if not str_is_float(value):
                 raise TypeError(f"transform is not numeric: {lat=} {long=} {alt=}")
         self.lat_old, self.long_old, self.alt_old = self.get_pos()
         if lat != "":

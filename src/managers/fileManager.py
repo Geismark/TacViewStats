@@ -23,23 +23,8 @@ def is_zip(file: str) -> bool:
     return False
 
 
-# def print_file_logs(logs):
-#     for type, error_msg in logs:
-#         match type:
-#             case "info":
-#                 logging.info(error_msg)
-#             case "debug":
-#                 logging.debug(error_msg)
-#             case "warning":
-#                 logging.warning(error_msg)
-#             case "error":
-#                 logging.error(error_msg)
-#             case _:
-#                 raise NotImplementedError(f"{type=}\n{error_msg=}")
-
-
 def read_files(files: list[str], AuthorIsUser: bool):
-    # files_logs = []  # TODO re-implement async logs
+    # TODO add logging config and to-file
     files_data = {}
     logging.info(f"Total files: {len(files)}   -   {get_timer()}")
     for index, file in enumerate(files):

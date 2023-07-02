@@ -1,33 +1,45 @@
+"""Module DocString"""  # TODO add module docstrings
+
 from src.classes.DCSObject import DCSObject
 
 
 class FileData:
     def __init__(self):
-        self.is_zip = None
-        self.file_name = None
-        self.file_type = None
-        self.file_version = None
-        self.recorder = None
-        self.source = None
-        self.mission_title = None
+        self.is_zip = None  # is the file a .zip?
+        self.file_name = None  # what is the name of the file itself
+        self.file_type = None  # ACMI file type recorded by TacView
+        self.file_version = None  # ACMI version recorded by TacView
+        self.recorder = (
+            None  # what application and version was used to record the data?
+        )
+        self.source = None  # what application and version was the data collected from?
+        self.mission_title = None  # title of the mission file loaded on the DCS server
         self.author = None  # client's in-game name
         self.server = None
         self.comments = (
             []
         )  # appears this is used for the briefing, yet to see 0,Briefing
         self.briefing = None  # may be used when changing slots?? *UNSURE*
-        self.debriefing = None  # expect None
-        self.mission_date = None  # TODO
-        self.mission_start_time = None  # TODO
-        self.record_date = None  # TODO
-        self.record_start_time = None  # TODO
-        self.longitude_reference = None
-        self.latitude_reference = None
-        self.objects = {}
+        self.debriefing = None  # expect None?
+        self.mission_date = None
+        self.mission_start_time = None  # TODO separate/parse mission date and time
+        self.record_date = None
+        self.record_start_time = None  # TODO separate/parse record date and time
+        self.longitude_reference = (
+            None  # the base longitude that all recorded data is added to
+        )
+        self.latitude_reference = (
+            None  # the base latitude that all recorded data is added to
+        )
+        self.objects = {}  # all objects referenced within the file
+        # have a seperate list for dead and dying objects?
         self.first_time_stamp = None
-        self.time_stamp = 0
-        self.server_events = []
-        self.category = None  # unsure what this is, needs testing
+        self.time_stamp = (
+            0  # the most recent timestamp processed whilst reading the file
+        )
+        self.final_time_stamp = None
+        # self.server_events = []
+        self.category = None  # unsure what this is, needs testing/researching
 
     def __str__(self):
         return self.file_name

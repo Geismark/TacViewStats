@@ -3,7 +3,7 @@ from src.utils.fileUtils import (
     FileData,
     attr_split,
     get_nearest_obj,
-    is_unit,
+    obj_is_type,
     get_launcher,
 )
 from src.data.acmiAttrDicts import (
@@ -35,6 +35,7 @@ def object_line(line: list, file_data: FileData):
         obj_data = file_data.objects[id]
         acmi_obj_attr_list = acmi_old_obj_to_attr
     else:
+        print(f"NEW: {id}")
         new = True
         obj_data = file_data.new_obj(id)
         acmi_obj_attr_list = acmi_new_obj_to_attr
@@ -59,9 +60,7 @@ def object_line(line: list, file_data: FileData):
         if "Missile" in obj_data.type:
             max_avg_lat_long = 0.1
             max_alt = 100
-            launcher_obj, distance_coords, avg_unit_dist = get_launcher(
-                file_data, obj_data
-            )
+            launcher_obj, distance_coords, avg_unit_dist = get_launcher(obj_data)
 
             # logging.debug(f"\n#####################################\n{obj_data.id} {obj_data.name} {obj_data.type}\n\t{obj_data.get_pos()}\n-------------------------------------\n")
             # for obj in file_data.objects.values():
@@ -77,7 +76,6 @@ def object_line(line: list, file_data: FileData):
                     f"Missile launch, no unit within range - {max_avg_lat_long=} {distance_coords=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
             else:
-                obj_data.launcher = launcher_obj
                 launcher_obj.add_launch(obj_data)
                 logging.debug(
                     f"MISSILE LAUNCH - {max_avg_lat_long=} {distance_coords=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"

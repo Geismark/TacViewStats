@@ -4,6 +4,7 @@ from statistics import fmean
 from src.classes.FileData import FileData
 from src.classes.DCSObject import DCSObject
 from src.classes.DCSEvent import DCSEvent
+from src.utils.coordUtils import coords_to_euclidean_distance
 
 # https://www.tacview.net/documentation/acmi/en/
 # T = Longitude | Latitude | Altitude
@@ -33,7 +34,8 @@ def attr_split(string):  # regex look-behind not (easily?) applicable
     return slices
 
 
-def get_launcher(file_data: FileData, origin_obj: DCSObject):
+def get_launcher(origin_obj: DCSObject):
+    file_data = origin_obj.file_obj
     all_objs = file_data.objects.values()
     closest_coords = [0, 0, 0]
     closest_obj = None
@@ -41,15 +43,15 @@ def get_launcher(file_data: FileData, origin_obj: DCSObject):
     ordinance_coords = origin_obj.get_real_pos()
     # can use simple numerical comparison as relative difference is all that matters, can check if within a certain distance afterwards
     for obj in all_objs:
-        if (not is_unit(obj)) or (obj is origin_obj):
+        if (not obj_is_type(obj)) or (obj is origin_obj):
             continue
         launcher_coords = obj.get_real_pos()
-        current = [abs(ordinance_coords[i] - launcher_coords[i]) for i in range(3)]
+        current_dist = [abs(ordinance_coords[i] - launcher_coords[i]) for i in range(3)]
         current_avg = (
-            current[0] + current[1] + current[2] / 10_000
+            current_dist[0] + current_dist[1] + current_dist[2] / 10_000
         ) / 3  # altitude unit is relatively far greater and less significant
         if (closest_obj == None) or (current_avg < closest_avg):
-            closest_coords = current
+            closest_coords = current_dist
             closest_obj = obj
             closest_avg = current_avg
 
@@ -60,33 +62,42 @@ def get_launcher(file_data: FileData, origin_obj: DCSObject):
     return closest_obj, closest_coords, closest_avg
 
 
-def get_nearest_obj(file_data: FileData, origin_obj: DCSObject, max_dist):
+def get_nearest_obj(
+    file_data: FileData,
+    origin_obj: DCSObject,
+    max_dist=None,
+    ignore_types=[],
+    include_types=[],
+    is_unit=False,
+    ignore_non_units=True,
+):
     all_objs = file_data.objects.values()
-    closest = [0, 0, 0]
-    closest_avg = None
+    closest_dist = None
     closest_obj = None
     for obj in all_objs:
-        if not is_unit(obj):
+        if not obj_is_type(
+            obj,
+            is_unit=is_unit,
+            ignore_non_units=ignore_non_units,
+            ignore_types=ignore_types,
+            include_types=include_types,
+        ):
             continue
         elif obj.id == origin_obj.id:
             continue
-        current_obj = [None, None, None]
-        points = obj.get_pos()
-        for i, p in enumerate(points):
-            current_obj[i] = abs(origin_obj.get_pos()[i] - p)
-        current_avg = fmean(current_obj)
-        if closest_obj == None:
-            closest = current_obj
-            closest_avg = current_avg
+        current_dist = coords_to_euclidean_distance(
+            origin_obj.get_real_pos(), closest_obj.get_real_pos()
+        )
+        if closest_obj == None or current_dist < closest_dist:
             closest_obj = obj
-        else:
-            if current_avg < closest_avg:
-                closest = current_obj
-                closest_avg = current_avg
-                closest_obj = obj
-    distance_1 = coords_to_distance(origin_obj.get_pos(), closest_obj.get_pos())
-    within_max = True if distance_1 <= max_dist else False
-    return closest_obj.id, distance_1, within_max, closest_avg
+            closest_dist = current_dist
+
+    if max_dist and closest_dist >= max_dist:
+        within_max = False
+    else:
+        within_max = True
+
+    return closest_obj, closest_dist, within_max
 
 
 def coords_to_distance(point1: list, point2: list, meters=True):
@@ -129,7 +140,9 @@ def coords_to_distance(point1: list, point2: list, meters=True):
     return distance
 
 
-def is_unit(obj_data, ignore_types=[], ground=True, air=True):
+def obj_is_type(
+    obj_data, ignore_types=[], include_types=[], is_unit=False, ignore_non_units=False
+):
     unit_types = ["Air", "Ground", "Sea"]
     non_units = [
         "Decoy",
@@ -144,20 +157,22 @@ def is_unit(obj_data, ignore_types=[], ground=True, air=True):
         "Bullseye",
         "Container",
     ]
-    for type in ignore_types:
-        non_units.append(type)  # TODO add checks here
-    for non_unit_type in non_units:
-        if non_unit_type in obj_data.type:
-            return False
+    ignore_list = ignore_types  # FUTUREDO add input type checks?
+    include_list = include_types
+    if is_unit:
+        include_list.extend(unit_types)
+    if ignore_non_units:
+        ignore_list.extend(non_units)
+
+    if ignore_list:
+        for ignore_t in ignore_list:
+            if ignore_t in obj_data.type:
+                return False
+    if include_list:
+        for include_t in include_list:
+            if include_t in obj_data.type:
+                return True
     return True
-
-
-# def is_float(string:str) -> bool:
-# 	try:
-# 		float(string)
-# 		return True
-# 	except ValueError:
-# 		return False
 
 
 if __name__ == "__main__":

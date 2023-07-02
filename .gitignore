@@ -1,4 +1,5 @@
 __pycache__
+# personal and testing data was kept in /dev
 dev/
 TVFiles/
 outputs/*

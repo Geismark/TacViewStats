@@ -21,6 +21,7 @@ if __name__ == "__main__":
         datefmt="%H:%M:%S",
     )
     # files_dir = get_directory(dir_path=None, dialog_single_file=False)
+    # input_dir = None
     files_dir = get_directory(dir_path=input_dir, dialog_single_file=False)
     files = get_files(files_dir)
     files_dict = read_files(
