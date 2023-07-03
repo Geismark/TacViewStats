@@ -33,7 +33,7 @@ def get_directory(
         raise FileNotFoundError(f"Directory not found\n\t{dir_path=}")
 
 
-def get_files(folder_dir: str, _TESTING=False):  # better name for _TESTING?
+def get_files(folder_dir: str):
     if os.path.isfile(folder_dir):
         files_any = [folder_dir]
     else:
@@ -44,13 +44,10 @@ def get_files(folder_dir: str, _TESTING=False):  # better name for _TESTING?
         f_acmi += file.count(".acmi")
         f_txt += file.count(".txt")
         f_mod += file.count(".mod")
-    if _TESTING == False:
-        logging.debug(
-            f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
-        )
-        return files_any
-    elif _TESTING:
-        return files_any, [f_zip, f_acmi, f_txt, f_mod]
+    logging.debug(
+        f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
+    )
+    return files_any, [f_zip, f_acmi, f_txt, f_mod]
 
 
 if __name__ == "__main__":

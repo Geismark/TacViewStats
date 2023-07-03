@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # files_dir = get_directory(dir_path=None, dialog_single_file=False)
     # input_dir = None
     files_dir = get_directory(dir_path=input_dir, dialog_single_file=False)
-    files = get_files(files_dir)
+    files, _ = get_files(files_dir)
     files_dict = read_files(
         files, AuthorIsUser=True
     )  # AuthorIsUser not implemented yet
