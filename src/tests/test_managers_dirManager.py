@@ -78,6 +78,3 @@ class TestDirManager(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-/home/circleci/project/src/tests/test_data/Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi
-/home/circleci/project/src/tests/test_data/Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi
