@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  format:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - run: curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.5.1 python3 -
+      - run: poetry install -vvv --only format --no-ansi
+      - run: poetry run black --check --diff .
+  test:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - run: curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.5.1 python3 -
+      - run: poetry install -vvv --with test --no-ansi
+      - run: poetry run pytest
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - format
+      - test
