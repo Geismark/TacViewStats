@@ -18,20 +18,15 @@ from src.tests import (
     test_utils_coordUtils,
 )
 
-try:
-    from dev.dev_testing_vars import dev_verbosity_all, dev_skip_dirs
-
-    import_verbosity = dev_verbosity_all
-    import_skip_dirs = dev_skip_dirs
-except ImportError:
-    import_verbosity = 1
-    import_skip_dirs = False
+from src.utils.configUtils import config
 
 
 class TestAll(unittest.TestCase):
     def setUp(self) -> None:
-        self.verbosity_all = import_verbosity  # 0=quiet, 1=default, 2=verbose
-        self.skip_dirs = import_skip_dirs
+        self.verbosity_all = (
+            config.DEV_TESTING.verbosity_level
+        )  # 0=quiet, 1=default, 2=verbose
+        self.skip_dirs = config.DEV_TESTING.skip_dialog
 
     # def tearDown(self):
     #     pass

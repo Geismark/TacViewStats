@@ -28,7 +28,7 @@ if __name__ == "__main__":
         format=f"%(asctime)s %(levelname)s - %(message)s",
         datefmt="%H:%M:%S",
     )
-    print(write_outcome({}))
+    write_outcome({})
     print(
         "/".join(
             os.path.dirname(os.path.realpath(__file__)).split("\\")[:-2] + ["outputs"]

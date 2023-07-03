@@ -35,7 +35,6 @@ def object_line(line: list, file_data: FileData):
         obj_data = file_data.objects[id]
         acmi_obj_attr_list = acmi_old_obj_to_attr
     else:
-        print(f"NEW: {id}")
         new = True
         obj_data = file_data.new_obj(id)
         acmi_obj_attr_list = acmi_new_obj_to_attr

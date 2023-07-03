@@ -60,4 +60,4 @@ if __name__ == "__main__":
         datefmt="%H:%M:%S",
     )
     dir = get_directory()
-    print(get_files(dir))
+    logging.debug(get_files(dir))
