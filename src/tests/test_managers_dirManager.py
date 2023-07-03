@@ -71,10 +71,13 @@ class TestDirManager(unittest.TestCase):
         )
         file1_name = cwd_to_test_data + r"/TEST_DIR.txt.acmi"
         file2_name = cwd_to_test_data + r"/TEST_ZIP_TRIMMED.mod.zip.acmi"
-        self.assertIn(file0_name, files_any[0], msg=f"{files_any=}")
-        self.assertIn(file1_name, files_any[1], msg=f"{files_any=}")
-        self.assertIn(file2_name, files_any[2], msg=f"{files_any=}")
+        self.assertIn(file0_name, files_any, msg=f"{files_any=}")
+        self.assertIn(file1_name, files_any, msg=f"{files_any=}")
+        self.assertIn(file2_name, files_any, msg=f"{files_any=}")
 
 
 if __name__ == "__main__":
     unittest.main()
+
+/home/circleci/project/src/tests/test_data/Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi
+/home/circleci/project/src/tests/test_data/Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi
