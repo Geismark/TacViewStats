@@ -1,9 +1,9 @@
 import logging
 from src.managers.fileManager import read_files
-from src.utils.performance import get_timer
+from src.utils.timeUtils import get_timer
 from src.managers.dirManager import get_directory, get_files
 from src.managers.outcomeWriter import write_outcome
-from src.managers.logHandler import log
+from src.managers.logHandler import setup_log_config
 from src.utils.configUtils import config
 
 try:
@@ -17,11 +17,7 @@ except ImportError:
 
 if __name__ == "__main__":
     get_timer()
-    logging.basicConfig(
-        level=config.LOGGING.level,
-        format=config.LOGGING.format,
-        datefmt=config.LOGGING.datefmt,
-    )
+    setup_log_config()
     # files_dir = get_directory(dir_path=None, dialog_single_file=False)
     # input_dir = None
     files_dir = get_directory(dir_path=input_dir, dialog_single_file=False)

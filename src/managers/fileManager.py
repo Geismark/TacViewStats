@@ -8,7 +8,7 @@ from src.managers.lineHandler import (
     time_line,
     obj_removed_line,
 )
-from src.utils.performance import get_timer
+from src.utils.timeUtils import get_timer
 
 
 # FUTUREDO do all zip checks before starting any reading?
