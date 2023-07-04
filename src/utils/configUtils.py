@@ -1,12 +1,16 @@
 import configparser
 
 
-class Section:
-    pass
+# -------------------- CANNOT LOG HERE --------------------
+# this module must be loaded for logger to initialise
+# -------------------- CANNOT LOG HERE --------------------
 
 
 class Config:
     def __init__(self):
+        class Section:
+            pass
+
         config = configparser.RawConfigParser()
         config.read("config.ini")
         for section in config:
@@ -17,12 +21,13 @@ class Config:
                     setattr(current_section, key, True)
                 elif value.capitalize() in ["False"]:
                     setattr(current_section, key, False)
+                elif value.capitalize() in ["None"]:
+                    setattr(current_section, key, None)
                 elif value.isdigit():
                     setattr(current_section, key, int(value))
                 else:
                     setattr(current_section, key, value)
-        # TODO need to choose file to write to - needs to be the same for all processes
-        # have each log start with id/counter for files -> keeps track of both processor and file
+        # FUTUREDO have each log start with id/counter for files -> keeps track of both processor and file
 
 
 config = Config()

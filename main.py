@@ -1,10 +1,10 @@
-import logging
+# MUST BE IMPORTED FIRST
+from src.managers.logHandler import logger
+
 from src.managers.fileManager import read_files
 from src.utils.timeUtils import get_timer
 from src.managers.dirManager import get_directory, get_files
 from src.managers.outcomeWriter import write_outcome
-from src.managers.logHandler import setup_log_config
-from src.utils.configUtils import config
 
 try:
     from dev.dev_dirs import test_dir as input_dir
@@ -12,12 +12,18 @@ try:
 except ImportError:
     input_dir = None
 
+# logger.debug("test")
+# logger.trace("trace")
+# logger.log_init_logs()
+# quit()
+
 # TODO add *args and **kwargs
 # TODO add logging to file
 
 if __name__ == "__main__":
     get_timer()
-    setup_log_config()
+
+    # print(config.LOGGING.__dict__)
     # files_dir = get_directory(dir_path=None, dialog_single_file=False)
     # input_dir = None
     files_dir = get_directory(dir_path=input_dir, dialog_single_file=False)
@@ -27,7 +33,7 @@ if __name__ == "__main__":
     )  # AuthorIsUser not implemented yet
     write_outcome(files_dict)  # TODO
     end_time = get_timer()
-    logging.info(
+    logger.info(
         f"END\n\t{'Total Time: ':>24}{end_time:.6f}\n\t{'Average Time per File: ':>24}{end_time / len(files_dict):.6f}"
         # TODO format to align decimal places
     )

@@ -4,7 +4,7 @@
 # T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw
 # T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw | U | V | Heading
 
-import logging
+from src.managers.logHandler import logger
 from math import radians, cos, sin, asin, sqrt
 
 

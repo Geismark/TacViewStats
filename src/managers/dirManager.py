@@ -1,4 +1,5 @@
-import logging
+from src.managers.logHandler import logger
+from src.managers.logHandler import logger
 import os
 import glob
 import tkinter as tk
@@ -44,17 +45,12 @@ def get_files(folder_dir: str):
         f_acmi += file.count(".acmi")
         f_txt += file.count(".txt")
         f_mod += file.count(".mod")
-    logging.debug(
+    logger.debug(
         f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
     )
     return files_any, [f_zip, f_acmi, f_txt, f_mod]
 
 
 if __name__ == "__main__":
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format=f"%(asctime)s %(levelname)s - %(message)s",
-        datefmt="%H:%M:%S",
-    )
     dir = get_directory()
-    logging.debug(get_files(dir))
+    logger.debug(get_files(dir))

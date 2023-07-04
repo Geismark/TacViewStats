@@ -1,4 +1,4 @@
-import logging
+from src.managers.logHandler import logger
 import zipfile
 import os
 from src.utils.fileUtils import FileData, DCSObject, coords_to_distance
@@ -24,11 +24,10 @@ def is_zip(file: str) -> bool:
 
 
 def read_files(files: list[str], AuthorIsUser: bool):
-    # TODO add logging config and to-file
     files_data = {}
-    logging.info(f"Total files: {len(files)}   -   {get_timer()}")
+    logger.info(f"Total files: {len(files)}   -   {get_timer()}")
     for index, file in enumerate(files):
-        logging.info(f"Reading file {index} {get_timer()}  -   {file}")
+        logger.info(f"Reading file {index} {get_timer()}  -   {file}")
         files_data[index] = FileData()
         file_data = files_data[index]
         file_data.file_name = file.split("\\")[-1]
@@ -55,7 +54,7 @@ def read_files(files: list[str], AuthorIsUser: bool):
             file_data.is_zip = False
             with open(file) as open_file:
                 file_formatted = [line for line in open_file]
-        logging.debug(f"\n\t{file_data.file_name=}\n\t{file_data.is_zip=}\n")
+        logger.debug(f"\n\t{file_data.file_name=}\n\t{file_data.is_zip=}\n")
         process_file(file_data, file_formatted, AuthorIsUser)
     return files_data
 
@@ -109,4 +108,4 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
 # 27403,T=5.406326|4.2691396|10204.17|-2.1|18.8|46.9|-84722.34|-99230.39|47.6,Type=Weapon+Missile,Name=AIM_120C,Color=Blue,Coalition=Enemies,Country=xb
 
 if __name__ == "__main__":
-    logging.info(get_timer())
+    logger.info(get_timer())

@@ -1,4 +1,4 @@
-import logging
+from src.managers.logHandler import logger
 from src.utils.fileUtils import (
     FileData,
     attr_split,
@@ -55,31 +55,31 @@ def object_line(line: list, file_data: FileData):
                 else:
                     setattr(obj_data, obj_attr_name, attr_line[len(acmi_pointer) :])
     if new:
-        # logging.debug(f"NEW OBJECT:\n\t\tName: {obj_data.name}   Type: {obj_data.type}   ID: {obj_data.id}")
+        # logger.debug(f"NEW OBJECT:\n\t\tName: {obj_data.name}   Type: {obj_data.type}   ID: {obj_data.id}")
         if "Missile" in obj_data.type:
             max_avg_lat_long = 0.1
             max_alt = 100
             launcher_obj, distance_coords, avg_unit_dist = get_launcher(obj_data)
 
-            # logging.debug(f"\n#####################################\n{obj_data.id} {obj_data.name} {obj_data.type}\n\t{obj_data.get_pos()}\n-------------------------------------\n")
+            # logger.debug(f"\n#####################################\n{obj_data.id} {obj_data.name} {obj_data.type}\n\t{obj_data.get_pos()}\n-------------------------------------\n")
             # for obj in file_data.objects.values():
             # 	if is_unit(obj):
-            # 		logging.debug(f"{obj.id} {obj.name} {obj.type} {obj.pilot}\n\t{obj.get_pos()}")
-            # logging.debug("\n-------------------------------------\n")
+            # 		logger.debug(f"{obj.id} {obj.name} {obj.type} {obj.pilot}\n\t{obj.get_pos()}")
+            # logger.debug("\n-------------------------------------\n")
             if launcher_obj == None:
-                logging.error(
+                logger.error(
                     f"Missile launch, no other unit: {obj_data.id=} {obj_data.name} {obj_data.spawn_time_stamp=} {obj_data.death_time_stamp=}"
                 )
             elif max_avg_lat_long < avg_unit_dist:
-                logging.warning(
+                logger.warning(
                     f"Missile launch, no unit within range - {max_avg_lat_long=} {distance_coords=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
             else:
                 launcher_obj.add_launch(obj_data)
-                logging.debug(
+                logger.debug(
                     f"MISSILE LAUNCH - {max_avg_lat_long=} {distance_coords=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
-            # logging.debug(f"{file_data.get_coord_reference()}\n#####################################\n")
+            # logger.debug(f"{file_data.get_coord_reference()}\n#####################################\n")
 
 
 def time_line(line: list, file_data: FileData):
@@ -93,5 +93,5 @@ def obj_removed_line(line: list, file_data: FileData):
     if str(obj_id) in file_data.objects:
         file_data.objects[obj_id].die()
     else:
-        logging.error(f"{file_data.objects.items()=}")
+        logger.error(f"{file_data.objects.items()=}")
         raise ValueError(f"Removed object is not within file_data: {obj_id}")
