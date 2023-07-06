@@ -66,19 +66,27 @@ class TestDirManager(unittest.TestCase):
         cwd_to_test_data = cwd_to_test_data.replace("\\", "/")
 
         files_any, counters = get_files(cwd_to_test_data)
-        self.assertEqual(counters, [2, 3, 1, 1], msg=f"{counters=}")
-        self.assertEqual(len(files_any), 3)
+        self.assertEqual(counters, [2, 4, 1, 1], msg=f"{counters=}")
+        self.assertEqual(len(files_any), 4)
         file0_name = "/Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi"
         file1_name = "/TEST_DIR.txt.acmi"
         file2_name = "/TEST_ZIP_TRIMMED.mod.zip.acmi"
+        file3_name = "/ZIP_TEST.acmi"
         self.assertTrue(
-            any(file0_name in file for file in files_any), msg=f"0 - {files_any=}"
+            any(file0_name in file for file in files_any),
+            msg=f"test_get_files_0 - {files_any=}",
         )
         self.assertTrue(
-            any(file1_name in file for file in files_any), msg=f"1 - {files_any=}"
+            any(file1_name in file for file in files_any),
+            msg=f"test_get_files_1 - {files_any=}",
         )
         self.assertTrue(
-            any(file2_name in file for file in files_any), msg=f"2 - {files_any=}"
+            any(file2_name in file for file in files_any),
+            msg=f"test_get_files_2 - {files_any=}",
+        )
+        self.assertTrue(
+            any(file3_name in file for file in files_any),
+            msg=f"test_get_files_3 - {files_any=}",
         )
 
 
