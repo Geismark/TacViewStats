@@ -15,11 +15,13 @@ from src.utils.timeUtils import get_timer
 def is_zip(file: str) -> bool:
     if not os.path.isfile(file):
         raise FileNotFoundError(f"{file=}")
-    if ".zip" in file:
-        if zipfile.is_zipfile(file):
+
+    if zipfile.is_zipfile(file):
+        if ".zip" in file:
             return True
-        else:  # FUTUREDO may not want to have assert here
-            raise TypeError(f".zip is not a ZIP file:\n{file=}")
+        else:
+            logger.debug(f"ZIP file without .zip:\n\t{file=}")
+            return True
     return False
 
 
