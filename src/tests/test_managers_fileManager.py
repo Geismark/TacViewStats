@@ -9,8 +9,10 @@ class TestFileManager(unittest.TestCase):
         self.test_data_dir = self.cwd + "/src/tests/test_data"
         self.zip_file_name = "TEST_ZIP_TRIMMED.mod.zip.acmi"
         self.unzipped_file_name = "TEST_DIR.txt.acmi"
+        self.zip_detection_test = "ZIP_TEST.acmi"
         self.zip_file_dir = self.test_data_dir + "/" + self.zip_file_name
         self.unzipped_file_dir = self.test_data_dir + "/" + self.unzipped_file_name
+        self.zip_test_dir = self.test_data_dir + "/" + self.zip_detection_test
 
     # def tearDown(self):
     #     pass
@@ -22,6 +24,7 @@ class TestFileManager(unittest.TestCase):
             is_zip(" ")
         self.assertFalse(is_zip(self.unzipped_file_dir))
         self.assertTrue(is_zip(self.zip_file_dir))
+        self.assertTrue(is_zip(self.zip_test_dir))
 
     # def test_read_files(self):
     #     raise NotImplementedError
