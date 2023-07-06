@@ -112,9 +112,10 @@ def setup_config_output_dir():
     if os.path.isdir(f"{os.getcwd()}{file_path}"):
         # if config path is from project dir
         file_path = f"{os.getcwd()}{file_path}"
+        debug_logs.append(f"Directory found from project root: {file_path=}")
     elif os.path.isdir(file_path):
         # if config path is from root
-        pass
+        debug_logs.append(f"Directory found from root: {file_path=}")
     else:
         debug_logs.append(
             f"Config Output Directory cannot be found:\n\t{file_path=}\n\tUsing default output dir."
@@ -175,5 +176,4 @@ def get_log_files(folder_dir: str):
         files = [folder_dir]
     else:
         files = glob.glob(f"{folder_dir}/*.*")  # lists all files in dir
-
     return files

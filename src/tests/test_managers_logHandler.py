@@ -19,7 +19,7 @@ class TestManagersLogHandler(unittest.TestCase):
 
         config.LOGGING.to_console = False
         config.LOGGING.to_file = False
-        empty_logger = Logger(__name__, setup_trace=False)
+        empty_logger = Logger("empty_handler", setup_trace=False)
 
         # ensure no errors when running each level
         empty_logger.trace("5")
