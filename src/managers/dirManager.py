@@ -1,4 +1,5 @@
-import logging
+from src.managers.logHandler import logger
+from src.managers.logHandler import logger
 import os
 import glob
 import tkinter as tk
@@ -33,31 +34,25 @@ def get_directory(
         raise FileNotFoundError(f"Directory not found\n\t{dir_path=}")
 
 
-def get_files(folder_dir: str, _TESTING=False):  # better name for _TESTING?
+def get_files(folder_dir: str):
     if os.path.isfile(folder_dir):
         files_any = [folder_dir]
     else:
         files_any = glob.glob(f"{folder_dir}/*.*")  # lists all files in dir
     f_mod, f_txt, f_zip, f_acmi = 0, 0, 0, 0
-    for file in files_any:  # TODO could also split string ('.') and count - faster?
+    for index, file in enumerate(files_any):
+        # TODO could also split string ('.') and count - faster?
         f_zip += file.count(".zip")
         f_acmi += file.count(".acmi")
         f_txt += file.count(".txt")
         f_mod += file.count(".mod")
-    if _TESTING == False:
-        logging.debug(
-            f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
-        )
-        return files_any
-    elif _TESTING:
-        return files_any, [f_zip, f_acmi, f_txt, f_mod]
+        files_any[index] = file.replace("\\", "/")
+    logger.debug(
+        f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
+    )
+    return files_any, [f_zip, f_acmi, f_txt, f_mod]
 
 
 if __name__ == "__main__":
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format=f"%(asctime)s %(levelname)s - %(message)s",
-        datefmt="%H:%M:%S",
-    )
     dir = get_directory()
-    print(get_files(dir))
+    logger.debug(get_files(dir))
