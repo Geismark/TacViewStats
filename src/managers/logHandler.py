@@ -12,11 +12,12 @@ from src.utils.logUtils import (
 
 class Logger(logging.Logger):
     # https://stackoverflow.com/a/76268417 This saved me.....
-    def __init__(self, name):
+    def __init__(self, name, setup_trace=True):
         get_timer()  # placed here to ensure timer starts no matter which module is run
         super().__init__(name, 0)
         # setup new level 'TRACE' @val==5
-        add_logging_level("TRACE", 5)
+        if setup_trace:
+            add_logging_level("TRACE", 5)
 
         debug_log1, debug_log2 = [], []
 
