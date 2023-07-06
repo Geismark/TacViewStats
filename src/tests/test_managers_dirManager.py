@@ -1,6 +1,7 @@
 import unittest
 import os
 from src.managers.dirManager import directory_dialog, get_directory, get_files
+from src.utils.configUtils import config
 
 
 class TestDirManager(unittest.TestCase):
@@ -11,6 +12,9 @@ class TestDirManager(unittest.TestCase):
     #     pass
 
     def test_directory_dialog(self):
+        if config.DEV_TESTING.skip_dialog:
+            return
+
         cwd_to_test_data = os.getcwd() + "/src/tests/test_data"
         test_dir_file = "TEST_DIR.txt.acmi"
         test_dir_check = "TacViewStats/src/tests/test_data"
@@ -40,17 +44,17 @@ class TestDirManager(unittest.TestCase):
 
         self.assertEqual(
             cwd_to_test_data,
-            get_directory(init_dir=cwd_to_test_data, dialog_single_file=False),
+            get_directory(
+                dir_path=cwd_to_test_data,
+            ),
         )
         self.assertEqual(
             cwd_to_test_data + "/" + test_dir_file,
             get_directory(
-                dialog_single_file=True,
-                init_dir=cwd_to_test_data,
-                init_file=test_dir_file,
+                dir_path=cwd_to_test_data + "/" + test_dir_file,
             ),
         )
-        # self.assertEqual()
+
         with self.assertRaises(FileNotFoundError):
             get_directory(" ")
         with self.assertRaises(FileNotFoundError):
@@ -60,17 +64,22 @@ class TestDirManager(unittest.TestCase):
         cwd = os.getcwd()
         cwd_to_test_data = cwd + "/src/tests/test_data"
         cwd_to_test_data = cwd_to_test_data.replace("\\", "/")
-        test_dir_file = "TEST_DIR.txt.acmi"
 
         files_any, counters = get_files(cwd_to_test_data)
         self.assertEqual(counters, [2, 3, 1, 1], msg=f"{counters=}")
         self.assertEqual(len(files_any), 3)
-        file0_name = "\\Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi"
-        file1_name = "\\TEST_DIR.txt.acmi"
-        file2_name = "\\TEST_ZIP_TRIMMED.mod.zip.acmi"
-        self.assertIn(file0_name, files_any[0], msg=f"{files_any=}")
-        self.assertIn(file1_name, files_any[1], msg=f"{files_any=}")
-        self.assertIn(file2_name, files_any[2], msg=f"{files_any=}")
+        file0_name = "/Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi"
+        file1_name = "/TEST_DIR.txt.acmi"
+        file2_name = "/TEST_ZIP_TRIMMED.mod.zip.acmi"
+        self.assertTrue(
+            any(file0_name in file for file in files_any), msg=f"0 - {files_any=}"
+        )
+        self.assertTrue(
+            any(file1_name in file for file in files_any), msg=f"1 - {files_any=}"
+        )
+        self.assertTrue(
+            any(file2_name in file for file in files_any), msg=f"2 - {files_any=}"
+        )
 
 
 if __name__ == "__main__":

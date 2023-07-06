@@ -1,7 +1,11 @@
 # TO RUN:
-# ...\TacViewStats> python -m unittest src/tests/run_tests.py
 
-# ALTERNATIVELY:
+# RECOMMENDED:
+# ...\TacViewStats> poetry run pytest
+
+# ALTERNATIVE 1:
+# ...\TacViewStats> python -m unittest src/tests/run_tests.py
+# ALTERNATIVE 2:
 # ...\TacViewStats> python -m unittest discover -s src/tests
 # this file will not run as it does not start with test*.py
 
@@ -26,7 +30,6 @@ class TestAll(unittest.TestCase):
         self.verbosity_all = (
             config.DEV_TESTING.verbosity_level
         )  # 0=quiet, 1=default, 2=verbose
-        self.skip_dirs = config.DEV_TESTING.skip_dialog
 
     # def tearDown(self):
     #     pass
@@ -52,12 +55,11 @@ class TestAll(unittest.TestCase):
 
         ############################# managers #############################
         # src/managers/dirManager.py
-        if not self.skip_dirs:
-            # FUTUREDO is there an automatic way to test dialog windows?
-            dirManager_suite = unittest.TestLoader().loadTestsFromModule(
-                test_managers_dirManager
-            )
-            unittest.TextTestRunner(verbosity=self.verbosity_all).run(dirManager_suite)
+        # FUTUREDO is there an automatic way to test dialog windows?
+        dirManager_suite = unittest.TestLoader().loadTestsFromModule(
+            test_managers_dirManager
+        )
+        unittest.TextTestRunner(verbosity=self.verbosity_all).run(dirManager_suite)
         # src/managers/fileManager.py
         fileManager_suite = unittest.TestLoader().loadTestsFromModule(
             test_managers_fileManager

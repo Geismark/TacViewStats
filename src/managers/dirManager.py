@@ -40,11 +40,13 @@ def get_files(folder_dir: str):
     else:
         files_any = glob.glob(f"{folder_dir}/*.*")  # lists all files in dir
     f_mod, f_txt, f_zip, f_acmi = 0, 0, 0, 0
-    for file in files_any:  # TODO could also split string ('.') and count - faster?
+    for index, file in enumerate(files_any):
+        # TODO could also split string ('.') and count - faster?
         f_zip += file.count(".zip")
         f_acmi += file.count(".acmi")
         f_txt += file.count(".txt")
         f_mod += file.count(".mod")
+        files_any[index] = file.replace("\\", "/")
     logger.debug(
         f"get_files types:\n\tAll={len(files_any)}\n\t{f_zip=}\n\t{f_acmi=}\n\t{f_txt=}\n\t{f_mod=}"
     )

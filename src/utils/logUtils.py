@@ -7,6 +7,7 @@ from src.utils.configUtils import config
 
 
 def add_logging_level(levelName, levelNum, methodName=None):
+    # https://stackoverflow.com/questions/2183233/how-to-add-a-custom-loglevel-to-pythons-logging-facility
     # https://stackoverflow.com/a/35804945
     """
     Comprehensively adds a new logging level to the `logging` module and the

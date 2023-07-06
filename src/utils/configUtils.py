@@ -31,5 +31,5 @@ class Config:
 
 
 config = Config()
-
+# print(config.DEV_TESTING.skip_dialog)
 # FUTUREDO going to introduce multiprocessing later -> need to ensure object is initialised only once
