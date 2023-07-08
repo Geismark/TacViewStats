@@ -141,7 +141,7 @@ class DCSObject:
         munition_obj.launcher = self
         self.launches[munition_obj.id] = munition_obj
 
-    def add_kill(self, victim):
+    def add_kill(self, victim, dist=None):
         """Adds self and self.launcher to relevant victim attributes.\n
         Checks both victim and self are dying.\n
         Updates both victim and self to dead."""
@@ -171,7 +171,7 @@ class DCSObject:
         self.update_to_dead()
         victim.update_to_dead()
         logger.trace(
-            f"Added kill:\n\t{self.id=} {self.name=} {self.type=} {self.state=}\n\t{victim.id=} {victim.name=} {victim.type=} {victim.state=}\n\t{f'{self.launcher.id=} {self.launcher.name=} {self.launcher.type=} {self.launcher.pilot=}' if self.launcher else ''}"
+            f"Added kill: {dist=} {self.file_obj.file_name}\n\t{self.id=} {self.name=} {self.type=} {self.state=} {self.pilot=}\n\t{victim.id=} {victim.name=} {victim.type=} {victim.state=} {self.pilot=}\n\t{f'{self.launcher.id=} {self.launcher.name=} {self.launcher.type=} {self.launcher.pilot=}' if self.launcher else ''}"
         )
 
     def update_to_dying(self):

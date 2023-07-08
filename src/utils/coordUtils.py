@@ -26,10 +26,10 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
         return None, None
     closest_obj = None
     closest_dist = None
-    if obj.check_state("Dying"):
-        obj_pos = obj.get_death_pos()
-    elif obj.check_state("Alive"):
+    if obj.check_state("Alive"):
         obj_pos = obj.get_pos()
+    elif obj.check_state("Dying", "Dead"):
+        obj_pos = obj.get_death_pos()
     else:
         raise ValueError(
             f"closest_obj reference object is not alive/dying: {obj.id=} {obj.state=} {obj.name=} {obj.type=}"
@@ -55,7 +55,7 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
             abs(obj_pos[0] - other_pos[0]),
             abs(obj_pos[1] - other_pos[1]),
             abs(obj_pos[2] - other_pos[2])
-            / 1_000,  # FUTUREDO find appropriate alt division value, OR change to euclidean/haversine
+            / 100_000,  # FUTUREDO find appropriate alt division value, OR change to euclidean/haversine
         ]
         avg_dist = sum(current_dist_list)
         if closest_dist is None or avg_dist < closest_dist:

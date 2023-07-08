@@ -54,6 +54,8 @@ def object_line(line: list, file_data: FileData):
                 acmi_pointer
             ):  # TODO how to make this more efficient?
                 if acmi_pointer == "T=":
+                    if obj_data.check_state("Dead"):
+                        logger.critical(f"{obj_data.__dict__}")
                     transform_line = attr_line[2:]
                     transformers = transform_line.split("|")
                     obj_data.update_transform(
@@ -119,7 +121,7 @@ def obj_removed_line(line: list, file_data: FileData):
                 f"Attempting to remove object that is not alive and not skip dying:\n\t{obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=}\n\t{line=}"
             )
         logger.trace(
-            f"REMOVE OBJECT: {obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=} {obj.file_obj.time_stamp=}\n\t{line}"
+            f"REMOVE LINE OBJECT: {obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=} {obj.file_obj.time_stamp=}\n\t{line}"
         )
 
     else:
