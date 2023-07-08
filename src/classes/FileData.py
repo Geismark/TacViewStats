@@ -31,8 +31,9 @@ class FileData:
         self.latitude_reference = (
             None  # the base latitude that all recorded data is added to
         )
-        self.objects = {}  # all objects referenced within the file
-        # have a seperate list for dead and dying objects?
+        self.objects = {}  # all objects currently alive within the file
+        self.dying_objects = {}  # all objects currently currently in death processing
+        self.dead_objects = {}  # all objects that have died
         self.first_time_stamp = None
         self.time_stamp = (
             0  # the most recent timestamp processed whilst reading the file
@@ -56,12 +57,12 @@ class FileData:
             # can't test False, as first time stamp may be 0.0 (although highly unlikely)
             self.first_time_stamp = self.time_stamp
 
-    def new_obj(self, id: str):
+    def new_obj(self, id: str, init_state="Alive"):
         if not isinstance(id, str):
             raise TypeError("id is not a string")
         if id in self.objects:
             raise ValueError("Object already exists")
-        new_object = DCSObject(self, id)
+        new_object = DCSObject(self, id, state=init_state)
         self.objects[id] = new_object
         return new_object
 
@@ -79,3 +80,13 @@ class FileData:
 
     def remove_obj(self, obj):
         obj.die()
+
+    def get_obj_by_id(self, id):
+        if id in self.objects:
+            return self.objects[id]
+        elif id in self.dying_objects:
+            return self.dying_objects[id]
+        elif id in self.dead_objects:
+            return self.dead_objects[id]
+        else:
+            return False
