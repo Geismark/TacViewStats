@@ -35,6 +35,9 @@ def get_directory(
 
 
 def get_files(folder_dir: str):
+    """Returns list of any files found in folder directory,
+    alongside list of extensions found:
+    [.zip, .acmi, .txt, .mod]"""
     if os.path.isfile(folder_dir):
         files_any = [folder_dir]
     else:
