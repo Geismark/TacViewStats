@@ -1,31 +1,29 @@
 # MUST BE IMPORTED FIRST
 from src.managers.logHandler import logger
 
+
 from src.managers.fileManager import read_files
 from src.utils.timeUtils import get_timer
 from src.managers.dirManager import get_directory, get_files
 from src.managers.outcomeWriter import write_outcome
 
 try:
-    from dev.dev_vars import test_dir as input_dir
-    from dev.dev_vars import test_file1 as input_dir
+    from dev.dev_vars import test_dir as input_dir  # test dir
+    from dev.dev_vars import test_file2 as input_dir  # trimmed test file
+    from dev.dev_vars import test_file1 as input_dir  # full test file
+    from dev.dev_vars import test_temp as input_dir
+
 except ImportError:
     input_dir = None
 
-# logger.debug("test")
-# logger.trace("trace")
-# logger.log_init_logs()
-# quit()
-
-# TODO add *args and **kwargs
 
 if __name__ == "__main__":
     get_timer()
 
-    # print(config.LOGGING.__dict__)
-    # files_dir = get_directory(dir_path=None, dialog_single_file=False)
     # input_dir = None
-    files_dir = get_directory(dir_path=input_dir, dialog_single_file=False)
+    dialog_single_file = True
+
+    files_dir = get_directory(dir_path=input_dir, dialog_single_file=dialog_single_file)
     files, _ = get_files(files_dir)
     files_dict = read_files(
         files, AuthorIsUser=True
