@@ -64,18 +64,22 @@ class TestClasses(unittest.TestCase):
         self.assertEqual(test_obj.get_coord_reference(), [21, 50])
 
         # FileData remove objects
-        # test_obj.remove_obj(test_unit_2)
-        # self.assertEqual(test_unit_2.state, "Dying")
-        # self.assertEqual(test_unit_2.death_time_stamp, test_obj.time_stamp)
-        # self.assertEqual(test_unit_2.get_pos(), [100, 100, -1])
         test_alive_coords = test_unit_2.get_pos()
         test_unit_2.update_to_dying()
         self.assertTrue(test_unit_2.check_state("Dying"))
         self.assertEqual(test_unit_2.death_time_stamp, test_obj.time_stamp)
-        self.assertEqual(test_unit_2.get_pos(), death_coords)
+        with self.assertRaises(ValueError):
+            test_unit_2.get_pos()
+        self.assertEqual(
+            [test_unit_2.lat, test_unit_2.long, test_unit_2.alt], death_coords
+        )
         self.assertEqual(test_unit_2.get_death_pos(), test_alive_coords)
         test_unit_2.update_to_dead()
         self.assertTrue(test_unit_2.check_state("Dead"))
         self.assertEqual(test_unit_2.death_time_stamp, test_obj.time_stamp)
-        self.assertEqual(test_unit_2.get_pos(), death_coords)
+        with self.assertRaises(ValueError):
+            test_unit_2.get_pos()
+        self.assertEqual(
+            [test_unit_2.lat, test_unit_2.long, test_unit_2.alt], death_coords
+        )
         self.assertEqual(test_unit_2.get_death_pos(), test_alive_coords)

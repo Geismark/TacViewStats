@@ -14,7 +14,7 @@ def write_outcome(files_data: dict):
     print(f"{files_data=}")
     for file_data in files_data.values():
         print(
-            f"\nFile Name: {file_data.file_name}\n\tFile Size:   {file_data.file_size:,} KB\n\tFile Length: {file_data.file_length:,}\n\n"
+            f"\nFile Name: {file_data.file_name}\n\tFile Size:   {file_data.file_size:,} KB\n\tFile Length: {file_data.file_length:,}\n"
         )
         for obj in (
             list(file_data.objects.values())

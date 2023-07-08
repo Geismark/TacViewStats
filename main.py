@@ -20,8 +20,8 @@ except ImportError:
 if __name__ == "__main__":
     get_timer()
 
-    # input_dir = None
-    dialog_single_file = True
+    input_dir = None
+    dialog_single_file = False
 
     files_dir = get_directory(dir_path=input_dir, dialog_single_file=dialog_single_file)
     files, _ = get_files(files_dir)

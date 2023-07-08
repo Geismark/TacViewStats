@@ -1,6 +1,5 @@
-import re, logging
+import logging
 from math import radians, cos, sin, asin, sqrt
-from statistics import fmean
 from src.classes.FileData import FileData
 from src.classes.DCSObject import DCSObject
 from src.utils.coordUtils import coords_to_euclidean_distance
@@ -36,7 +35,8 @@ def attr_split(string):  # regex look-behind not (easily?) applicable
 def get_launcher(origin_obj: DCSObject):
     file_data = origin_obj.file_obj
     all_objs = file_data.objects.values()
-    closest_coords = [0, 0, 0]
+    # unlikely for launcher to die before munition register, but something to consider
+    closest_coords = [None, None, None]
     closest_obj = None
     closest_avg = None
     ordinance_coords = origin_obj.get_real_pos()
@@ -48,7 +48,7 @@ def get_launcher(origin_obj: DCSObject):
         current_dist = [abs(ordinance_coords[i] - launcher_coords[i]) for i in range(3)]
         current_avg = (
             current_dist[0] + current_dist[1] + current_dist[2] / 10_000
-        ) / 3  # altitude unit is relatively far greater and less significant
+        ) / 3  # FUTUREDO altitude unit is relatively far greater and less significant
         if (closest_obj == None) or (current_avg < closest_avg):
             closest_coords = current_dist
             closest_obj = obj
@@ -70,7 +70,9 @@ def get_nearest_obj(
     is_unit=False,
     ignore_non_units=True,
 ):
-    all_objs = file_data.objects.values()
+    all_objs = (
+        file_data.objects.values()
+    )  # TODO this is an issue, may want target object that is dying/dead
     closest_dist = None
     closest_obj = None
     for obj in all_objs:

@@ -35,18 +35,13 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
             f"closest_obj reference object is not alive/dying: {obj.id=} {obj.state=} {obj.name=} {obj.type=}"
         )
     for other in other_objs:
-        if not isinstance(other, DCSObject):
+        if other == obj:
+            continue
+        elif not isinstance(other, DCSObject):
             raise TypeError(
                 f"Comparison object is not DCSObject: {other.id=} {type(obj)=}"
             )
-        elif other.state == "Dead":
-            if other.check_state("Dead"):
-                continue
-            else:
-                raise ValueError(
-                    f"Dead object is not in appropriate dictionary: {other.id=}\n\t{obj.file_obj.objects.keys()=}\n\t{obj.file_obj.dying_objects.keys()=}\n\t{obj.file_obj.dead_objects.keys()=}"
-                )  # should have raised error already
-        if other == obj:
+        elif other.check_state("Dead"):
             continue
         if other.check_state("Alive"):
             other_pos = other.get_pos()
@@ -54,12 +49,13 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
             other_pos = other.get_death_pos()
         else:
             raise ValueError(
-                f"Invalid comparison object state: {other.id=} {other.state}"
+                f"Invalid comparison object state: {other.id=} {other.state=} {other.name=} {other.type=}"
             )
         current_dist_list = [
             abs(obj_pos[0] - other_pos[0]),
             abs(obj_pos[1] - other_pos[1]),
-            abs(obj_pos[2] - other_pos[2]) / 100,
+            abs(obj_pos[2] - other_pos[2])
+            / 1_000,  # FUTUREDO find appropriate alt division value, OR change to euclidean/haversine
         ]
         avg_dist = sum(current_dist_list)
         if closest_dist is None or avg_dist < closest_dist:

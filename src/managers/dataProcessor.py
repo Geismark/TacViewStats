@@ -1,9 +1,7 @@
-from src.classes.DCSEvent import DCSEvent
-from src.classes.FileData import FileData
-from src.classes.DCSObject import DCSObject
-from src.utils.coordUtils import get_closest_obj
 from src.managers.logHandler import logger
-from src.data.typeReferences import skip_dying_types, killer_types
+from src.classes.FileData import FileData
+from src.utils.coordUtils import get_closest_obj
+from src.data.typeReferences import killer_types
 from src.utils.processingUtils import check_is_type
 
 
@@ -12,7 +10,9 @@ def process_file_tick(file: FileData):
     if not isinstance(file, FileData):
         raise TypeError(f"FileData is not FileData: {type(file)=}")
     dying_ref_list = [
-        obj for obj in file.dying_objects.values() if not obj.check_skip_dying_type()
+        obj
+        for obj in file.dying_objects.values()
+        if not obj.check_skip_data_processing_type()
     ]
     for ref_obj in dying_ref_list:
         if (file.time_stamp - ref_obj.death_time_stamp) > 10:
@@ -28,8 +28,13 @@ def process_file_tick(file: FileData):
         ]:  # TODO update to obj.type using list
             continue
 
-        if ref_obj.check_skip_dying_type() or ref_obj.check_state("Dead"):
+        if (
+            ref_obj.check_skip_dying_type()
+            or ref_obj.check_state("Dead")
+            or ref_obj.check_skip_data_processing_type()
+        ):
             continue
+            # unfortunately (potentially?) necessary, as objects in ref_list change during this loop
 
         if len(dying_ref_list) > 1:
             closest_list = [o for o in dying_ref_list if o.check_state("Dying")]
@@ -41,9 +46,7 @@ def process_file_tick(file: FileData):
         if closest_obj == None:
             logger.trace(f"closest_obj is None - {file.dying_objects.keys()=}")
             return
-        # logger.debug(
-        #     f"Closest object: ref:{ref_obj.id} other:{closest_obj.id} dist:{dist} time:{file.time_stamp}"
-        # )
+
         if not closest_obj.check_state("Dying"):
             raise ValueError(
                 f"Closest object is not dying:\n\t{closest_obj.id=} {closest_obj.type=}\n\t{ref_obj.id=} {ref_obj.type=}"
@@ -55,9 +58,9 @@ def process_file_tick(file: FileData):
             if check_is_type(ref_obj, killer_types) and not check_is_type(
                 closest_obj, killer_types
             ):
-                logger.critical(
-                    f"Closest object:\n\t\t{file.time_stamp=} {dist=}\n\t\t{ref_obj.id=} {ref_obj.type=} {ref_obj.name=} {f'{ref_obj.launcher.name} {ref_obj.launcher.pilot}' if ref_obj.launcher != None else ''}\n\t\t{closest_obj.id=} {closest_obj.type=} {closest_obj.name=} {f'{closest_obj.launcher.name} {closest_obj.launcher.pilot}' if closest_obj.launcher != None else ''}\n\t\t{ref_obj.pilot=} {closest_obj.pilot=}"
-                )
+                # logger.critical(
+                #     f"Closest object:\n\t\t{file.time_stamp=} {dist=}\n\t\t{ref_obj.id=} {ref_obj.type=} {ref_obj.name=} {f'{ref_obj.launcher.name} {ref_obj.launcher.pilot}' if ref_obj.launcher != None else ''}\n\t\t{closest_obj.id=} {closest_obj.type=} {closest_obj.name=} {f'{closest_obj.launcher.name} {closest_obj.launcher.pilot}' if closest_obj.launcher != None else ''}\n\t\t{ref_obj.pilot=} {closest_obj.pilot=}"
+                # )
                 ref_obj.add_kill(closest_obj)
     # TODO add more checks here, NEEDS testing
 

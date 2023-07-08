@@ -1,6 +1,7 @@
 import unittest
 from src.classes.DCSObject import DCSObject
 from src.classes.FileData import FileData
+from src.data.coordReferences import death_coords
 
 
 class TestClasses(unittest.TestCase):
@@ -106,4 +107,6 @@ class TestClasses(unittest.TestCase):
         self.assertEqual(test_unit.state, "Dying")
         self.assertEqual(test_unit.file_obj.time_stamp, file_obj.time_stamp)
         self.assertEqual(test_unit.death_time_stamp, file_obj.time_stamp)
-        self.assertEqual(test_unit.get_pos(), [100, 100, -1])
+        with self.assertRaises(ValueError):
+            test_unit.get_pos()
+        self.assertEqual([test_unit.lat, test_unit.long, test_unit.alt], death_coords)

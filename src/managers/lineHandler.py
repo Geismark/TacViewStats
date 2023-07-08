@@ -2,8 +2,6 @@ from src.managers.logHandler import logger
 from src.utils.fileUtils import (
     FileData,
     attr_split,
-    get_nearest_obj,
-    obj_is_type,
     get_launcher,
 )
 from src.data.acmiAttrDicts import (
@@ -64,13 +62,10 @@ def object_line(line: list, file_data: FileData):
         if "Missile" in obj_data.type:
             max_avg_lat_long = 0.1
             max_alt = 100
-            launcher_obj, distance_coords, avg_unit_dist = get_launcher(obj_data)
+            launcher_obj, distance_coords, avg_unit_dist = get_launcher(
+                obj_data
+            )  # FUTUREDO update get_launcher logic
 
-            # logger.debug(f"\n#####################################\n{obj_data.id} {obj_data.name} {obj_data.type}\n\t{obj_data.get_pos()}\n-------------------------------------\n")
-            # for obj in file_data.objects.values():
-            # 	if is_unit(obj):
-            # 		logger.debug(f"{obj.id} {obj.name} {obj.type} {obj.pilot}\n\t{obj.get_pos()}")
-            # logger.debug("\n-------------------------------------\n")
             if launcher_obj == None:
                 logger.error(
                     f"Missile launch, no other unit: {obj_data.id=} {obj_data.name} {obj_data.spawn_time_stamp=} {obj_data.death_time_stamp=}"
@@ -89,7 +84,7 @@ def object_line(line: list, file_data: FileData):
                 )
 
 
-def time_line(line: list, file_data: FileData, last_file_tick_processed: int):
+def time_stamp_line(line: list, file_data: FileData, last_file_tick_processed: int):
     new_time = float(line[1:])
     file_data.set_time(new_time)
     if (file_data.time_stamp == 0) or (
@@ -113,7 +108,9 @@ def obj_removed_line(line: list, file_data: FileData):
             raise ValueError(
                 f"Attempting to remove object that is not alive and not skip dying:\n\t{obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=}\n\t{line=}"
             )
-        logger.trace(f"REMOVE OBJECT: {line}")
+        logger.trace(
+            f"REMOVE OBJECT: {obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=} {obj.file_obj.time_stamp=}\n\t{line}"
+        )
 
     else:
         logger.error(f"{file_data.objects.items()=}\n\t{obj_id=} {line=}")

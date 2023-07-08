@@ -1,6 +1,7 @@
 """Module DocString"""  # TODO add module docstrings
 
 from src.classes.DCSObject import DCSObject
+from src.managers.logHandler import logger
 
 
 class FileData:
@@ -17,7 +18,9 @@ class FileData:
         self.source = None  # what application and version was the data collected from?
         self.mission_title = None  # title of the mission file loaded on the DCS server
         self.author = None  # client's in-game name
-        self.server = None
+        self.server = (
+            None  # Not Implemented: will predict which server the data came from
+        )
         self.comments = (
             []
         )  # appears this is used for the briefing, yet to see 0,Briefing
@@ -80,9 +83,6 @@ class FileData:
                 )
         return [self.latitude_reference, self.longitude_reference]
 
-    def remove_obj(self, obj):
-        obj.die()
-
     def get_obj_by_id(self, id):
         if id in self.objects:
             return self.objects[id]
@@ -92,3 +92,11 @@ class FileData:
             return self.dead_objects[id]
         else:
             return False
+
+    def check_is_FileData(self):
+        if isinstance(self, FileData):
+            return True
+        else:
+            return False
+
+    # TODO: return list of objects from specified object dictionaries

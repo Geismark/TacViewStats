@@ -12,3 +12,5 @@ killer_types = [
     "Projectile",
     "Shell",
 ]
+
+skip_data_processing_types = skip_dying_types
