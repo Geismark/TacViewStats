@@ -10,8 +10,9 @@ class TestClasses(unittest.TestCase):
     def test_DCSObject(self):
         # FileData required for DCSObject init
         file_obj = FileData()
+        file_obj.set_time(1)
         # DCSObject init
-        test_unit = DCSObject(file_obj=file_obj, id="123")
+        test_unit = file_obj.new_obj("123", "Alive")
         self.assertEqual(test_unit.id, "123")
         self.assertEqual(test_unit.get_pos(), [None, None, 0])
         # DCSObject update position empty
@@ -87,7 +88,7 @@ class TestClasses(unittest.TestCase):
         test_munition.file_obj = file_obj
         # DCSObject add munition
         test_unit.add_launch(test_munition)
-        self.assertEqual(test_unit.launches, [test_munition])
+        self.assertEqual(list(test_unit.launches.values()), [test_munition])
         self.assertEqual(test_munition.launcher, test_unit)
         # DCSObject add munition - cannot have already launched
         with self.assertRaises(ValueError):
@@ -95,11 +96,13 @@ class TestClasses(unittest.TestCase):
         # DCSObject add multiple munitions
         test_munition2 = DCSObject(file_obj, "munition2")
         test_unit.add_launch(test_munition2)
-        self.assertEqual(test_unit.launches, [test_munition, test_munition2])
+        self.assertEqual(
+            list(test_unit.launches.values()), [test_munition, test_munition2]
+        )
         self.assertEqual(test_munition2.launcher, test_unit)
 
         # DCSObject die
-        test_unit.die()
+        test_unit.update_to_dying()
         self.assertEqual(test_unit.state, "Dying")
         self.assertEqual(test_unit.file_obj.time_stamp, file_obj.time_stamp)
         self.assertEqual(test_unit.death_time_stamp, file_obj.time_stamp)

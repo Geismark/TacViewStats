@@ -14,11 +14,22 @@ def write_outcome(files_data: dict):
     print(f"{files_data=}")
     for file_data in files_data.values():
         print(f"\nFile Name: {file_data.file_name}\n")
-        for obj in file_data.objects.values():
+        for obj in (
+            list(file_data.objects.values())
+            + list(file_data.dying_objects.values())
+            + list(file_data.dead_objects.values())
+        ):
             if len(obj.launches) > 0:
                 print((f"{obj.id} - {obj.type} - {obj.name} - {obj.pilot}"))
-                for launch in obj.launches:
-                    print(f"\t{launch.name}")
+                for launch in obj.launches.values():
+                    if len(launch.kills.values()) == 0:
+                        print(f"\t{launch.name}\t{len(launch.kills.values())}")
+                    elif len(launch.kills.values()) == 1:
+                        print(
+                            f"\t{launch.name}\t{len(launch.kills.values())} - {list(launch.kills.values())[0].name}\t{list(launch.kills.values())[0].pilot}\t{list(launch.kills.values())[0].type}"
+                        )
+                    else:
+                        logger.critical(f"Multiple kills: {launch.kills.values()=}")
     print("\n")
 
 

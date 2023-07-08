@@ -6,6 +6,66 @@
 
 from src.managers.logHandler import logger
 from math import radians, cos, sin, asin, sqrt
+from src.classes.DCSObject import DCSObject
+
+
+def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]:
+    if not isinstance(obj, DCSObject):
+        raise TypeError(f"Reference object is not DCSObject: {type(obj)=}")
+    if not isinstance(other_objs, list):
+        raise TypeError(f"other_objs is not list: {type(other_objs)=} {other_objs=}")
+    if not obj.check_state():
+        raise ValueError(
+            f"Reference object is not alive/dying/dead: {obj.id=} {obj.state=}"
+        )
+    if obj.check_state("Dead"):
+        logger.debug(f"Trying to get closest obj of dead obj: {obj.id=}")
+        return None, None
+    if len(other_objs) <= 1:
+        logger.trace(f"len(other_objs) <= 1: {len(other_objs)=}")
+        return None, None
+    closest_obj = None
+    closest_dist = None
+    if obj.check_state("Dying"):
+        obj_pos = obj.get_death_pos()
+    elif obj.check_state("Alive"):
+        obj_pos = obj.get_pos()
+    else:
+        raise ValueError(
+            f"closest_obj reference object is not alive/dying: {obj.id=} {obj.state=} {obj.name=} {obj.type=}"
+        )
+    for other in other_objs:
+        if not isinstance(other, DCSObject):
+            raise TypeError(
+                f"Comparison object is not DCSObject: {other.id=} {type(obj)=}"
+            )
+        elif other.state == "Dead":
+            if other.check_state("Dead"):
+                continue
+            else:
+                raise ValueError(
+                    f"Dead object is not in appropriate dictionary: {other.id=}\n\t{obj.file_obj.objects.keys()=}\n\t{obj.file_obj.dying_objects.keys()=}\n\t{obj.file_obj.dead_objects.keys()=}"
+                )  # should have raised error already
+        if other == obj:
+            continue
+        if other.check_state("Alive"):
+            other_pos = other.get_pos()
+        elif other.check_state("Dying"):
+            other_pos = other.get_death_pos()
+        else:
+            raise ValueError(
+                f"Invalid comparison object state: {other.id=} {other.state}"
+            )
+        current_dist_list = [
+            abs(obj_pos[0] - other_pos[0]),
+            abs(obj_pos[1] - other_pos[1]),
+            abs(obj_pos[2] - other_pos[2]) / 100,
+        ]
+        avg_dist = sum(current_dist_list)
+        if closest_dist is None or avg_dist < closest_dist:
+            closest_obj = other
+            closest_dist = avg_dist
+    return closest_obj, closest_dist
 
 
 def coords_to_euclidean_distance(point1: list, point2: list, distance_unit="nm"):

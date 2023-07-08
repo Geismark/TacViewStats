@@ -66,6 +66,7 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
         file_start = "∩╗┐FileType="
     else:
         file_start = "ï»¿FileType="  # I have no idea what these characters are, I assume same as the .zip just extracted
+    last_file_tick_processed = 0
     line_continued = False  # FUTUREDO distinguish between comments/briefing/debriefing
     for index, line in enumerate(file):
         line = line.rstrip("\n")
@@ -94,10 +95,14 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
         elif line.startswith("0,"):
             global_line(line, file_data)
         elif line.startswith("#"):
-            time_line(line, file_data)
+            last_file_tick_processed = time_line(
+                line, file_data, last_file_tick_processed
+            )
+            logger.trace(f"TIME: {file_data.time_stamp}")
         elif line.startswith("-"):
             obj_removed_line(line, file_data)
         else:
+            # logger.trace("UPDATE OBJECT")
             object_line(line, file_data)
     return
 
