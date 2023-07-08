@@ -45,4 +45,10 @@ all_known_types = [
     "FixedWing",
     "Rotorcraft",
     "Building",
+    "Heavy",
+    "Armor",
+    "Tank",
+    "Infantry",
+    "Bomb",
+    "Rocket",
 ]
