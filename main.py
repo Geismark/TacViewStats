@@ -8,10 +8,14 @@ from src.managers.dirManager import get_directory, get_files
 from src.managers.outcomeWriter import write_outcome
 
 try:
-    from dev.dev_vars import test_dir as input_dir  # test dir
     from dev.dev_vars import test_file2 as input_dir  # trimmed test file
     from dev.dev_vars import test_file1 as input_dir  # full test file
     from dev.dev_vars import test_temp as input_dir
+    from dev.dev_vars import test_launcher_accuracy as input_dir
+    from dev.dev_vars import test_kill_accuracy as input_dir
+    from dev.dev_vars import test_brody as input_dir
+    from dev.dev_vars import test_dir as input_dir  # test dir
+
 
 except ImportError:
     input_dir = None
