@@ -9,6 +9,8 @@ class FileData:
         self.file_name = None  # what is the name of the file itself
         self.file_type = None  # ACMI file type recorded by TacView
         self.file_version = None  # ACMI version recorded by TacView
+        self.file_length = None  # Number of lines in the file
+        self.file_size = None  # size of the file in KB
         self.recorder = (
             None  # what application and version was used to record the data?
         )
