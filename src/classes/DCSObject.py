@@ -1,7 +1,11 @@
 from src.managers.logHandler import logger
 from src.utils.mathUtils import str_is_float
 from src.data.coordReferences import death_coords
-from src.data.typeReferences import skip_dying_types, skip_data_processing_types
+from src.data.typeReferences import (
+    skip_dying_types,
+    skip_data_processing_types,
+    all_known_types,
+)
 
 
 class DCSObject:
@@ -320,3 +324,11 @@ class DCSObject:
             raise ValueError(
                 f"Objects from different files!\n\t{self.id=} - {self.file_obj.file_name}\n\t{other.id=} - {other.file_obj.file_name}"
             )
+
+    def set_types(self, types: str):
+        """Set object types. Pass in type string as found in .acmi"""
+        type_list = types.split("+")
+        for type in type_list:
+            if type not in all_known_types:
+                logger.critical(f"Unknown type: {type=}")
+        self.type = type_list

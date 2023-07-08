@@ -2,7 +2,7 @@ from src.managers.logHandler import logger
 from src.classes.FileData import FileData
 from src.utils.coordUtils import get_closest_obj
 from src.data.typeReferences import killer_types
-from src.utils.processingUtils import check_is_type
+from src.utils.processingUtils import check_is_type, check_lists_share_element
 
 
 # TODO MASSIVE TIME SINK
@@ -22,10 +22,7 @@ def process_file_tick(file: FileData):
             )
             continue
 
-        if ref_obj.name not in [
-            "AIM_120C",
-            "AIM-9",
-        ]:  # TODO update to obj.type using list
+        if not check_lists_share_element(ref_obj.type, killer_types):
             continue
 
         if (

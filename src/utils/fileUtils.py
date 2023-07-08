@@ -29,6 +29,7 @@ def attr_split(string):  # regex look-behind not (easily?) applicable
             string[0] + slices[0]
         )  # adds back 1st char of line (because of the i+1 above)
 
+    # example_slices = ['40000001', 'T=15.4498618|11.1275818|2000|779324.31|684054.06', 'Type=Navaid+Static+Bullseye', 'Color=Grey', 'Coalition=Neutrals']
     return slices
 
 

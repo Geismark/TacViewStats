@@ -9,7 +9,6 @@ acmi_old_obj_to_attr = {
 }
 acmi_new_obj_to_attr = {
     "T=": -1,
-    "Type=": "type",
     "Name=": "name",
     "Pilot=": "pilot",
     "Color=": "color",

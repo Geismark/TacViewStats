@@ -11,6 +11,7 @@ from src.data.acmiAttrDicts import (
     acmi_global_to_attr,
 )
 from src.managers.dataProcessor import process_file_tick
+from src.utils.coordUtils import get_closest_obj
 
 # https://www.tacview.net/documentation/acmi/en/
 # T = Longitude | Latitude | Altitude
@@ -32,7 +33,9 @@ def object_line(line: list, file_data: FileData):
     obj_by_id = file_data.get_obj_by_id(id)
     if obj_by_id:
         obj_data = obj_by_id
-        if obj_data.check_skip_dying_type():
+        if (
+            obj_data.check_skip_dying_type()
+        ):  # TODO update this to something more relevant
             return
         new = False
         acmi_obj_attr_list = acmi_old_obj_to_attr
@@ -43,6 +46,9 @@ def object_line(line: list, file_data: FileData):
         acmi_obj_attr_list = acmi_new_obj_to_attr
     acmi_obj_attr_list = acmi_obj_to_attr_all  # FUTUREDO could use shorter dictionary to reduce time/memory? Unsure if it would have any effect
     for attr_line in attrs:
+        if attr_line.startswith("Type="):
+            obj_data.set_types(attr_line[len("Type=") :])
+            continue
         for acmi_pointer, obj_attr_name in acmi_obj_attr_list.items():
             if attr_line.startswith(
                 acmi_pointer
@@ -54,30 +60,34 @@ def object_line(line: list, file_data: FileData):
                         transformers[1], transformers[0], transformers[2]
                     )
                 elif obj_attr_name == None:
-                    break  # dict.value==None -> skip this attr
+                    continue  # dict.value==None -> skip this attr
                 else:
                     setattr(obj_data, obj_attr_name, attr_line[len(acmi_pointer) :])
     if new:
         # logger.debug(f"NEW OBJECT:\n\t\tName: {obj_data.name}   Type: {obj_data.type}   ID: {obj_data.id}")
+        if obj_data.file_obj != file_data:
+            raise ValueError(
+                f"New object FileDate != file_data passed to object_line {obj_data.file_obj=} {file_data=}"
+            )
         if "Missile" in obj_data.type:
-            max_avg_lat_long = 0.1
+            max_avg_dist = 0.01
             max_alt = 100
-            launcher_obj, distance_coords, avg_unit_dist = get_launcher(
-                obj_data
+            launcher_obj, avg_unit_dist = get_closest_obj(
+                obj_data, list(file_data.objects.values())
             )  # FUTUREDO update get_launcher logic
 
             if launcher_obj == None:
                 logger.error(
                     f"Missile launch, no other unit: {obj_data.id=} {obj_data.name} {obj_data.spawn_time_stamp=} {obj_data.death_time_stamp=}"
                 )
-            elif max_avg_lat_long < avg_unit_dist:
+            elif max_avg_dist < avg_unit_dist:
                 logger.debug(
-                    f"Missile launch, no unit within range - {max_avg_lat_long=} {distance_coords=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
+                    f"Missile launch, no unit within range - {max_avg_dist=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
             else:
                 launcher_obj.add_launch(obj_data)
                 logger.trace(
-                    f"Missile launch success - {max_avg_lat_long=} {distance_coords=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
+                    f"Missile launch success - {max_avg_dist=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
                 logger.critical(
                     f"New launch: {obj_data.id=} {obj_data.name=} {obj_data.launcher} {obj_data.type}\n\t{launcher_obj.id=} {launcher_obj.name=} {launcher_obj.launches=} {launcher_obj.type}"
