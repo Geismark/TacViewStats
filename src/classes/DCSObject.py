@@ -5,6 +5,7 @@ from src.data.typeReferences import (
     skip_dying_types,
     skip_data_processing_types,
     all_known_types,
+    valid_DCSObject_states,
 )
 
 
@@ -16,7 +17,7 @@ class DCSObject:
             raise TypeError(
                 f"DCSObject init state is not string: {state=} {type(state)=}"
             )
-        if state not in ["Alive", "Dying", "Dead"]:
+        if state not in valid_DCSObject_states:
             raise ValueError(
                 f"DCSObject init state is not Alive, Dying, or Dead: {state=}"
             )
@@ -250,7 +251,7 @@ class DCSObject:
 
     def check_state(self, *states_to_check):
         """Checks if object state is one of the provided states"""
-        valid_states = ["Alive", "Dying", "Dead"]
+        valid_states = valid_DCSObject_states
         if len(states_to_check) == 0:
             states_to_check = valid_states
         else:
@@ -266,7 +267,7 @@ class DCSObject:
 
     def _check_is_state(self, state: str):
         """Use object.check_state(*states_to_check) instead of this"""
-        if state not in ["Alive", "Dying", "Dead"]:
+        if state not in valid_DCSObject_states:
             raise ValueError(f"State to check is not Alive/Dying/Dead: {state=}")
         if state == "Alive":
             if (

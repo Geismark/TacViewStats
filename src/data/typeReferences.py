@@ -1,3 +1,5 @@
+valid_DCSObject_states = ["Alive", "Dying", "Dead"]
+
 skip_dying_types = [
     "Shrapnel",
     "Flare",
