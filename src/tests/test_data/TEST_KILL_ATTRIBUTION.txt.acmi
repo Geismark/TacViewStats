@@ -1,0 +1,1254 @@
+﻿FileType=text/acmi/tacview
+FileVersion=2.1
+0,ReferenceLongitude=50
+0,ReferenceLatitude=23
+0,ReferenceTime=2020-05-04T11:32:15Z
+0,RecordingTime=2023-06-21T05:21:05.916Z
+0,Title=PG-AA-Trainer-Modern-v2.6
+0,DataRecorder=DCS2ACMI 1.8.8.201
+0,DataSource=DCS 2.8.6.41066
+0,Author=Brody
+0,Comments=Welcome to the [DCAF] Dedicated Air-to-Air training mission.\
+\
+Hosted by Cody "Keller" Stever\
+\
+\
+\
+Air-to-Air Commandments:\
+\
+1) Never face up without SA and a targeting plan.\
+\
+2) Throttles for the ET's\, even if you don't see them.\
+\
+3) Never don't Banzai.\
+\
+4) If you see intakes\, maintain plane of motion and hope for the best!\
+\
+5) If you bunt\, you're a c*nt.\
+\
+6) When faced with a 24-ship Russian horde hell-bent on killing your carrier\, turn to your 4 squadron mates and instill some bravery into their souls by telling them\, "Punch the tanks boys\, let's get silly."\
+\
+7) "Fox-3 unknown aircraft" is not \
+recognized brevity no matter what @Munchie  tries to tell you.\
+\
+8) "MMMMM\, twelve seconds" - @Peter\
+\
+9) BRAA is selfish.\
+\
+10) "2-0-2 is five kills." - @Stigz \
+\
+\
+\
+-------------------------------------------\
+Notes:\
+- Universal Blue Home Base is Al Dhafra AFB.\
+- SRS and LotATC IP/PWs available in DCAF discord under 22 Group (Training)-->#server-info\
+-------------------------------------------\
+\
+\
+\
+AWACS / EWR:\
+\
+Blue AWACS [Darkstar] Freq: 312.55\
+Red AWACS [Magic] Freq: 313.55\
+\
+Blue 80's EWR Freq: 314.55\
+Red 80's EWR Freq: 315.55\
+\
+\
+\
+Tankers:\
+\
+Texaco 1-1 (KC-135MPRS)\
+Freq: 280.000\, TACAN 28X\
+\
+Shell 1-1 (KC-135)\
+Freq: 290.000\, TACAN 29X\
+\
+\
+\
+Carrier:\
+\
+CVN-75 Harry S. Truman\
+BRC 045\, WoD: 0 kt\
+Freq: 305.000\, TACAN 75X\, ICLS 7\
+\
+\
+\
+OCA Target 1:\
+\
+Powerplant. Located in the vicinity of an Sa-11. Two plants\, three storage silos. Manpad expected in the vicinity.\
+\
+\
+OCA Target 2:\
+\
+Iranian pirates are harrassing the civilian tanker ships at AL Hawayan port. Two armed speedboats are reported in the vicinity. Neutralize the pirates without causing collateral damage to the civilians. Watch out for manpads at the shoreline.
+40000001,T=14.4498618|9.1275818|2000|779324.31|684054.06,Type=Navaid+Static+Bullseye,Color=Grey,Coalition=Neutrals
+40000002,T=5.162382|1.8955655|2000|-109854.62|-140295.77,Type=Navaid+Static+Bullseye,Color=Blue,Coalition=Enemies
+40000003,T=6.0594976|2.9553137|2000|-18405.49|-23859.61,Type=Navaid+Static+Bullseye,Color=Red,Coalition=Allies
+#57.41
+0,Category=Nothing
+102,T=4.1422798|1.5614548|1|||358.8|-213709.94|-175541.02|,Type=Ground+Static+Aerodrome,Color=Blue,Coalition=Enemies,Name=Oil rig,Country=us
+202,T=6.368078|2.3743641|0.05|||194.9|12182.69|-88381.16|195.1,Type=Sea+Watercraft+Warship,Color=Red,Coalition=Allies,Name=speedboat,Country=xr,Pilot=Fast Boi-1,Group=Fast Boi
+203,T=5.6683292|6.504971|5682.98|0.1|0.1|269.6|-53319.25|369740|270.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=FA-18C_hornet,Country=xb,Pilot=Brody,Group=80's F/A-18C,Importance=1,IAS=259,AOA=1.7,Throttle=1,AirBrakes=0,Flaps=0,LandingGear=0,HDM=267.3,RollControlPosition=0,PitchControlPosition=0.12,YawControlPosition=0,PilotHeadRoll=0.74,PilotHeadPitch=-9.58,PilotHeadYaw=4.39
+302,T=6.3710887|2.370882|0.06|||62.2|12483.76|-88768.2|62.5,Type=Sea+Watercraft+Warship,Color=Red,Coalition=Allies,Name=speedboat,Country=xr,Pilot=Fast Boi-1-1,Group=Fast Boi-1
+402,T=4.32998|1.6515448||||43.9|-194494.08|-165940.59|45,Type=Sea+Watercraft+AircraftCarrier,Color=Blue,Coalition=Enemies,Name=CVN_75,Country=us,Pilot=CVN,Group=CVN
+502,T=4.4164747|1.6318992||||87.9|-185776.38|-168284.88|89,Type=Sea+Watercraft+Warship,Color=Blue,Coalition=Enemies,Name=PERRY,Country=us,Pilot=OHP,Group=OHP
+602,T=4.4157763|1.6317294||||116.9|-185847.45|-168302.36|118,Type=Sea+Watercraft,Color=Blue,Coalition=Enemies,Name=HarborTug,Country=us,Pilot=Tug-1,Group=Tug
+702,T=4.4158225|1.631547||||66.9|-185843.16|-168322.66|68,Type=Sea+Watercraft,Color=Blue,Coalition=Enemies,Name=HarborTug,Country=us,Pilot=Tug-2,Group=Tug
+802,T=4.417106|1.6320471||||116.9|-185712.13|-168269.69|118,Type=Sea+Watercraft,Color=Blue,Coalition=Enemies,Name=HarborTug,Country=us,Pilot=Tug-3,Group=Tug
+902,T=4.4191146|1.6301779||||116.9|-185512.59|-168480.61|118,Type=Sea+Watercraft,Color=Blue,Coalition=Enemies,Name=Ship_Tilde_Supply,Country=us,Pilot=Tug-4,Group=Tug
+1303,T=5.6563391|6.4997808|2660.03,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+1403,T=5.6566597|6.5018643|2537.66,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+1503,T=5.655936|6.5037659|2389.76,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+1603,T=5.6548761|6.5058288|2284.69,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+1703,T=5.6548719|6.5079768|2144.1,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+1803,T=5.6553491|6.5102441|2024.18,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+1903,T=5.6548221|6.5126355|1938.87,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+3c02,T=5.885432|3.6405875|41.22|-0.4||159.5|-35179.68|52178.87|160,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6M tr,Country=ru,Pilot=Ground-6-1,Group=Ground-6
+3d02,T=5.886283|3.6414117|38.98|-1.1|-1.1|313.5|-35094.17|52269.43|314,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 40B6MD sr,Country=ru,Pilot=Ground-6-2,Group=Ground-6
+3e02,T=5.8869651|3.6423485|40.87|2.1||133.5|-35025.37|52372.61|134,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 54K6 cp,Country=ru,Pilot=Ground-6-3,Group=Ground-6
+3f02,T=5.8873011|3.6420621|41.24|0.8||133.5|-34992.21|52340.59|134,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 64H6E sr,Country=ru,Pilot=Ground-6-4,Group=Ground-6
+4002,T=5.8848151|3.6410964|39.52|-0.8|2.3|133.5|-35240.59|52235.78|134,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Pilot=Ground-6-5,Group=Ground-6
+4102,T=5.8849422|3.6412056|39.31|-0.4|2.4|143.5|-35227.83|52247.77|144,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Pilot=Ground-6-6,Group=Ground-6
+4202,T=5.8847045|3.6409811|39.62|0.6|1.8|123.5|-35251.71|52223.1|124,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Pilot=Ground-6-7,Group=Ground-6
+4302,T=5.8860313|3.6400712|41.58|-1.1|-1.7|313.5|-35120.52|52121.16|314,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85C ln,Country=ru,Pilot=Ground-6-8,Group=Ground-6
+4402,T=5.8861474|3.6401903|42|0.2|-1.5|303.5|-35108.84|52134.26|304,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Pilot=Ground-6-9,Group=Ground-6
+4502,T=5.8859046|3.6399604|41.43|0.2|-1.9|323.5|-35133.23|52109.01|324,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S-300PS 5P85D ln,Country=ru,Pilot=Ground-6-10,Group=Ground-6
+4602,T=5.886796|3.64176|40.28|-1.3||43.5|-35042.77|52307.56|44,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=generator_5i57,Country=ru,Pilot=Ground-6-11,Group=Ground-6
+4702,T=5.8867226|3.6418206|40.04|-1.3||43.5|-35050.02|52314.34|44,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=generator_5i57,Country=ru,Pilot=Ground-6-12,Group=Ground-6
+4802,T=5.8870341|3.6413199|40.94|-1.4|-0.6|313.5|-35019.5|52258.61|314,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-5,Country=ru,Pilot=Ground-6-13,Group=Ground-6
+4902,T=5.8871076|3.6413895|41.2|-1.5|-0.8|313.5|-35012.11|52266.26|314,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-5,Country=ru,Pilot=Ground-6-14,Group=Ground-6
+4a02,T=5.884845|3.6403063|40.76|-2.2|0.2|43.5|-35238.38|52148.24|44,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-6-15,Group=Ground-6
+4b02,T=5.8859922|3.6419934|39.08|0.5|-0.5|178.5|-35122.55|52334.11|179,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-60_Maz,Country=ru,Pilot=Ground-6-16,Group=Ground-6
+4c02,T=5.8860932|3.6419957|39.16|0.5|-0.5|178.5|-35112.5|52334.29|179,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-60_Maz,Country=ru,Pilot=Ground-6-17,Group=Ground-6
+4d02,T=5.8851191|3.6400769|41.61|0.3|-0.6|43.5|-35211.32|52122.59|44,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=KAMAZ Truck,Country=ru,Pilot=Ground-6-18,Group=Ground-6
+4e02,T=6.1907282|2.5070956|139.41|0.2|-1|206.6|-5570.74|-73586.02|207,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-11 Buk SR 9S18M1,Country=ru,Pilot=Ground-7-1,Group=Ground-7
+4f02,T=6.1899836|2.507707|141.33|-1.4|-1.7|133.6|-5645.15|-73517.85|134,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-11 Buk LN 9A310M1,Country=ru,Pilot=Ground-7-2,Group=Ground-7
+5002,T=6.1914917|2.5064844|140.91|-0.7|-1.7|312.6|-5494.42|-73654.16|313,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-11 Buk LN 9A310M1,Country=ru,Pilot=Ground-7-3,Group=Ground-7
+5102,T=6.1914197|2.5078176|139||1.6|225.6|-5500.75|-73506.48|226,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-11 Buk LN 9A310M1,Country=ru,Pilot=Ground-7-4,Group=Ground-7
+5202,T=6.1900711|2.506427|141.06|0.6|-2.9|43.6|-5637.23|-73659.66|44,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-11 Buk LN 9A310M1,Country=ru,Pilot=Ground-7-5,Group=Ground-7
+5302,T=6.1905906|2.505597|141.98|0.5|-1.2|356.6|-5585.57|-73751.9|357,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-10,Country=ru,Pilot=Ground-7-6,Group=Ground-7
+5402,T=6.1907072|2.5056107|141.86|0.3|-1.2|6.6|-5573.84|-73750.45|7,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-10,Country=ru,Pilot=Ground-7-7,Group=Ground-7
+5502,T=6.1903841|2.5070486|139.6|1.6|1.7|314.6|-5605.35|-73591.01|315,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-7-8,Group=Ground-7
+5602,T=6.1905826|2.5066954|138.75|-0.9|1.4|226.6|-5585.64|-73630.25|227,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320-31,Country=ru,Pilot=Ground-7-9,Group=Ground-7
+5702,T=6.190646|2.5066405|138.62|-0.9|-1|225.6|-5579.31|-73636.37|226,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320-31,Country=ru,Pilot=Ground-7-10,Group=Ground-7
+5802,T=6.1904187|2.5070815|139.47|1.6|1.7|314.6|-5601.85|-73587.39|315,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-375 PBU,Country=ru,Pilot=Ground-7-11,Group=Ground-7
+5902,T=6.1909513|2.5070768|139.62|-1|0.1|312.6|-5548.33|-73588.23|313,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SA-11 Buk CC 9S470M1,Country=ru,Pilot=Ground-7-12,Group=Ground-7
+5a02,T=6.0611944|2.7153406|217.53|0.6||214.6|-18425.39|-50437.95|215,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SNR_75V,Country=ru,Pilot=Ground-8-1,Group=Ground-8
+5b02,T=6.0609908|2.7145301|219.19|3.3||177.6|-18446.46|-50527.57|178,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-8-2,Group=Ground-8
+5c02,T=6.0604219|2.7160041|217.04|-2||311.6|-18502.37|-50363.92|312,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-8-3,Group=Ground-8
+5d02,T=6.0619162|2.7147409|221.79|-0.6||131.6|-18353.45|-50504.89|132,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-8-4,Group=Ground-8
+5e02,T=6.0621604|2.7156701|221.01|-0.3||81.6|-18328.22|-50402.16|82,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-8-5,Group=Ground-8
+5f02,T=6.0613794|2.7162751|220.73|-1.9||358.6|-18406.1|-50334.59|359,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-8-6,Group=Ground-8
+6002,T=6.060248|2.7151509|215.27|0.3||276.6|-18520.5|-50458.29|277,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-8-7,Group=Ground-8
+6102,T=6.0606664|2.7154227|216.64||2.3|102.6|-18478.31|-50428.49|103,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-8-8,Group=Ground-8
+6202,T=6.060676|2.7154745|216.62||2.3|102.6|-18477.3|-50422.75|103,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-8-9,Group=Ground-8
+6302,T=6.0604188|2.7167718|219.52|-2.3||350.6|-18502.08|-50278.9|351,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-8-10,Group=Ground-8
+6402,T=6.060351|2.7166906|219.07|-1|-2.2|262.6|-18508.95|-50287.84|263,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320 APA-5D,Country=ru,Pilot=Ground-8-11,Group=Ground-8
+6502,T=6.063243|2.7150485|227.65|-0.3|-1.7|273.6|-18220.1|-50471.77|274,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-8-12,Group=Ground-8
+6602,T=6.0632304|2.7152972|227.72|-0.6|-1.6|282.6|-18221.17|-50444.22|283,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-8-13,Group=Ground-8
+6702,T=6.0629624|2.7159109|226.78|4|-2.5|174.6|-18247.57|-50376.06|175,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-8-14,Group=Ground-8
+6802,T=6.0627466|2.7158902|225.24|4.2|-2.1|169.6|-18269.24|-50378.2|170,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-8-15,Group=Ground-8
+6902,T=6.0032359|2.8127776|5.69|0.3||222.5|-24158.57|-39604.14|222.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=snr s-125 tr,Country=ru,Pilot=Ground-9-1,Group=Ground-9
+6a02,T=6.0034623|2.8132604|5.74|-0.3||44.6|-24135.47|-39550.83|45,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-9-2,Group=Ground-9
+6b02,T=6.0037277|2.8130476|5.91|-0.3||44.6|-24109.04|-39574.6|45,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-9-3,Group=Ground-9
+6c02,T=6.0031389|2.8131901|5.58|-0.3||44.6|-24167.95|-39558.38|45,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-9-4,Group=Ground-9
+6d02,T=6.0036919|2.8127385|5.93|-0.3||44.6|-24112.88|-39608.8|45,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-9-5,Group=Ground-9
+6e02,T=6.0035335|2.8121007|6.05|0.4||222.5|-24129.3|-39679.32|222.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-9-6,Group=Ground-9
+6f02,T=6.0031186|2.8128811|5.61|-0.2|-0.3|313.6|-24170.24|-39592.58|314,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-9-7,Group=Ground-9
+7002,T=6.0030909|2.8128192|5.6|-0.3|0.2|42.6|-24173.06|-39599.42|43,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-9-8,Group=Ground-9
+7102,T=6.0025583|2.8124496|5.37|-0.2|-0.3|315.6|-24226.77|-39639.95|316,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-9-9,Group=Ground-9
+7202,T=6.0025973|2.8124873|5.38|-0.2|-0.3|317.6|-24222.83|-39635.8|318,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-9-10,Group=Ground-9
+7302,T=6.0026273|2.8125199|5.4|-0.2|-0.3|313.6|-24219.79|-39632.21|314,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-9-11,Group=Ground-9
+7402,T=6.0034429|2.8121034|6|-0.1|-0.4|317.6|-24138.38|-39678.96|318,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-9-12,Group=Ground-9
+7502,T=6.338289|1.9952059|10.99|-0.5|0.9|223.7|8979.38|-130353.16|224,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 1S91 str,Country=ru,Pilot=Ground-10-1,Group=Ground-10
+7602,T=6.3375483|1.9958183|11.52|-0.9|-0.2|133.7|8904.97|-130284.98|134,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-10-2,Group=Ground-10
+7702,T=6.3390485|1.9945938|10.06|0.8|0.5|312.7|9055.7|-130421.31|313,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-10-3,Group=Ground-10
+7802,T=6.3389786|1.9959271|9.45|-0.5|0.9|225.7|9049.37|-130273.63|226,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-10-4,Group=Ground-10
+7902,T=6.3376337|1.9945378|12.43|0.5|-0.9|43.7|8912.89|-130426.81|44,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-10-5,Group=Ground-10
+7a02,T=6.33815|1.9937072|12.04|1|-0.2|356.7|8964.54|-130519.05|357,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-10,Country=ru,Pilot=Ground-10-6,Group=Ground-10
+7b02,T=6.3382661|1.9937208|11.83|0.9|-0.4|6.7|8976.27|-130517.59|7,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-10,Country=ru,Pilot=Ground-10-7,Group=Ground-10
+7c02,T=6.3379702|1.9951638|11.54|0.9|0.5|314.7|8947.18|-130357.66|315,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-10-8,Group=Ground-10
+7d02,T=6.3381434|1.9948058|11.45|-0.4|0.9|226.7|8964.48|-130397.39|227,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320-31,Country=ru,Pilot=Ground-10-9,Group=Ground-10
+7e02,T=6.3382065|1.9947509|11.37|-0.5|0.9|225.7|8970.81|-130403.51|226,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320-31,Country=ru,Pilot=Ground-10-10,Group=Ground-10
+7f02,T=6.337994|1.9951877|11.49|0.9|0.5|314.7|8949.6|-130355.03|315,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-375 PBU,Country=ru,Pilot=Ground-10-11,Group=Ground-10
+8002,T=4.4761106|6.3304645|2008.25|-1.3||359|-169326.2|352311.41|0.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SNR_75V,Country=ru,Pilot=Ground-13-1,Group=Ground-13
+8102,T=4.4756084|6.3311687|2007.71|-1.2||312.7|-169373.3|352390.53|314,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-13-2,Group=Ground-13
+8202,T=4.4772094|6.3304872|2010.64|0.4||86.7|-169219.41|352311.63|88,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-13-3,Group=Ground-13
+8302,T=4.4751|6.330429|2006.42|0.3||266.7|-169424.45|352309.59|268,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-13-4,Group=Ground-13
+8402,T=4.4756472|6.3296866|2007.78|1||216.7|-169373.08|352226.16|218,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-13-5,Group=Ground-13
+8502,T=4.4767261|6.3296845|2009.74|0.6||133.7|-169268.28|352223.66|135,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-13-6,Group=Ground-13
+8602,T=4.4766512|6.3312028|2010.1|-0.4||51.7|-169271.92|352392.13|53,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-13-7,Group=Ground-13
+8702,T=4.4765633|6.3307433|2009.48|0.3|-1.3|237.7|-169281.56|352341.38|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-13-8,Group=Ground-13
+8802,T=4.4765978|6.3307005|2009.52|0.3|-1.3|237.7|-169278.31|352336.56|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-13-9,Group=Ground-13
+8902,T=4.4778287|6.3299455|2011.61|0.4||125.7|-169160.55|352250.28|127,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-13-10,Group=Ground-13
+8a02,T=4.4778132|6.3300461|2011.55|-0.9|0.9|37.7|-169161.81|352261.47|39,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320 APA-5D,Country=ru,Pilot=Ground-13-11,Group=Ground-13
+8b02,T=4.4743757|6.3293646|2005.7|-0.9|0.6|48.7|-169497.36|352193.13|50,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-13-12,Group=Ground-13
+8c02,T=4.4745846|6.3291966|2006.15|-0.8|0.7|57.7|-169477.47|352174.06|59,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-13-13,Group=Ground-13
+8d02,T=4.4752741|6.3289328|2007.5|-0.5|-1|309.7|-169411.13|352143.38|311,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-13-14,Group=Ground-13
+8e02,T=4.4754156|6.3290852|2007.68|-0.4|-1|304.7|-169397.02|352159.97|306,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-13-15,Group=Ground-13
+8f02,T=4.7049442|6.1473916|1587.63|0.4||357.8|-147496.03|331561.06|358.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=snr s-125 tr,Country=ru,Pilot=Ground-14-1,Group=Ground-14
+9002,T=4.7051647|6.1469048|1587.46|-0.4||179.9|-147475.63|331506.69|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-14-2,Group=Ground-14
+9102,T=4.7047999|6.1468873|1587.68|-0.4||179.9|-147511.16|331505.44|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-14-3,Group=Ground-14
+9202,T=4.7053453|6.1471603|1587.37|-0.4||179.9|-147457.5|331534.66|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-14-4,Group=Ground-14
+9302,T=4.7045789|6.1471294|1587.83|-0.3||179.9|-147532.14|331532.69|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-14-5,Group=Ground-14
+9402,T=4.7041844|6.1476834|1588.1|0.3||357.8|-147569.33|331594.84|358.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-14-6,Group=Ground-14
+9502,T=4.705113|6.1473927|1587.52||-0.4|88.9|-147479.59|331560.88|90,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-14-7,Group=Ground-14
+9602,T=4.7050835|6.1474543|1587.54|-0.4|-0.1|177.9|-147482.33|331567.75|179,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-14-8,Group=Ground-14
+9702,T=4.7051779|6.1480556|1587.53||-0.4|90.9|-147471.84|331634.22|92,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-14-9,Group=Ground-14
+9802,T=4.7051795|6.148004|1587.52||-0.4|92.9|-147471.8|331628.5|94,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-14-10,Group=Ground-14
+9902,T=4.7051837|6.1479618|1587.52||-0.4|88.9|-147471.48|331623.81|90,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-14-11,Group=Ground-14
+9a02,T=4.7042531|6.1477389|1588.06||-0.3|92.9|-147562.52|331600.88|94,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-14-12,Group=Ground-14
+9b02,T=4.6587841|6.6081541|2011.95|0.2||357.7|-150963.2|382723.31|358.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=snr s-125 tr,Country=ru,Pilot=Ground-15-1,Group=Ground-15
+9c02,T=4.659006|6.6076672|2012.78|-0.1||179.8|-150942.8|382668.91|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-15-2,Group=Ground-15
+9d02,T=4.6586396|6.6076495|2012.89|-0.1||179.8|-150978.33|382667.66|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-15-3,Group=Ground-15
+9e02,T=4.6591872|6.607923|2012.28|-0.1||179.8|-150924.67|382696.91|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-15-4,Group=Ground-15
+9f02,T=4.6584174|6.6078917|2012.5|-0.1||179.8|-150999.31|382694.94|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-15-5,Group=Ground-15
+a002,T=4.6580208|6.6084451|2011.6|0.2||357.7|-151036.48|382757.06|358.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-15-6,Group=Ground-15
+a102,T=4.6589537|6.6081554|2011.91|-0.9|-0.1|88.8|-150946.78|382723.13|90,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-15-7,Group=Ground-15
+a202,T=4.658924|6.6082169|2011.81|-0.2|0.9|177.8|-150949.52|382730|179,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-15-8,Group=Ground-15
+a302,T=4.6590183|6.6088182|2010.71|-0.9|-0.1|90.8|-150939.03|382796.47|92,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-15-9,Group=Ground-15
+a402,T=4.65902|6.6087664|2010.8|-0.9|-0.1|92.8|-150938.98|382790.72|94,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-15-10,Group=Ground-15
+a502,T=4.6590242|6.6087242|2010.88|-0.9|-0.1|88.8|-150938.67|382786.03|90,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-15-11,Group=Ground-15
+a602,T=4.6580896|6.608501|2011.48|-0.9|-0.1|92.8|-151029.7|382763.13|94,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-15-12,Group=Ground-15
+a702,T=4.4609732|6.8646591|1677.59|0.4||357.6|-169499.63|411562.72|358.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=snr s-125 tr,Country=ru,Pilot=Ground-16-1,Group=Ground-16
+a802,T=4.4611967|6.8641726|1677.88|-0.4||179.7|-169479.22|411508.31|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-16-2,Group=Ground-16
+a902,T=4.4608294|6.8641543|1678.16|-0.4||179.7|-169514.75|411507.06|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-16-3,Group=Ground-16
+aa02,T=4.4613778|6.8644287|1677.52|-0.4||179.7|-169461.09|411536.31|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-16-4,Group=Ground-16
+ab02,T=4.4606061|6.8643958|1678.09|-0.4||179.7|-169535.73|411534.31|181,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=5p73 s-125 ln,Country=ru,Pilot=Ground-16-5,Group=Ground-16
+ac02,T=4.4602073|6.8649488|1677.85|0.4||357.6|-169572.92|411596.47|358.9,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-16-6,Group=Ground-16
+ad02,T=4.461143|6.8646604|1677.46|-0.5|-0.4|88.7|-169483.22|411562.5|90,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-16-7,Group=Ground-16
+ae02,T=4.4611133|6.8647218|1677.43|-0.4|0.5|177.7|-169485.94|411569.38|179,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-16-8,Group=Ground-16
+af02,T=4.4612066|6.8653232|1676.8|-0.5|-0.4|90.7|-169475.45|411635.84|92,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-16-9,Group=Ground-16
+b002,T=4.4612084|6.8652716|1676.84|-0.5|-0.4|92.7|-169475.39|411630.13|94,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-16-10,Group=Ground-16
+b102,T=4.4612125|6.8652294|1676.89|-0.5|-0.4|88.7|-169475.11|411625.44|90,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=GAZ-66,Country=ru,Pilot=Ground-16-11,Group=Ground-16
+b202,T=4.4602761|6.8650045|1677.75|-0.5|-0.4|92.7|-169566.14|411602.5|94,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-16-12,Group=Ground-16
+b302,T=6.4138253|1.7827518|31.43|-0.2|0.5|223.7|16501.02|-153913.42|224,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 1S91 str,Country=ru,Pilot=Ground-23-1,Group=Ground-23
+b402,T=6.4130863|1.7833644|31.74|-0.5|-0.1|133.8|16426.61|-153845.27|134,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-23-2,Group=Ground-23
+b502,T=6.4145832|1.7821391|30.83|0.2|0.4|312.7|16577.35|-153981.59|313,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-23-3,Group=Ground-23
+b602,T=6.4145142|1.7834726|30.57|-0.1|0.5|225.7|16571.01|-153833.91|226,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-23-4,Group=Ground-23
+b702,T=6.4131708|1.7820839|31.99|0.4|-0.3|43.8|16434.54|-153987.09|44,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Kub 2P25 ln,Country=ru,Pilot=Ground-23-5,Group=Ground-23
+b802,T=6.4136855|1.781253|31.41|0.5|0.1|356.8|16486.18|-154079.33|357,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-10,Country=ru,Pilot=Ground-23-6,Group=Ground-23
+b902,T=6.4138016|1.7812666|31.31|0.5||6.7|16497.92|-154077.88|7,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATZ-10,Country=ru,Pilot=Ground-23-7,Group=Ground-23
+ba02,T=6.413507|1.7827098|31.7|0.5|0.2|314.7|16468.83|-153917.94|315,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZiL-131 APA-80,Country=ru,Pilot=Ground-23-8,Group=Ground-23
+bb02,T=6.4136798|1.7823516|31.62|-0.4|0.3|226.7|16486.12|-153957.67|227,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320-31,Country=ru,Pilot=Ground-23-9,Group=Ground-23
+bc02,T=6.4137427|1.7822966|31.55|-0.4|0.3|225.7|16492.46|-153963.8|226,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320-31,Country=ru,Pilot=Ground-23-10,Group=Ground-23
+bd02,T=6.4135308|1.7827337|31.68|0.5|0.2|314.7|16471.24|-153915.3|315,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-375 PBU,Country=ru,Pilot=Ground-23-11,Group=Ground-23
+be02,T=4.2192324|6.2279683|1565.83|-0.1||358.8|-194550.06|341514.47|0.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SNR_75V,Country=ru,Pilot=Ground-25-1,Group=Ground-25
+bf02,T=4.2187292|6.2286712|1565.58|-0.1||312.6|-194597.16|341593.56|314,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-25-2,Group=Ground-25
+c002,T=4.2203302|6.2279931|1565.99|-0.2||86.6|-194443.25|341514.69|88,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-25-3,Group=Ground-25
+c102,T=4.2182233|6.2279309|1565.68|0.2||266.6|-194648.3|341512.66|268,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-25-4,Group=Ground-25
+c202,T=4.2187716|6.2271897|1566.06|0.2||216.6|-194596.92|341429.22|218,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-25-5,Group=Ground-25
+c302,T=4.2198493|6.2271896|1566.22|-0.1||133.6|-194492.13|341426.72|135,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-25-6,Group=Ground-25
+c402,T=4.2197708|6.2287073|1565.73|||51.6|-194495.77|341595.16|53,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-25-7,Group=Ground-25
+c502,T=4.2196839|6.228248|1565.79|0.2||237.6|-194505.42|341544.44|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-25-8,Group=Ground-25
+c602,T=4.2197185|6.228205|1565.8|0.2||237.6|-194502.17|341539.59|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-25-9,Group=Ground-25
+c702,T=4.2209499|6.2274526|1566.29|-0.1||125.6|-194384.41|341453.34|127,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-25-10,Group=Ground-25
+c802,T=4.2209341|6.2275532|1566.25|-0.2|-0.1|37.6|-194385.67|341464.53|39,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320 APA-5D,Country=ru,Pilot=Ground-25-11,Group=Ground-25
+c902,T=4.2175022|6.2268654|1565.98|-0.2|-0.1|48.6|-194721.22|341396.19|50,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-25-12,Group=Ground-25
+ca02,T=4.2177115|6.2266978|1566.08|-0.2||57.6|-194701.31|341377.13|59,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-25-13,Group=Ground-25
+cb02,T=4.2184008|6.2264353|1566.28|0.1|-0.2|309.6|-194634.97|341346.44|311,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-25-14,Group=Ground-25
+cc02,T=4.2185416|6.2265879|1566.25|0.1|-0.2|304.6|-194620.88|341363.03|306,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-25-15,Group=Ground-25
+cd02,T=3.8757664|6.6748605|1561.19|-0.1||358.7|-226623.45|391909.19|0.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SNR_75V,Country=ru,Pilot=Ground-26-1,Group=Ground-26
+ce02,T=3.8752584|6.6755621|1560.87|-0.1||312.4|-226670.55|391988.31|314,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-26-2,Group=Ground-26
+cf02,T=3.8768684|6.6748885|1561.3|-0.2||86.4|-226516.66|391909.41|88,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-26-3,Group=Ground-26
+d002,T=3.874753|6.6748203|1560.95|0.1||266.4|-226721.7|391907.38|268,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-26-4,Group=Ground-26
+d102,T=3.8753065|6.6740809|1561.24|0.2||216.4|-226670.33|391823.94|218,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-26-5,Group=Ground-26
+d202,T=3.8763886|6.6740839|1561.59|-0.1||133.4|-226565.53|391821.44|135,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-26-6,Group=Ground-26
+d302,T=3.876304|6.6756011|1560.97|||51.4|-226569.17|391989.91|53,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-26-7,Group=Ground-26
+d402,T=3.8762187|6.6751415|1561.12|0.2|0.1|237.4|-226578.81|391939.16|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-26-8,Group=Ground-26
+d502,T=3.8762536|6.6750989|1561.14|0.2|0.1|237.4|-226575.56|391934.34|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-26-9,Group=Ground-26
+d602,T=3.8774929|6.67435|1561.59|-0.1||125.4|-226457.8|391848.06|127,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-26-10,Group=Ground-26
+d702,T=3.8774767|6.6744505|1561.54|-0.2|-0.1|37.4|-226459.06|391859.25|39,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320 APA-5D,Country=ru,Pilot=Ground-26-11,Group=Ground-26
+d802,T=3.8740332|6.6737529|1560.83|-0.2|0.1|48.4|-226794.61|391790.91|50,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-26-12,Group=Ground-26
+d902,T=3.8742438|6.673586|1560.92|-0.2|0.1|57.4|-226774.72|391771.84|59,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-26-13,Group=Ground-26
+da02,T=3.8749369|6.6733256|1561.2|-0.1|-0.2|309.4|-226708.38|391741.16|311,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-26-14,Group=Ground-26
+db02,T=3.8750779|6.6734786|1561.23|-0.1|-0.2|304.4|-226694.27|391757.75|306,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-26-15,Group=Ground-26
+dc02,T=2.5950968|6.4794688|1477.52|||358|-351504.84|374268.09|0.2,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=SNR_75V,Country=ru,Pilot=Ground-28-1,Group=Ground-28
+dd02,T=2.5945813|6.4801647|1477.67|-0.1||311.8|-351551.97|374347.22|314,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-28-2,Group=Ground-28
+de02,T=2.5961949|6.4795072|1477.6|0.1||85.8|-351398.06|374268.31|88,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-28-3,Group=Ground-28
+df02,T=2.5940871|6.479419|1477.43|-0.1||265.8|-351603.09|374266.28|268,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-28-4,Group=Ground-28
+e002,T=2.594648|6.4786857|1477.29|||215.8|-351551.72|374182.84|218,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-28-5,Group=Ground-28
+e102,T=2.5957266|6.4786989|1477.39|0.1||132.8|-351446.94|374180.34|135,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-28-6,Group=Ground-28
+e202,T=2.5956236|6.4802137|1477.74|0.1||50.8|-351450.56|374348.81|53,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=S_75M_Volhov,Country=ru,Pilot=Ground-28-7,Group=Ground-28
+e302,T=2.5955441|6.4797536|1477.62|-0.1|-0.1|236.8|-351460.22|374298.06|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-28-8,Group=Ground-28
+e402,T=2.5955794|6.4797112|1477.62|-0.1|-0.1|236.8|-351456.97|374293.22|239,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ZIL-131 KUNG,Country=ru,Pilot=Ground-28-9,Group=Ground-28
+e502,T=2.5968243|6.4789753|1477.51|0.1||124.8|-351339.19|374206.97|127,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=p-19 s-125 sr,Country=ru,Pilot=Ground-28-10,Group=Ground-28
+e602,T=2.5968068|6.4790754|1477.53||0.1|36.8|-351340.47|374218.16|39,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320 APA-5D,Country=ru,Pilot=Ground-28-11,Group=Ground-28
+e702,T=2.5933824|6.478346|1477.09||0.1|47.8|-351676.03|374149.81|50,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-28-12,Group=Ground-28
+e802,T=2.5935946|6.4781812|1477.09|0.1|0.1|56.8|-351656.13|374130.75|59,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=ATMZ-5,Country=ru,Pilot=Ground-28-13,Group=Ground-28
+e902,T=2.5942888|6.4779277|1477.1|-0.1||308.8|-351589.78|374100.06|311,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-28-14,Group=Ground-28
+ea02,T=2.5944273|6.4780819|1477.14|-0.1||303.8|-351575.69|374116.66|306,Type=Ground+Vehicle,Color=Red,Coalition=Allies,Name=Ural-4320T,Country=ru,Pilot=Ground-28-15,Group=Ground-28
+fe02,T=1.6723146|3.9061906|10058.4||4.3|357.5|-453722.69|92273.08|,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=A_380,Country=xr,Pilot=A380,Group=A380
+10802,T=5.2161201|6.7543032|1715.54|-0.5||136.1|-96731.57|397960.53|137,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=1L13 EWR,Country=xr,Pilot=Red 80s EWR,Group=Red 80s EWR
+10902,T=6.190732|2.4938689|158.25|0.1|0.8|198.6|-5579.26|-75050.78|199,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-10M3,Country=xr,Pilot=Ground-21-1,Group=Ground-21
+10a02,T=3.565143|0.5207965|138.09|0.1||172.6|-275032.63|-289559.63|174,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=1L13 EWR,Country=xr,Pilot=Red BFM EWR,Group=Red BFM EWR
+10b02,T=6.347947|2.3724694|5.44|||179.7|10156.37|-88581.25|180,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-10M3,Country=xr,Pilot=Ground-22-1,Group=Ground-22
+10c02,T=6.2223519|2.2034394|199.96|-1.6|0.1|247.7|-2588.08|-107231.98|248,Type=Ground+AntiAircraft,Color=Red,Coalition=Allies,Name=Strela-10M3,Country=xr,Pilot=Ground-24-1,Group=Ground-24
+10d02,T=5.0753808|2.0195116|3.28|-0.1||358.8|-118449.7|-126444.91|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Command_Post,Country=us,Pilot=Ground-1-1,Group=Ground-1
+10e02,T=5.0759231|2.0193918|3.35|||134.2|-118395.16|-126458.96|135,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-1-2,Group=Ground-1
+10f02,T=5.0753226|2.0199736|3.02|-0.1||358.8|-118454.85|-126393.66|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-1-3,Group=Ground-1
+11002,T=5.0759308|2.0197828|3.23|-0.4||89.2|-118393.77|-126415.66|90,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_C,Country=us,Pilot=Ground-1-4,Group=Ground-1
+11102,T=5.0755333|2.0197038|3.24|-0.1||358.8|-118434.02|-126423.85|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Radar_MPQ64F1,Country=us,Pilot=Ground-1-5,Group=Ground-1
+11202,T=5.0752418|2.0193429|3.27||0.1|89.2|-118464|-126463.41|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-1-6,Group=Ground-1
+11302,T=5.0752375|2.0194187|3.26||0.1|89.2|-118464.31|-126455|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-1-7,Group=Ground-1
+11402,T=5.2834533|1.9170137|68.4|||358.9|-97593.23|-138079.92|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Command_Post,Country=us,Pilot=Ground-2-1,Group=Ground-2
+11502,T=5.2839949|1.9168932|68.34|-0.2||134.3|-97538.7|-138093.97|135,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-2-2,Group=Ground-2
+11602,T=5.283396|1.9174758|68.29|0.1||358.9|-97598.38|-138028.67|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-2-3,Group=Ground-2
+11702,T=5.2840034|1.9172842|68.23|-0.1||89.3|-97537.3|-138050.67|90,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_C,Country=us,Pilot=Ground-2-4,Group=Ground-2
+11802,T=5.2836059|1.9172057|68.33|0.1||358.9|-97577.55|-138058.86|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Radar_MPQ64F1,Country=us,Pilot=Ground-2-5,Group=Ground-2
+11902,T=5.2833142|1.9168452|68.41|-0.1||89.3|-97607.52|-138098.41|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-2-6,Group=Ground-2
+11a02,T=5.2833101|1.916921|68.41|-0.1||89.3|-97607.84|-138090|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-2-7,Group=Ground-2
+11b02,T=4.8800492|1.7270306|29.69|-0.3||358.7|-138669.86|-158550.38|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Command_Post,Country=us,Pilot=Ground-3-1,Group=Ground-3
+11c02,T=4.8805902|1.7269114|30.03|0.1||134.1|-138615.33|-158564.42|135,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-3-2,Group=Ground-3
+11d02,T=4.8799905|1.7274925|29.5|-0.3||358.7|-138675|-158499.11|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-3-3,Group=Ground-3
+11e02,T=4.8805974|1.7273025|29.9|-0.2||89.1|-138613.92|-158521.11|90,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_C,Country=us,Pilot=Ground-3-4,Group=Ground-3
+11f02,T=4.880201|1.7272229|29.71|-0.3||358.7|-138654.17|-158529.31|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Radar_MPQ64F1,Country=us,Pilot=Ground-3-5,Group=Ground-3
+12002,T=4.8799107|1.7268617|29.67|-0.2|0.3|89.1|-138684.16|-158568.86|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-3-6,Group=Ground-3
+12102,T=4.8799064|1.7269376|29.64|-0.2|0.3|89.1|-138684.47|-158560.45|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-3-7,Group=Ground-3
+12202,T=4.6084639|1.508517|2.03|||358.6|-166570.81|-182305.91|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Command_Post,Country=us,Pilot=Ground-4-1,Group=Ground-4
+12302,T=4.6090041|1.5083988|2.03|||134|-166516.28|-182319.95|135,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-4-2,Group=Ground-4
+12402,T=4.6084043|1.5089787|2.03|||358.6|-166575.97|-182254.66|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_B,Country=us,Pilot=Ground-4-3,Group=Ground-4
+12502,T=4.6090106|1.5087897|2.04|||89|-166514.88|-182276.66|90,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_LN_C,Country=us,Pilot=Ground-4-4,Group=Ground-4
+12602,T=4.6086148|1.5087096|2.03|||358.6|-166555.14|-182284.84|359.6,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=NASAMS_Radar_MPQ64F1,Country=us,Pilot=Ground-4-5,Group=Ground-4
+12702,T=4.608326|1.5083479|2.02|||89|-166585.11|-182324.41|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-4-6,Group=Ground-4
+12802,T=4.6083215|1.5084237|2.02|||89|-166585.42|-182316|90,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-4-7,Group=Ground-4
+12902,T=4.8384666|1.4416389|48.22|1||33.1|-143373.52|-190098.66|34,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot str,Country=us,Pilot=Ground-5-1,Group=Ground-5
+12a02,T=4.8377904|1.442294|50.09|1|0.5|33.1|-143440.95|-190025.02|34,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Patriot EPP,Country=us,Pilot=Ground-5-2,Group=Ground-5
+12b02,T=4.8382695|1.4413767|47.92|1|0.5|33.1|-143393.95|-190127.39|34,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ECS,Country=us,Pilot=Ground-5-3,Group=Ground-5
+12c02,T=4.8380105|1.4413424|48.11|-0.5|1|303.1|-143420.28|-190130.78|304,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Patriot AMG,Country=us,Pilot=Ground-5-4,Group=Ground-5
+12d02,T=4.8384095|1.4412904|47.63|1|0.5|33.1|-143379.91|-190137.17|34,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Patriot cp,Country=us,Pilot=Ground-5-5,Group=Ground-5
+12e02,T=4.8382501|1.4432413|51.39|0.8||13.1|-143392.7|-189920.81|14,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Pilot=Ground-5-6,Group=Ground-5
+12f02,T=4.8383226|1.444238|51.45|-0.3||13.1|-143383.63|-189810.52|14,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Pilot=Ground-5-7,Group=Ground-5
+13002,T=4.8391087|1.4445166|50.84|-0.7||33.1|-143303.42|-189780.91|34,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Pilot=Ground-5-8,Group=Ground-5
+13102,T=4.8391555|1.4431009|50.41|0.7||33.1|-143301.13|-189937.8|34,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Pilot=Ground-5-9,Group=Ground-5
+13202,T=4.8400887|1.4437683|50.67|0.4||33.1|-143205.34|-189865.34|34,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Pilot=Ground-5-10,Group=Ground-5
+13302,T=4.8394103|1.4421723|48.68|0.8||53.1|-143276.89|-190041.06|54,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Pilot=Ground-5-11,Group=Ground-5
+13402,T=4.8403383|1.442547|49.05|0.8||53.1|-143182.14|-190001.03|54,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Patriot ln,Country=us,Pilot=Ground-5-12,Group=Ground-5
+13502,T=4.8397103|1.4405552|45.88|0.2|0.7|13.1|-143249.28|-190220.67|14,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M1097 Avenger,Country=us,Pilot=Ground-5-13,Group=Ground-5
+13602,T=4.8365081|1.4433074|52.02|-0.5|-0.4|33.1|-143569.23|-189910.73|34,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=M1097 Avenger,Country=us,Pilot=Ground-5-14,Group=Ground-5
+13702,T=4.8368934|1.4418439|50.13|0.8|0.8|13.1|-143532.7|-190073.45|14,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Pilot=Ground-5-15,Group=Ground-5
+13802,T=4.83695|1.4416694|49.72|0.6|1.1|13.1|-143527.27|-190092.88|14,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Pilot=Ground-5-16,Group=Ground-5
+13902,T=4.8370071|1.4414856|49.27|0.6|1.1|13.1|-143521.8|-190113.33|14,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M978 HEMTT Tanker,Country=us,Pilot=Ground-5-17,Group=Ground-5
+13a02,T=4.8368317|1.4420216|50.51|0.8|0.8|13.1|-143538.66|-190053.67|14,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-5-18,Group=Ground-5
+13b02,T=4.8387046|1.4430045|50.5|0.8|0.8|13.1|-143347.03|-189947.77|14,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-5-19,Group=Ground-5
+13c02,T=4.8385348|1.4413112|47.54|0.5|-1|123.1|-143367.17|-190135.06|124,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=M 818,Country=us,Pilot=Ground-5-20,Group=Ground-5
+13d02,T=5.130904|1.5926157|96.35|-0.3||223.2|-113493.16|-173808.17|224,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Pilot=Ground-11-1,Group=Ground-11
+13e02,T=5.131021|1.592113|96.91|-0.3||223.2|-113482.07|-173864.02|224,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Pilot=Ground-11-2,Group=Ground-11
+13f02,T=5.1312621|1.5929744|95.02|-0.3||223.2|-113456.36|-173768.94|224,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-11-3,Group=Ground-11
+14002,T=5.132379|1.5924034|93.61|-1.1||103.2|-113344.1|-173833.72|104,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-11-4,Group=Ground-11
+14102,T=5.1323691|1.5915609|94.99|-1.4||163.2|-113346.38|-173927.02|164,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-5,Group=Ground-11
+14202,T=5.1332464|1.5922368|92.1|-1.1||103.2|-113256.51|-173853.36|104,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-6,Group=Ground-11
+14302,T=5.1324981|1.5932077|92.07|0.3||43.2|-113330.84|-173744.8|44,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-7,Group=Ground-11
+14402,T=5.1300147|1.591754|99.59|-0.3||223.2|-113584.53|-173902.39|224,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-11-8,Group=Ground-11
+14502,T=5.1305056|1.5910985|99.07|-0.3||163.2|-113535.8|-173975.67|164,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-9,Group=Ground-11
+14602,T=5.129403|1.5911512|99.54|||223.2|-113647.38|-173968.31|224,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-10,Group=Ground-11
+14702,T=5.1292342|1.5922003|100.43|-0.1||283.2|-113662.9|-173851.89|284,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-11,Group=Ground-11
+14802,T=5.1303494|1.592694|97.38|-0.3||223.2|-113549.21|-173798.73|224,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-11-12,Group=Ground-11
+14902,T=5.1305568|1.5939194|95.27|1.4||343.2|-113526.37|-173663.3|344,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-11-13,Group=Ground-11
+14a02,T=5.1295967|1.593895|97.49|0.9||283.2|-113623.64|-173664.67|284,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-14,Group=Ground-11
+14b02,T=5.1303755|1.5946578|94.76|1.4||343.2|-113543.62|-173581.27|344,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-15,Group=Ground-11
+14c02,T=5.1314484|1.5941089|93|0.5||43.2|-113435.79|-173643.53|44,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-11-16,Group=Ground-11
+14d02,T=4.5352209|1.2456339|16|||53|-174512.7|-211299.45|54,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Pilot=Ground-12-1,Group=Ground-12
+14e02,T=4.5347549|1.2459194|16|||359|-174559.48|-211266.98|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Pilot=Ground-12-2,Group=Ground-12
+14f02,T=4.5352378|1.2451486|16|||359|-174511.94|-211353.25|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-12-3,Group=Ground-12
+15002,T=4.5340059|1.2448454|16|||239|-174637.67|-211384.63|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-12-4,Group=Ground-12
+15102,T=4.5333721|1.2454551|16|||299|-174700.86|-211315.94|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-5,Group=Ground-12
+15202,T=4.5332596|1.2444116|16|||239|-174714.33|-211431.34|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-6,Group=Ground-12
+15302,T=4.5345325|1.2441933|16|||179|-174585.45|-211457.81|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-7,Group=Ground-12
+15402,T=4.5352009|1.2468181|16|||359|-174512.42|-211168.22|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-12-8,Group=Ground-12
+15502,T=4.5343515|1.2469746|16|||299|-174598.39|-211149.36|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-9,Group=Ground-12
+15602,T=4.5351792|1.24764|16|||359|-174513.02|-211077.13|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-10,Group=Ground-12
+15702,T=4.5360976|1.2469963|16|||59|-174420.98|-211150.09|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-11,Group=Ground-12
+15802,T=4.5356767|1.2459314|16|||359|-174465.83|-211267.31|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-12-12,Group=Ground-12
+15902,T=4.5364606|1.2449214|16|||119|-174388.17|-211380.61|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-12-13,Group=Ground-12
+15a02,T=4.5371279|1.2455511|16|||59|-174319.16|-211312.05|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-14,Group=Ground-12
+15b02,T=4.5371515|1.2445082|16|||119|-174318.8|-211427.63|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-15,Group=Ground-12
+15c02,T=4.5359678|1.2442171|16|||179|-174439.61|-211457.75|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-12-16,Group=Ground-12
+15d02,T=5.9845239|6.2819374|1826.23|-0.5||290.5|-22884.42|344717.09|291,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Pilot=Ground-17-1,Group=Ground-17
+15e02,T=5.9840396|6.2822268|1826.04|-0.5||359.5|-22931.2|344749.56|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Pilot=Ground-17-2,Group=Ground-17
+15f02,T=5.9845367|6.2814522|1825.9|-0.5||359.5|-22883.64|344663.31|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-17-3,Group=Ground-17
+16002,T=5.9832452|6.2811589|1824.6|||239.5|-23009.39|344631.91|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-17-4,Group=Ground-17
+16102,T=5.9825887|6.2817741|1824.43|-0.6||299.5|-23072.57|344700.63|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-5,Group=Ground-17
+16202,T=5.9824604|6.2807313|1823.56|-0.1||239.5|-23086.04|344585.19|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-6,Group=Ground-17
+16302,T=5.9837893|6.2805028|1824.5|0.5||179.5|-22957.16|344558.75|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-7,Group=Ground-17
+16402,T=5.9845151|6.2831219|1827.08|-0.5||359.5|-22884.14|344848.34|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-17-8,Group=Ground-17
+16502,T=5.9836286|6.2832852|1826.4|-0.6||299.5|-22970.1|344867.19|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-9,Group=Ground-17
+16602,T=5.984501|6.2839436|1827.63|-0.5||359.5|-22884.73|344939.41|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-10,Group=Ground-17
+16702,T=5.9854548|6.2832923|1827.98|0.1||59.5|-22792.69|344866.44|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-11,Group=Ground-17
+16802,T=5.9850035|6.282231|1826.85|-0.5||359.5|-22837.55|344749.22|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-17-12,Group=Ground-17
+16902,T=5.985813|6.2812148|1826.79|0.6||119.5|-22759.89|344635.94|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-17-13,Group=Ground-17
+16a02,T=5.9865173|6.2818389|1827.83|0.1||59.5|-22690.88|344704.5|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-14,Group=Ground-17
+16b02,T=5.9865314|6.2807958|1827.06|0.6||119.5|-22690.5|344588.91|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-15,Group=Ground-17
+16c02,T=5.9852905|6.2805145|1825.77|0.5||179.5|-22811.32|344558.78|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-17-16,Group=Ground-17
+16d02,T=5.9340231|6.8745132|2694.77|2.3||218.5|-27187.12|410424.56|219,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Pilot=Ground-18-1,Group=Ground-18
+16e02,T=5.9335357|6.8748023|2692.69|-0.4||359.5|-27233.9|410457.03|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Pilot=Ground-18-2,Group=Ground-18
+16f02,T=5.9340363|6.874028|2694.54|-0.4||359.5|-27186.35|410370.78|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-18-3,Group=Ground-18
+17002,T=5.9327374|6.8737341|2692.96|-1.1||239.5|-27312.09|410339.38|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-18-4,Group=Ground-18
+17102,T=5.9320767|6.8743489|2694.32|-1.4||299.5|-27375.27|410408.09|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-5,Group=Ground-18
+17202,T=5.9319482|6.8733061|2688.16|-2.8||239.5|-27388.75|410292.66|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-6,Group=Ground-18
+17302,T=5.9332851|6.8730784|2691.42|0.4||179.5|-27259.87|410266.22|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-7,Group=Ground-18
+17402,T=5.9340134|6.8756976|2687.53|-0.4||359.5|-27186.85|410555.81|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-18-8,Group=Ground-18
+17502,T=5.9331216|6.8758604|2685.96|2.6||299.5|-27272.81|410574.66|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-9,Group=Ground-18
+17602,T=5.9339986|6.8765192|2682.51|-0.4||359.5|-27187.43|410646.88|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-10,Group=Ground-18
+17702,T=5.9349584|6.8758685|2687.1|-2.9||59.5|-27095.4|410573.91|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-11,Group=Ground-18
+17802,T=5.9345053|6.8748073|2693.29|-0.4||359.5|-27140.25|410456.72|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-18-12,Group=Ground-18
+17902,T=5.9353201|6.8737914|2694.62|1.4||119.5|-27062.6|410343.41|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-18-13,Group=Ground-18
+17a02,T=5.9360281|6.8744158|2696.67|-2.9||59.5|-26993.58|410411.97|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-14,Group=Ground-18
+17b02,T=5.9360431|6.8733731|2693.85|1.4||119.5|-26993.21|410296.41|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-15,Group=Ground-18
+17c02,T=5.9347951|6.8730911|2692.33|0.4||179.5|-27114.02|410266.28|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-18-16,Group=Ground-18
+17d02,T=5.9098215|6.5450819|1995.9|-0.5||246.5|-29868.74|373941.03|247,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Pilot=Ground-19-1,Group=Ground-19
+17e02,T=5.9093356|6.545371|1996.1|-0.2||359.5|-29915.52|373973.5|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Pilot=Ground-19-2,Group=Ground-19
+17f02,T=5.9098347|6.5445967|1995.28|-0.2||359.5|-29867.97|373887.25|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-19-3,Group=Ground-19
+18002,T=5.9085401|6.5443029|1994.46|-0.5||239.5|-29993.71|373855.88|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-19-4,Group=Ground-19
+18102,T=5.9078814|6.5449174|1995.01|-0.7||299.5|-30056.89|373924.56|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-5,Group=Ground-19
+18202,T=5.9077535|6.5438749|1993.66|-0.4||239.5|-30070.37|373809.16|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-6,Group=Ground-19
+18302,T=5.9090861|6.5436469|1993.84|0.2||179.5|-29941.49|373782.69|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-7,Group=Ground-19
+18402,T=5.9098116|6.5462663|1997.41|-0.2||359.5|-29868.47|374072.28|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-19-8,Group=Ground-19
+18502,T=5.9089227|6.5464291|1997.31|-0.7||299.5|-29954.43|374091.13|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-9,Group=Ground-19
+18602,T=5.9097967|6.5470882|1998.46|-0.2||359.5|-29869.05|374163.38|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-10,Group=Ground-19
+18702,T=5.9107536|6.5464376|1997.94|0.5||59.5|-29777.02|374090.41|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-11,Group=Ground-19
+18802,T=5.910302|6.5453761|1996.44|-0.2||359.5|-29821.88|373973.19|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-19-12,Group=Ground-19
+18902,T=5.9111144|6.5443601|1995.42|0.7||119.5|-29744.22|373859.88|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-19-13,Group=Ground-19
+18a02,T=5.91182|6.5449847|1996.46|0.5||59.5|-29675.2|373928.44|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-14,Group=Ground-19
+18b02,T=5.911835|6.5439419|1995.15|0.6||119.5|-29674.83|373812.88|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-15,Group=Ground-19
+18c02,T=5.9105912|6.5436599|1994.38|0.2||179.5|-29795.64|373782.75|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-19-16,Group=Ground-19
+18d02,T=4.5561773|1.2473349|16|||125.9|-172380.67|-211148.47|127,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=us,Pilot=Walk Around-1-1,Group=Walk Around-1
+18e02,T=6.9299314|7.2111004|1752.31|1||219|69012.4|447246.44|219,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk pcp,Country=us,Pilot=Ground-27-1,Group=Ground-27
+18f02,T=6.9294452|7.2113931|1752.42|-0.8|||68965.62|447278.91|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk sr,Country=us,Pilot=Ground-27-2,Group=Ground-27
+19002,T=6.9299398|7.2106151|1752.57|0.8|||69013.17|447192.66|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-27-3,Group=Ground-27
+19102,T=6.9286335|7.2103309|1752.33|-1.3||240|68887.43|447161.25|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-27-4,Group=Ground-27
+19202,T=6.9279766|7.2109507|1753.69|-2.5||300|68824.25|447229.97|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-5,Group=Ground-27
+19302,T=6.9278374|7.2099089|1752.84|1||240|68810.77|447114.53|240,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-6,Group=Ground-27
+19402,T=6.9291767|7.209671|1751.91|1||180|68939.66|447088.09|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-7,Group=Ground-27
+19502,T=6.9299335|7.2122848|1753.79|2.6|||69012.68|447377.69|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-27-8,Group=Ground-27
+19602,T=6.9290402|7.2124544|1752.72|||300|68926.72|447396.53|300,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-9,Group=Ground-27
+19702,T=6.9299269|7.2131066|1752.6|1.1|||69012.09|447468.75|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-10,Group=Ground-27
+19802,T=6.9308836|7.2124486|1752.42|-0.7||60|69104.12|447395.78|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-11,Group=Ground-27
+19902,T=6.9304182|7.2113908|1752.32|-0.6|||69059.27|447278.59|,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk cwar,Country=us,Pilot=Ground-27-12,Group=Ground-27
+19a02,T=6.9312259|7.2103687|1752.7|1.8||120|69136.93|447165.28|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk tr,Country=us,Pilot=Ground-27-13,Group=Ground-27
+19b02,T=6.9319425|7.2109878|1751.96|-0.4||60|69205.95|447233.84|60,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-14,Group=Ground-27
+19c02,T=6.9319471|7.2099449|1754.61|0.7||120|69206.31|447118.28|120,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-15,Group=Ground-27
+19d02,T=6.930692|7.2096724|1754.25|0.7||180|69085.5|447088.16|180,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=Hawk ln,Country=us,Pilot=Ground-27-16,Group=Ground-27
+19f02,T=4.5281953|1.0038841|7926|-22.8|4|127.5|-175698.92|-238069.02|128.5,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=KC135MPRS,Country=xb,Pilot=Texaco 1-1,Group=Texaco
+1a002,T=4.5978107|1.1938953|7315.2||3.6|134.3|-168253.58|-217142.13|135.3,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=KC-135,Country=xb,Pilot=Shell 1-1,Group=Shell
+1a102,T=4.5646515|1.2458211|46.06|-1.2|-2.3|295.6|-171522.8|-211331.23|296.6,Type=Air+Rotorcraft,Color=Blue,Coalition=Enemies,Name=UH-1H,Country=xb,Pilot=Hover Boi,Group=Hover Boi
+1a202,T=5.0640858|-0.2249428|100.47|||359.2|-122993.33|-375013.84|,Type=Ground+Static+Building,Color=Blue,Coalition=Enemies,Name=TACAN_beacon,Country=xb,Pilot=Ground-20-1,Group=Ground-20
+1a302,T=5.2161852|6.7397786|1722.37|-0.4||224.1|-96750.16|396350.66|225,Type=Ground+AntiAircraft,Color=Blue,Coalition=Enemies,Name=1L13 EWR,Country=xb,Pilot=Blue 80s EWR,Group=Blue 80s EWR
+1a402,T=4.5553494|1.2483208|16|||127|-172462.86|-211037.78|128,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=ERO_MJ-1B_DRIVEABLE,Country=xb,Pilot=Jeep-1,Group=Jeep
+1a502,T=4.5551051|1.2486192|16|||166|-172487.09|-211004.28|167,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=ERO_MJ-1B_DRIVEABLE,Country=xb,Pilot=Jeep-1-1,Group=Jeep-1
+1a602,T=4.5541443|1.2515034|16|||257|-172579.08|-210683.05|258,Type=Ground+Vehicle,Color=Blue,Coalition=Enemies,Name=Hummer,Country=xb,Pilot=Jeep,Group=Jeep
+58e02,T=5.6753689|6.5009732|2904.79|-25.9|19|358.5|-52641.89|369289.19|359.1,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=MiG-21Bis,Country=xr,Pilot=PVE_Red_80s_MiG21#001-04
+5e202,T=5.6967077|6.5053257|2651.82||2.3|89.3|-50567.9|369748.16|90,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=MiG-29A,Country=xr,Pilot=PVE_Red_80s_MiG29#001-01
+5e302,T=5.6547804|6.514028|1915.6|88.7|-9.5|12.9|-54621.01|370758.78|13.6,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=MiG-29A,Country=xr,Pilot=PVE_Red_80s_MiG29#001-02
+63202,T=5.7419267|6.5257185|2026.21|-0.4|-5|286.8|-46160.16|371959.72|287.4,Type=Weapon+Missile,Color=Blue,Coalition=Enemies,Name=HAWK_RAKETA,Country=us
+63d02,T=5.8294828|6.5371002|2059.37|3.2|-0.4|261.4|-37662.02|373132.31|262,Type=Weapon+Missile,Color=Blue,Coalition=Enemies,Name=HAWK_RAKETA,Country=us
+63e02,T=5.6767183|6.5084266|6112.9|-44.3|46.3|346.8|-52501.68|370113.66|347.4,Type=Weapon+Missile,Color=Red,Coalition=Allies,Name=P_60,Country=xr
+64202,T=5.8844593|6.5401471|2165.01|-1.9|2.2|253.8|-32331.43|373417.53|254.3,Type=Weapon+Missile,Color=Blue,Coalition=Enemies,Name=HAWK_RAKETA,Country=us
+#57.41
+1503,T=||2389.76
+64202,T=5.8844311|6.5401399|2165.12|-32334.17|373416.75
+#57.44
+203,T=5.6682016|6.5049702|5682.64|-53331.61|369740.06,IAS=259.1
+1603,T=||2284.66
+fe02,T=1.6723113|3.906261|||4.3|||92280.91|
+19f02,T=4.5282498|1.0038431|7926|-22.8||127.5|-175693.45|-238073.66|128.5
+1a002,T=4.5978617|1.1938496||-168248.48|-217147.27
+1a102,T=4.5646516|1.2458219||||294.9||-211331.16|295.9
+58e02,T=5.6753679|6.5010557|2907.59|-25.8|19.1|358.4|-52641.88|369298.34|359
+5e202,T=5.6967865|6.5053265||-50560.26|
+5e302,T=5.6547852|6.5140855|1914.42|87.9|-9.3|14.2|-54620.47|370765.16|14.9
+#57.45
+1703,T=||2144.06
+#57.47
+1803,T=||2024.12
+63202,T=5.7416636|6.525788|2023.89|-46185.57|371967.69
+63d02,T=5.8290878|6.5370477|2059.08|3.2||261.4|-37700.35|373126.88|262
+#57.48
+63e02,T=5.6766881|6.5085387|6126.26|-44|||-52504.46|370126.13|
+#57.51
+1903,T=|6.5126355|1938.77
+#57.54
+64202,T=5.8836303|6.539936|2168.16|-32411.99|373394.91
+#57.55
+203,T=5.6678189|6.5049678|5681.62|-53368.71|369740.22,IAS=259.3
+#57.6
+63202,T=5.7411347|6.5259275|2019.16||-5.1|286.7|-46236.66|371983.69|
+63d02,T=5.8282882|6.536942|2058.48|-37777.95|373115.94
+#57.62
+63e02,T=5.6766366|6.5087304|6149.08|-43.5|||-52509.21|370147.44|
+#57.65
+fe02,T=1.6722912|3.9066848|||92328.05
+18d02,T=4.556177|1.2473351||-172380.7|-211148.45
+19f02,T=4.5285788|1.0035974|7926.01|||127.3|-175660.44|-238101.47|128.3
+1a002,T=4.5981689|1.1935748||-168217.8|-217178.25
+1a102,T=|1.2458264|46.07|||291||-211330.66|292
+58e02,T=5.6753574|6.5015519|2924.99|-25.3|19.7|357.9|-52642.27|369353.34|358.6
+5e202,T=5.6972606|6.5053314||-50514.3|369748.19
+5e302,T=5.654841|6.5144263|1907.26|71.1|-4.9|21.2|-54614.62|370802.84|21.8
+#57.66
+203,T=5.667411|6.5049653|5680.53|-53408.26|369740.41,IAS=259.4
+#57.67
+64202,T=5.8828474|6.5397367|2171.12|-32488.06|373373.56
+#57.73
+63202,T=5.7406057|6.5260667|2014.39|-46287.76|371999.69
+63d02,T=5.8274825|6.5368356|2057.88|-37856.14|373104.94
+#57.75
+63e02,T=5.6765861|6.5089187|6171.5|-43.1|||-52513.88|370168.34|
+#57.77
+203,T=5.6670101|6.5049628|5679.47|-53447.13|369740.56,IAS=259.5
+#57.8
+64202,T=5.8820944|6.539545|2173.98|-1.8|||-32561.23|373353|
+#57.84
+1303,T=||2659.6
+#57.86
+1403,T=||2537.21
+fe02,T=1.672271|3.9071106||-453722.72|92375.41
+19f02,T=4.5289105|1.0033518|7926.02|||127|-175627.16|-238129.28|128.1
+1a002,T=4.5984775|1.1932986||-168186.97|-217209.39
+1a102,T=4.5646513|1.2458309||||286.8|-171522.81|-211330.16|287.8
+58e02,T=5.6753423|6.5020499|2943.03|-24.7|20.3|357.4|-52643.1|369408.53|358.1
+5e202,T=5.697737|6.5053364|2651.83|-0.1|3.1||-50468.11|369748.22|89.9
+5e302,T=5.6549182|6.5147625|1900.89|42.6|4.6|23.4|-54606.71|370840.03|24.1
+63202,T=5.7400887|6.5262027|2009.73|-46337.7|372015.28
+63d02,T=5.8266891|6.5367309|2057.28|3.1|||-37933.14|373094.09|
+#57.89
+203,T=5.6665947|6.5049602|5678.36|-53487.39|369740.75,IAS=259.6
+63e02,T=5.6765318|6.5091206|6195.53|-42.7|||-52518.88|370190.78|
+#57.91
+1503,T=||2389.27
+#57.93
+64202,T=5.8813353|6.5393517|2176.85|-32634.99|373332.31
+#57.94
+1603,T=||2284.16
+#57.95
+1703,T=||2143.57
+#57.97
+1803,T=||2023.63
+#57.99
+63202,T=5.73956|6.5263418|2004.96|-46388.77|372031.25
+63d02,T=5.8258711|6.5366228|2056.67|-38012.53|373082.94
+#58
+203,T=5.6662114|6.5049578|5677.35|-53524.55|369740.91,IAS=259.7
+#58.01
+1903,T=||1938.29
+1a03,T=5.654959|6.514951|1896.3,Type=Misc+Decoy+Chaff,Color=Violet,Coalition=Neutral
+64802,T=5.9097876|6.5470952|2001.1||19.8|257.4|-29869.94|374164.16|258,Type=Weapon+Missile,Color=Blue,Coalition=Enemies,Name=HAWK_RAKETA,Country=us
+#58.02
+63e02,T=5.676482|6.5093062|6217.64|-42.2|||-52523.48|370211.41|
+#58.06
+64202,T=5.8805523|6.5391524|2179.82|-32711.07|373310.94
+#58.07
+fe02,T=1.6722505|3.9075424|||92423.46
+19f02,T=4.5292481|1.0031039||||126.8|-175593.28|-238157.34|127.8
+1a002,T=4.5987906|1.1930185||-168155.69|-217240.97
+1a102,T=4.5646506|1.2458355||||282.9|-171522.88|-211329.64|284
+58e02,T=5.6753225|6.5025541|2961.94|-24.2|20.9|357|-52644.39|369464.44|357.7
+5e202,T=5.6982203|6.5053415|2652.08|-1.2|5.5|89.2|-50421.26|369748.28|89.8
+5e302,T=5.6550065|6.515099|1896.19|15.9|12|18.7|-54597.71|370877.22|19.4
+#58.11
+203,T=5.6658136|6.5049554|5676.29|-53563.11|369741.06,IAS=259.8
+#58.12
+63202,T=5.7390472|6.5264767|2000.33|-46438.3|372046.75
+63d02,T=5.8250716|6.5365173|2056.07|-38090.12|373072
+#58.14
+302,T=6.3711778|2.3709242|0.02|||62.3|12492.75|-88763.56|62.6
+64802,T=5.9097759|6.5470929|2001.52|-29871.07|374163.91
+#58.15
+202,T=||0.01
+18d02,T=4.5561769|1.2473352||-172380.72|-211148.44
+63e02,T=5.6764326|6.50949|6239.51|-41.7|||-52528.03|370231.81|
+#58.19
+64202,T=5.8797574|6.53895|2182.84|-32788.32|373289.25
+#58.22
+203,T=5.6654229|6.5049529|5675.26|-53600.99|369741.25,IAS=259.9
+#58.25
+63202,T=5.738554|6.5266065|1995.89|-46485.95|372061.66
+63d02,T=5.8242967|6.5364149|2055.49|3|||-38165.33|373061.44|
+#58.27
+64802,T=5.9097457|6.547087|2002.6|-29874|374163.28
+#58.28
+fe02,T=1.6722302|3.9079703||-453722.75|92471.05
+19f02,T=4.5295836|1.0028596|7926.03|||126.6|-175559.61|-238185|127.6
+1a002,T=4.5991007|1.192741||-168124.7|-217272.25
+1a102,T=4.5646495|1.2458399||||278.7|-171522.97|-211329.16|279.8
+58e02,T=5.6752985|6.5030527|2981.25|-23.8|21.5|356.5|-52646.09|369519.72|357.2
+5e202,T=5.6986987|6.5053468|2653.05|-4.5|10|88.6|-50374.88|369748.34|89.3
+5e302,T=5.6550918|6.5154297|1893.81|-8.7|14.9|11.4|-54589.03|370913.78|12
+63e02,T=5.6763859|6.5096636|6260.19|-41.4|||-52532.34|370251.09|
+#58.32
+64202,T=5.8789923|6.5387554|2185.78|-32862.67|373268.41
+#58.33
+203,T=5.6650106|6.5049504|5674.17|-53640.97|369741.41,IAS=260
+#58.34
+1303,T=||2659.11
+#58.36
+1403,T=||2536.72
+#58.38
+63202,T=5.7380103|6.5267495|1990.98|-46538.47|372078.06
+63d02,T=5.8234356|6.5363012|2054.84|-38248.89|373049.69
+#58.4
+64802,T=5.9096944|6.547077|2004.43|-29878.98|374162.22
+#58.41
+1503,T=||2388.78
+63e02,T=5.6763394|6.5098369|6280.81|-41|||-52536.63|370270.38|
+#58.44
+203,T=5.6646232|6.504948|5673.14|-53678.52|369741.56,IAS=260.1
+1603,T=||2283.68
+#58.45
+1703,T=||2143.08
+64202,T=5.8781912|6.5385518|2188.98|-1.7|2.3||-32940.51|373246.59|254.4
+#58.47
+1803,T=||2023.14
+#58.49
+fe02,T=1.6722098|3.9084001|||92518.87
+19f02,T=4.5299219|1.0026155||-22.9||126.3|-175525.66|-238212.66|127.4
+1a002,T=4.5994123|1.1924621||-168093.56|-217303.69
+1a102,T=4.5646481|1.2458443||||274.9|-171523.11|-211328.66|276
+58e02,T=5.6752699|6.5035524|3001.26|-23.5|22.1|356.1|-52648.23|369575.13|356.8
+5e202,T=5.6991775|6.5053539|2655.49|-10.6|15.2|87.1|-50328.46|369748.59|87.8
+5e302,T=5.6551656|6.5157617|1893.53|-25.8|13.7|6.1|-54581.45|370950.47|6.8
+#58.51
+1903,T=||1937.79
+63202,T=5.7375132|6.5268802|1986.5|-46586.48|372093.06
+63d02,T=5.8226423|6.5361964|2054.25|-38325.89|373038.84
+1a03,T=5.654997|6.5150923|1894.25
+#58.53
+64802,T=5.9096217|6.5470629|2007.03|-29886.04|374160.72
+#58.54
+63e02,T=5.6762908|6.5100178|6302.36|-40.5|||-52541.11|370290.47|
+#58.55
+203,T=5.6642356|6.5049456|5672.12|-53716.09|369741.75,IAS=260.2
+#58.58
+64202,T=5.8774379|6.5383608|2192.21||2.5||-33013.7|373226.13|
+#58.64
+63202,T=5.7370275|6.527008|1982.12|-46633.4|372107.75
+63d02,T=5.8218612|6.5360932|2053.66|2.9|||-38401.7|373028.19|
+#58.65
+18d02,T=4.5561786|1.2473345||-172380.55|-211148.53
+#58.66
+203,T=5.6638444|6.5049431|5671.09|-53754.02|369741.91,IAS=260.3
+64802,T=5.9095389|6.5470467|2009.99|-29894.08|374159
+#58.67
+63e02,T=5.6762448|6.5101889|6322.73|-40.2|||-52545.35|370309.47|
+#58.7
+fe02,T=1.6721895|3.9088279||-453722.78|92566.46
+19f02,T=4.5302596|1.0023738|||3.9|126.1|-175491.77|-238240.03|127.1
+1a002,T=4.5997224|1.1921846||-168062.58|-217334.97
+1a102,T=4.5646464|1.2458486|||-2.4|270.8|-171523.28|-211328.19|271.8
+58e02,T=5.6752373|6.5040485|3021.77|-23.4|22.7|355.6|-52650.77|369630.13|356.3
+5e202,T=5.6996495|6.5053653|2659.98|-21.2|21.4|83.4|-50282.69|369749.34|84.1
+5e302,T=5.6552211|6.5160945|1894.94|-41.7|10.4|2.3|-54575.64|370987.28|3
+#58.73
+64202,T=5.876541|6.5381345|2196.52||2.9|253.9|-33100.86|373201.91|254.5
+#58.77
+203,T=5.6634458|6.5049407|5670.04|-53792.66|369742.09,IAS=260.4
+63202,T=5.736553|6.5271328|1977.84|-46679.24|372122.09
+63d02,T=5.8210925|6.5359917|2053.09|-38476.3|373017.69
+#58.79
+64802,T=5.9094286|6.5470252|2013.93|-29904.79|374156.72
+#58.8
+63e02,T=5.6761975|6.5103649|6343.69|-39.7|||-52549.71|370329.03|
+#58.84
+1303,T=||2658.62
+#58.86
+1403,T=||2536.23
+64202,T=5.8757575|6.5379385|2200.88||3.4|254.1|-33177|373180.91|254.7
+#58.87
+58e02,T=5.6752086|6.5044373|3038.31|-23.5|23.1|355.3|-52653.06|369673.25|355.9
+-58e02
+5e202,T=5.7000136|6.5053809|2665.27|-31.7|25.3|79|-50247.37|369750.69|79.6
+-5e202
+5e302,T=5.6552512|6.5163595|1896.73|-52.9|7.5|0.9|-54572.38|371016.63|1.6
+-5e302
+#58.88
+203,T=5.6630472|6.5049382|5668.99|-53831.31|369742.25,IAS=260.5
+#58.9
+63202,T=5.7360593|6.5272627|1973.39|-46726.93|372137
+63d02,T=5.8202868|6.5358853|2052.48|-38554.49|373006.69
+#58.91
+1503,T=||2388.29
+fe02,T=1.6721691|3.9092578|||92614.28
+19f02,T=4.5306001|1.0021322|7926.02|||125.9|-175457.58|-238267.41|126.9
+1a002,T=4.600034|1.1919058||-168031.45|-217366.39
+1a102,T=4.5646444|1.2458527||||266.9|-171523.48|-211327.72|268
+#58.92
+64802,T=5.909298|6.5469996|2018.59|-0.2|19.7|257.3|-29917.47|374154|257.9
+#58.93
+63e02,T=5.6761528|6.5105313|6363.49|-39.4|||-52553.84|370347.53|
+#58.94
+1603,T=||2283.19
+#58.95
+1703,T=||2142.59
+#58.97
+1803,T=||2022.65
+#58.99
+203,T=5.6626412|6.5049357|5667.92|-53870.67|369742.44,IAS=260.6
+64202,T=5.8749676|6.5377425|2205.74||3.5|254.2|-33253.74|373159.94|
+#59.01
+1903,T=||1937.3
+1a03,T=5.6549971|6.5150925|1893.76
+#59.03
+63202,T=5.7355657|6.5273926|1968.94|-46774.61|372151.91
+63d02,T=5.8194751|6.535778|2051.87|-38633.28|372995.59
+#59.05
+64802,T=5.9091484|6.5469703|2023.91|-0.6|||-29931.99|374150.91|
+#59.06
+63e02,T=5.6761065|6.5107038|6384.03|-39|||-52558.11|370366.69|
+#59.1
+203,T=5.662253|6.5049333|5666.9|-53908.3|369742.59,IAS=260.7
+#59.12
+fe02,T=1.6721491|3.9096795||-453722.81|92661.19
+19f02,T=4.5309351|1.0018965||||125.6|-175423.94|-238294.11|126.6
+1a002,T=4.6003396|1.1916323||-168000.91|-217397.23
+1a102,T=4.564642|1.2458566||||262.8|-171523.7|-211327.28|263.8
+64202,T=5.8742077|6.537554|2210.42|-1.6|||-33327.59|373139.75|
+#59.14
+302,T=6.3712982|2.3709829|-0.05|12504.9|-88757.12
+#59.15
+202,T=||-0.06
+18d02,T=4.55618|1.2473338||-172380.39|-211148.59
+#59.16
+63202,T=5.7350979|6.5275156|1964.72|-46819.8|372166.03
+63d02,T=5.8187002|6.5356757|2051.29|2.8|||-38708.48|372985|
+#59.18
+64802,T=5.9089844|6.5469381|2029.74|-0.9|||-29947.92|374147.47|
+#59.2
+63e02,T=5.6760569|6.5108885|6406.02|-38.5|||-52562.69|370387.22|
+#59.21
+203,T=5.6618503|6.5049308|5665.85|-53947.34|369742.75,IAS=260.8
+#59.25
+64202,T=5.8734297|6.537361|2215.22|-33403.18|373119.09
+#59.29
+63202,T=5.7346188|6.5276416|1960.4|-46866.08|372180.5
+63d02,T=5.8179007|6.53557|2050.69|-38786.07|372974.09
+#59.31
+64802,T=5.9088031|6.5469025|2036.19|-1.3|||-29965.52|374143.69|
+#59.32
+203,T=5.6614583|6.5049284|5664.82|-53985.34|369742.94,IAS=260.9
+#59.33
+fe02,T=1.672129|3.9101032|||92708.33
+19f02,T=4.5312729|1.0016609|7926.01|||125.4|-175390.02|-238320.81|126.4
+1a002,T=4.6006468|1.1913574||-167970.22|-217428.22
+1a102,T=4.5646393|1.2458604||||258.9|-171523.97|-211326.86|260
+63e02,T=5.6760156|6.5110421|6424.32|-38.2|||-52566.5|370404.28|
+#59.34
+1303,T=||2658.14
+-1303
+#59.36
+1403,T=||2535.74
+#59.38
+64202,T=5.8726577|6.5371696|2219.98|-33478.19|373098.63
+#59.41
+1503,T=||2387.79
+#59.42
+63202,T=5.7341214|6.5277725|1955.91|-46914.13|372195.53
+63d02,T=5.8170644|6.5354595|2050.07|-38867.25|372962.69
+#59.43
+203,T=5.6610733|6.504926|5663.81|-54022.66|369743.09,IAS=261
+#59.44
+1603,T=||2282.7
+64802,T=5.9085968|6.5468621|2043.53|-1.6|||-29985.55|374139.41|
+#59.45
+1703,T=||2142.1
+#59.46
+63e02,T=5.67597|6.5112119|6444.53|-37.8|||-52570.7|370423.13|
+#59.47
+1803,T=||2022.16
+#59.51
+1903,T=||1936.81
+64202,T=5.8718318|6.5369647|2225.07|-33558.44|373076.69
+1a03,T=||1893.27
+#59.54
+203,T=5.6606595|6.5049234|5662.73|-54062.78|369743.28,IAS=261.1
+fe02,T=1.6721081|3.9105433||-453722.84|92757.28
+19f02,T=4.5316248|1.0014177|7926|||125.1|-175354.69|-238348.39|126.2
+1a002,T=4.6009657|1.191072||-167938.36|-217460.39
+1a102,T=4.5646363|1.2458641||||254.7|-171524.28|-211326.45|255.8
+#59.55
+63202,T=5.7336675|6.5278918|1951.82|-46957.97|372209.22
+63d02,T=5.8162956|6.535358|2049.49|2.7|||-38941.85|372952.19|
+#59.57
+64802,T=5.9083782|6.5468192|2051.31|-1.9|||-30006.78|374134.84|
+#59.59
+63e02,T=5.6759255|6.5113774|6464.23|-37.4|||-52574.8|370441.53|
+#59.64
+64202,T=5.8710957|6.5367821|2229.6|-33629.97|373057.16
+#59.65
+203,T=5.6602743|6.5049211|5661.73|-54100.12|369743.44,IAS=261.2
+18d02,T=4.5561817|1.2473331||-172380.22|-211148.67
+#59.68
+63202,T=5.7331916|6.528017|1947.53|-0.3|||-47003.93|372223.59|
+63d02,T=5.8154839|6.5352507|2048.88|-39020.63|372941.09
+#59.7
+64802,T=5.9081352|6.5467715|2059.96|-2.2|||-30030.38|374129.78|
+#59.72
+63e02,T=5.6758848|6.5115289|6482.27|-37|||-52578.56|370458.38|
+#59.75
+fe02,T=1.6720882|3.9109609|||92803.73
+19f02,T=4.5319598|1.001188|7925.99|||124.9|-175321.03|-238374.42|125.9
+1a002,T=4.6012684|1.1908011||-167908.11|-217490.94
+1a102,T=4.564633|1.2458675||||250.9|-171524.59|-211326.08|251.9
+#59.76
+203,T=5.6598745|6.5049186|5660.68|-54138.88|369743.63,IAS=261.3
+#59.77
+64202,T=5.8702936|6.5365831|2234.55|-33707.91|373035.84
+#59.81
+63202,T=5.732705|6.528145|1943.14|-47050.94|372238.31
+63d02,T=5.8146476|6.5351402|2048.25|-39101.8|372929.69
+#59.83
+64802,T=5.9078708|6.5467196|2069.36|-2.6|||-30056.04|374124.28|
+#59.85
+63e02,T=5.6758422|6.5116875|6501.16|-36.7|||-52582.49|370476|
+#59.86
+1403,T=||2535.25
+#59.87
+203,T=5.6594711|6.5049161|5659.63|-54177.99|369743.78,IAS=261.4
+#59.9
+64202,T=5.8695454|6.5363975|2239.16|-1.5|||-33780.61|373016|
+#59.91
+1503,T=||2387.31
+#59.94
+1603,T=||2282.21
+63202,T=5.7322609|6.5282618|1939.14|-47093.84|372251.72
+63d02,T=5.8138789|6.5350386|2047.68|-39176.41|372919.19
+#59.95
+203,AOA=1.6
+1703,T=||2141.61
+#59.96
+fe02,T=1.6720676|3.9113969||-453722.88|92852.23
+19f02,T=4.5323106|1.0009497|7925.98|||124.7|-175285.8|-238401.45|125.7
+1a002,T=4.6015844|1.1905184||-167876.53|-217522.81
+1a102,T=4.5646294|1.2458707|||-2.5|246.7|-171524.95|-211325.7|247.7
+64802,T=5.9075824|6.546663|2079.62|-2.9|||-30084.05|374118.28|
+#59.97
+1803,T=||2021.67
+#59.98
+203,T=5.6590747|6.5049137|5658.6|-54216.41|369743.97,IAS=261.5
+63e02,T=5.6757984|6.5118505|6520.57|-36.3|||-52586.53|370494.09|
+#60.01
+1903,T=||1936.33
+1a03,T=||1892.79
+#60.03
+63d02,T=5.8133562|6.5349695|2047.28|2.6|||-39227.14|372912.03|
+-63d02
+64202,T=5.8687433|6.5361985|2244.1|-33858.56|372994.69
+64802,T=5.9074364|6.5466344|2084.82|-3|||-30098.23|374115.22|
+-64802
+#60.07
+63202,T=5.7318092|6.5283806|1935.06|-47137.47|372265.34
+#60.09
+203,T=5.6586962|6.5049113|5657.62|-54253.11|369744.13,IAS=261.6
+#60.11
+63e02,T=5.6757586|6.5119988|6538.22|-36|||-52590.2|370510.56|
+#60.14
+302,T=6.3714064|2.3710621|-0.07|||49.2|12515.82|-88748.4|49.5
+#60.15
+202,T=||-0.07
+18d02,T=4.5561838|1.2473323||-172380.02|-211148.77
+#60.16
+64202,T=5.867989|6.5360113|2248.75|-33931.85|372974.66
+#60.17
+fe02,T=1.6720472|3.9118267|||92900.05
+19f02,T=4.5326576|1.000716|7925.96|||124.4|-175250.92|-238427.97|125.4
+1a002,T=4.601896|1.1902395||-167845.41|-217554.23
+1a102,T=4.5646256|1.2458737||||242.9|-171525.34|-211325.38|243.9
+#60.2
+203,T=5.6582996|6.5049089|5656.59|-54291.56|369744.31,IAS=261.7
+63202,T=5.731357|6.5284995|1930.98|-47181.16|372279
+#60.24
+63e02,T=5.6757163|6.5121562|6556.96|-35.6|||-52594.1|370528.06|
+#60.29
+64202,T=5.8671987|6.5358153|2253.62|-34008.64|372953.69
+#60.31
+203,T=5.6579028|6.5049065|5655.56|-54330.02|369744.47,IAS=261.8
+#60.33
+63202,T=5.7308869|6.5286232|1926.75|-47226.56|372293.22
+#60.36
+1403,T=||2534.76
+#60.37
+63e02,T=5.6756757|6.5123074|6574.96|-35.2|||-52597.85|370544.88|
+#60.38
+fe02,T=1.6720269|3.9122525||-453722.91|92947.42
+19f02,T=4.5330023|1.0004859|7925.95|||124.2|-175216.3|-238454.08|125.2
+1a002,T=4.6022046|1.1899634||-167814.56|-217585.38
+1a102,T=4.5646216|1.2458763||||238.7|-171525.75|-211325.06|239.7
+#60.41
+1503,T=||2386.82
+#60.42
+203,T=5.657506|6.504904|5654.53|-54368.5|369744.66,IAS=261.9
+64202,T=5.8664324|6.5356251|2258.34|-34083.11|372933.34
+#60.44
+1603,T=||2281.72
+#60.45
+1703,T=||2141.12
+#60.46
+63202,T=5.7304373|6.5287414|1922.69|-47269.99|372306.78
+#60.47
+1803,T=||2021.18
+#60.5
+63e02,T=5.6756351|6.5124582|6592.91|-34.9|||-52601.59|370561.63|
+#60.51
+1903,T=||1935.83
+1a03,T=||1892.29
+#60.53
+203,T=5.6571054|6.5049016|5653.49|-54407.33|369744.84,IAS=262
+#60.55
+64202,T=5.865654|6.535432|2263.14|-34158.74|372912.69
+#60.59
+fe02,T=1.6720066|3.9126803|||92995.01
+19f02,T=4.5333497|1.000256|7925.93|||123.9|-175181.38|-238480.17|125
+1a002,T=4.6025147|1.1896858||-167783.58|-217616.66
+1a102,T=4.5646174|1.2458787||||234.8|-171526.17|-211324.8|235.9
+63202,T=5.7299939|6.528858|1918.69|-47312.82|372320.19
+#60.63
+63e02,T=5.6755947|6.5126086|6610.83|-34.5|||-52605.31|370578.34|
+#60.64
+203,T=5.6566938|6.5048991|5652.43|0.2|||-54447.23|369745|,IAS=262.1
+64202,T=5.8651211|6.5352998|2266.43|-34210.52|372898.53
+-64202
+#60.65
+18d02,T=4.5561864|1.2473315||-172379.75|-211148.88
+#60.71
+63202,T=5.7296249|6.5289551|1915.37|-47348.46|372331.31
+-63202
+#60.75
+203,T=5.6563074|6.5048967|5651.43|-54484.69|369745.19,IAS=262.2
+#60.76
+63e02,T=5.6755544|6.5127587|6628.69|-34.2|||-52609.03|370595|
+#60.8
+fe02,T=1.6719859|3.9131163||-453722.94|93043.51
+19f02,T=4.5337049|1.000023|7925.92|||123.7|-175145.69|-238506.61|124.7
+1a002,T=4.6028307|1.189403||-167752|-217648.53
+1a102,T=4.5646128|1.2458809||||230.6|-171526.63|-211324.55|231.6
+#60.86
+203,T=5.6559209|6.5048943|5650.43|-54522.16|369745.34,IAS=262.3
+1403,T=||2534.27
+#60.87
+-1403
+#60.89
+63e02,T=5.6755163|6.5129005|6645.57|-33.9|||-52612.54|370610.75|
+#60.91
+1503,T=||2386.33
+#60.94
+1603,T=||2281.23
+#60.95
+1703,T=||2140.63
+#60.97
+203,T=5.6555198|6.5048919|5649.4|-54561.05|369745.53,IAS=262.4
+1803,T=||2020.69
+#61.01
+1903,T=||1935.35
+fe02,T=1.6719665|3.9135258|||93089.05
+19f02,T=4.5340394|0.9998055|7925.9|||123.5|-175112.06|-238531.3|124.5
+1a002,T=4.6031275|1.1891374||-167722.34|-217678.48
+1a102,T=4.5646084|1.2458827||||226.7|-171527.06|-211324.34|227.7
+1a03,T=||1891.81
+#61.02
+63e02,T=5.6754768|6.5130475|6663.08|-33.5|||-52616.19|370627.09|
+#61.08
+203,T=5.6551149|6.5048894|5648.35|-54600.29|369745.72,IAS=262.5
+#61.14
+302,T=6.3714893|2.3711638|-0.02|||38.8|12524.22|-88737.18|39
+#61.15
+202,T=||-0.02
+18d02,T=4.5561893|1.2473306||-172379.47|-211148.97
+63e02,T=5.6754392|6.5131876|6679.76|-33.2|||-52619.66|370642.66|
+#61.19
+203,T=5.6547244|6.504887|5647.35|-54638.15|369745.88
+#61.2
+203,IAS=262.6
+#61.22
+fe02,T=1.6719454|3.9139699||-453722.97|93138.46
+19f02,T=4.5344034|0.999571|7925.88|||123.2|-175075.47|-238557.92|124.2
+1a002,T=4.6034494|1.1888494||-167690.19|-217710.95
+1a102,T=4.5646035|1.2458843||||222.5|-171527.56|-211324.16|223.5
+#61.28
+63e02,T=5.6754005|6.5133317|6696.92|-32.8|||-52623.23|370658.69|
+#61.3
+203,T=5.6543266|6.5048846|5646.32|-54676.72|369746.06
+#61.32
+203,IAS=262.7
+#61.41
+203,T=5.6539322|6.5048822|5645.31|-54714.95|369746.25
+1503,T=||2385.84
+63e02,T=5.6753633|6.5134701|6713.39|-32.5|||-52626.66|370674.06|
+#61.43
+fe02,T=1.6719255|3.9143895|||93185.15
+19f02,T=4.5347483|0.9993507|7925.86|||123|-175040.8|-238582.94|124
+1a002,T=4.6037536|1.1885772||-167659.8|-217741.64
+1a102,T=4.5645988|1.2458854||||218.6|-171528.05|-211324.02|219.6
+#61.44
+203,IAS=262.8
+1603,T=||2280.74
+#61.45
+1703,T=||2140.14
+#61.47
+1803,T=||2020.2
+#61.51
+1903,T=||1934.86
+1a03,T=||1891.32
+#61.52
+203,T=5.653516|6.5048796|5644.24|-54755.3|369746.41
+#61.54
+63e02,T=5.6753248|6.5136134|6730.46|-32.2|||-52630.21|370689.97|
+#61.55
+203,IAS=262.9
+#61.63
+203,T=5.6531178|6.5048772|5643.22|-54793.9|369746.59
+#61.64
+fe02,T=1.6719053|3.9148153||-453723|93232.51
+19f02,T=4.5350992|0.9991286|7925.84|||122.7|-175005.52|-238608.19|123.8
+1a002,T=4.6040622|1.188301||-167628.95|-217772.78
+1a102,T=4.5645938|1.2458863||||214.4|-171528.55|-211323.92|215.4
+#61.65
+18d02,T=4.5561925|1.2473298||-172379.14|-211149.06
+#61.67
+63e02,T=5.6752878|6.513751|6746.84|-31.9|||-52633.62|370705.28|
+#61.68
+203,IAS=263
+#61.74
+203,T=5.6527231|6.5048748|5642.21|-54832.17|369746.78
+#61.8
+203,IAS=263.1
+63e02,T=5.675252|6.5138841|6762.69|-31.5|||-52636.92|370720.06|
+#61.85
+203,T=5.6523355|6.5048725|5641.22|-54869.74|369746.94
+fe02,T=1.6718852|3.9152391|||93279.65
+19f02,T=4.5354495|0.9989088|7925.82|||122.5|-174970.3|-238633.16|123.5
+1a002,T=4.6043693|1.1880261||-167598.27|-217803.77
+1a102,T=4.5645889|1.2458868||||210.6|-171529.05|-211323.84|211.6
+#61.91
+203,IAS=263.2
+1503,T=||2385.35
+#61.93
+63e02,T=5.675215|6.5140221|6779.12|-31.3|||-52640.34|370735.38|
+#61.94
+1603,T=||2280.25
+#61.95
+1703,T=||2139.65
+#61.96
+203,T=5.6519261|6.50487|5640.18|-54909.43|369747.13
+#61.97
+1803,T=||2019.71
+#62.01
+1903,T=||1934.36
+1a03,T=||1890.82
+#62.04
+203,IAS=263.3
+#62.06
+fe02,T=1.6718645|3.915675||-453723.03|93328.15
+19f02,T=4.5358109|0.9986841|7925.79|||122.3|-174933.94|-238658.69|123.3
+1a002,T=4.6046853|1.1877433||-167566.69|-217835.64
+1a102,T=4.5645837|1.2458871|46.06|||206.4|-171529.56|-211323.81|207.4
+63e02,T=5.6751788|6.5141566|6795.13|-30.9|||-52643.67|370750.34|
+#62.07
+203,T=5.6515347|6.5048676|5639.18|-54947.38|369747.31
+#62.14
+302,T=6.3715679|2.3712663|0.06|||33|12532.18|-88725.87|33.3
+#62.15
+202,T=||0.05
+203,IAS=263.4
+18d02,T=4.5561961|1.247329||-172378.77|-211149.16
+#62.18
+203,T=5.651125|6.5048651|5638.13|-54987.09|369747.5
+#62.19
+63e02,T=5.6751428|6.5142906|6811.09|-30.6|||-52646.99|370765.22|
+#62.27
+203,IAS=263.5
+fe02,T=1.6718445|3.9160967|||93375.05
+19f02,T=4.5361615|0.9984681|7925.77|||122|-174898.69|-238683.25|123.1
+1a002,T=4.604991|1.1874698||-167536.16|-217866.47
+1a102,T=4.5645787|1.2458869||||202.4|-171530.08||203.4
+#62.29
+203,T=5.6507442|6.5048628|5637.16|-55024.01|369747.66
+#62.32
+63e02,T=5.6751093|6.5144153|6825.93|-30.3|||-52650.08|370779.09|
+#62.4
+203,T=5.6503234|6.5048603|5636.09|-55064.8|369747.84,IAS=263.6
+#62.41
+1503,T=||2384.87
+-1503
+#62.44
+1603,T=||2279.76
+#62.45
+1703,T=||2139.16
+63e02,T=5.6750745|6.5145447|6841.34|-30|||-52653.29|370793.47|
+#62.47
+1803,T=||2019.22
+#62.48
+fe02,T=1.6718241|3.9165266||-453723.06|93422.88
+19f02,T=4.5365198|0.9982492|7925.75|||121.8|-174862.64|-238708.13|122.8
+1a002,T=4.6053025|1.1871909||-167505.02|-217897.91
+1a102,T=4.5645736|1.2458865|46.07|||197.9|-171530.59|-211323.86|199
+#62.51
+203,T=5.6499279|6.5048579|5635.08|-55103.14|369748.03
+1903,T=||1933.87
+1a03,T=||1890.33
+#62.52
+203,IAS=263.7
+#62.58
+63e02,T=5.6750396|6.5146747|6856.82|-29.7|||-52656.51|370807.91|
+#62.62
+203,T=5.6495468|6.5048556|5634.12|-55140.09|369748.22
+#62.64
+203,IAS=263.8
+#62.65
+18d02,T=4.5562|1.2473283||-172378.38|-211149.25
+#62.69
+fe02,T=1.6718037|3.9169544|||93470.47
+19f02,T=4.5368775|0.9980328|7925.73|-23||121.6|-174826.66|-238732.73|122.6
+1a002,T=4.6056126|1.1869134||-167474.03|-217929.19
+1a102,T=4.5645686|1.2458857|46.06|-1.3||193.8|-171531.11|-211323.94|194.8
+#62.71
+63e02,T=5.6750061|6.5147995|6871.67|-29.4|||-52659.6|370821.75|
+#62.73
+203,T=5.6491438|6.5048531|5633.09|-55179.16|369748.41
+#62.76
+203,IAS=263.9
+#62.84
+203,T=5.6487371|6.5048507|5632.06|-55218.59|369748.59
+63e02,T=5.6749719|6.5149268|6886.83|-29.1|||-52662.76|370835.91|
+#62.89
+203,IAS=264
+#62.9
+fe02,T=1.6717832|3.9173883||-453723.09|93518.73
+19f02,T=4.5372413|0.9978147|7925.71|||121.3|-174790.05|-238757.55|122.3
+1a002,T=4.6059271|1.1866319||-167442.61|-217960.92
+1a102,T=4.5645636|1.2458845||||189.3|-171531.63|-211324.06|190.3
+#62.94
+1603,T=||2279.27
+#62.95
+203,T=5.6483266|6.5048482|5631.02|-55258.39|369748.78
+1703,T=||2138.67
+#62.97
+1803,T=||2018.73
+63e02,T=5.6749378|6.5150536|6901.93|-28.8|||-52665.9|370850|
+#63.01
+203,IAS=264.1
+1903,T=||1933.38
+1a03,T=||1889.84
+#63.06
+203,T=5.6479305|6.5048458|5630.02|-55296.78|369748.94
+#63.1
+63e02,T=5.6749056|6.5151735|6916.21|-28.5|||-52668.87|370863.31|
+#63.11
+fe02,T=1.6717634|3.9178039||-453723.13|93564.97
+19f02,T=4.5375906|0.9976071|7925.68|||121.1|-174754.91|-238781.17|122.1
+1a002,T=4.6062283|1.1863624||-167412.52|-217991.31
+1a102,T=4.5645589|1.2458831||||185.1|-171532.11|-211324.22|186.1
+#63.14
+203,IAS=264.2
+302,T=6.3716451|2.3713686|0.08|||30.4|12539.99|-88714.57|30.7
+#63.15
+202,T=||0.08
+18d02,T=4.5562042|1.2473278||-172377.95|-211149.31
+#63.17
+203,T=5.6475343|6.5048434|5629.02|-55335.19|369749.13
+#63.23
+63e02,T=5.6748737|6.5152921|6930.33|-28.3|||-52671.81|370876.5|
+#63.26
+203,IAS=264.3
+#63.28
+203,T=5.6471235|6.5048409|5627.98|-55375.02|369749.31
+#63.32
+fe02,T=1.6717428|3.9182378|||93613.24
+19f02,T=4.5379563|0.9973918|7925.66|||120.8|-174718.09|-238805.67|121.8
+1a002,T=4.6065428|1.1860809||-167381.08|-218023.03
+1a102,T=4.5645541|1.2458812||||180.5|-171532.59|-211324.41|181.5
+#63.36
+63e02,T=5.6748409|6.5154141|6944.86|-28|||-52674.83|370890.06|
+#63.38
+203,IAS=264.4
+#63.4
+203,T=5.6467089|6.5048384|5626.94|-55415.21|369749.5
+#63.44
+1603,T=||2278.78
+#63.45
+1703,T=||2138.18
+#63.47
+1803,T=||2018.24
+#63.49
+63e02,T=5.6748083|6.5155357|6959.33|-27.7|||-52677.85|370903.56|
+#63.51
+203,T=5.6463051|6.504836|5625.92|-55454.36|369749.69,IAS=264.5
+1903,T=||1932.89
+1a03,T=||1889.36
+#63.53
+fe02,T=1.6717227|3.9186616||-453723.16|93660.38
+19f02,T=4.5383145|0.9971829|7925.64|||120.6|-174682.05|-238829.45|121.6
+1a002,T=4.6068499|1.185806||-167350.39|-218054.02
+1a102,T=4.5645496|1.2458791||||176.3|-171533.06|-211324.64|177.3
+#63.62
+203,T=5.6459012|6.5048336|5624.9|-55493.52|369749.88
+63e02,T=5.6747772|6.5156514|6973.11|-27.4|||-52680.71|370916.44|
+#63.63
+203,IAS=264.6
+#63.65
+18d02,T=4.5562087|1.2473275||-172377.5|-211149.34
+#63.73
+203,T=5.6455008|6.5048312|5623.89|-55532.33|369750.06
+#63.74
+fe02,T=1.671702|3.9190976|||93708.88
+19f02,T=4.5386839|0.9969694|7925.61|||120.3|-174644.86|-238853.77|121.4
+1a002,T=4.6071659|1.1855232||-167318.83|-218085.91
+1a102,T=4.5645451|1.2458766||-1.4||171.6|-171533.52|-211324.91|172.6
+#63.75
+63e02,T=5.6747462|6.5157668|6986.85|-27.2|||-52683.57|370929.25|
+#63.76
+203,IAS=264.7
+#63.84
+203,T=5.645104|6.5048288|5622.9|-55570.8|369750.25
+#63.88
+63e02,T=5.6747143|6.5158853|7000.96|-26.9|||-52686.51|370942.41|
+#63.89
+203,IAS=264.8
+#63.94
+1603,T=||2278.29
+-1603
+#63.95
+203,T=5.6446851|6.5048263|5621.85|-55611.41|369750.44
+1703,T=||2137.68
+fe02,T=1.6716815|3.9195294||-453723.19|93756.91
+19f02,T=4.5390509|0.9967594|7925.59|||120.1|-174607.92|-238877.69|121.1
+1a002,T=4.6074789|1.1852431||-167287.55|-218117.48
+1a102,T=4.5645409|1.2458738||||167.3|-171533.94|-211325.2|168.4
+#63.97
+1803,T=||2017.75
+#64.01
+1903,T=||1932.41
+63e02,T=5.6746852|6.5159938|7013.88|-26.6|||-52689.2|370954.47|
+1a03,T=||1888.87
+#64.02
+203,IAS=264.9
+#64.06
+203,T=5.644299|6.504824|5620.88|-55648.84|369750.63
+#64.14
+302,T=6.3717212|2.3714732|0.03|||30.3|12547.71|-88703.02|30.5
+63e02,T=5.6746538|6.5161107|7027.78|-26.3|46.2||-52692.09|370967.47|
+#64.15
+202,T=||0.03
+203,IAS=265
+18d02,T=4.5562134|1.2473274||-172377.02|-211149.38
+#64.16
+fe02,T=1.6716614|3.9199511|||93803.83
+19f02,T=4.5394101|0.9965556|7925.57|||119.9|-174571.75|-238900.89|120.9
+1a002,T=4.6077846|1.1849695||-167257|-218148.31
+1a102,T=4.5645371|1.2458709||||162.7|-171534.34|-211325.52|163.7
+#64.17
+203,T=5.6439018|6.5048216|5619.88|-55687.34|369750.81
+#64.2
+202,T=||0.03
+203,T=5.6437826|6.5048209|5619.58|-55698.9|369750.88
+302,T=6.3717258|2.3714796|0.03|||30.3|12548.18|-88702.31|30.5
+1703,T=||2137.43
+1803,T=||2017.52
+1903,T=||1932.22
+fe02,T=1.6716574|3.9200361|||93813.29
+18d02,T=4.5562139|1.2473274||-172376.97|
+19f02,T=4.5394827|0.9965148|7925.56|||119.8|-174564.44|-238905.55|120.9
+1a002,T=4.6078462|1.1849143||-167250.84|-218154.53
+1a102,T=4.5645364|1.2458703||||161.8|-171534.42|-211325.59|162.8
+63e02,T=5.6746416|6.5161558|7033.11|-26.2|46||-52693.21|370972.47|
+1a03,T=||1888.68

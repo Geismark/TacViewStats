@@ -6,6 +6,63 @@
 
 from src.managers.logHandler import logger
 from math import radians, cos, sin, asin, sqrt
+from src.classes.DCSObject import DCSObject
+from src.data.valueReferences import closest_obj_alt_division
+
+
+def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]:
+    if not isinstance(obj, DCSObject):
+        raise TypeError(f"Reference object is not DCSObject: {type(obj)=}")
+    if not isinstance(other_objs, list):
+        raise TypeError(f"other_objs is not list: {type(other_objs)=} {other_objs=}")
+    if not obj.check_state():
+        raise ValueError(
+            f"Reference object is not alive/dying/dead: {obj.id=} {obj.state=}"
+        )
+    if obj.check_state("Dead"):
+        logger.debug(f"Trying to get closest obj of dead obj: {obj.id=}")
+        return None, None
+    if len(other_objs) <= 1:
+        logger.trace(f"len(other_objs) <= 1: {len(other_objs)=}")
+        return None, None
+    closest_obj = None
+    closest_dist = None
+    if obj.check_state("Alive"):
+        obj_pos = obj.get_pos()
+    elif obj.check_state("Dying", "Dead"):
+        obj_pos = obj.get_death_pos()
+    else:
+        raise ValueError(
+            f"closest_obj reference object is not alive/dying: {obj.id=} {obj.state=} {obj.name=} {obj.type=}"
+        )
+    for other in other_objs:
+        if other == obj:
+            continue
+        elif not isinstance(other, DCSObject):
+            raise TypeError(
+                f"Comparison object is not DCSObject: {other.id=} {type(obj)=}"
+            )
+        elif other.check_state("Dead"):
+            continue
+        if other.check_state("Alive"):
+            other_pos = other.get_pos()
+        elif other.check_state("Dying"):
+            other_pos = other.get_death_pos()
+        else:
+            raise ValueError(
+                f"Invalid comparison object state: {other.id=} {other.state=} {other.name=} {other.type=}"
+            )
+        current_dist_list = [
+            abs(obj_pos[0] - other_pos[0]),
+            abs(obj_pos[1] - other_pos[1]),
+            abs(obj_pos[2] - other_pos[2])
+            / closest_obj_alt_division,  # FUTUREDO find appropriate alt division value, OR change to euclidean/haversine
+        ]
+        avg_dist = sum(current_dist_list)
+        if closest_dist is None or avg_dist < closest_dist:
+            closest_obj = other
+            closest_dist = avg_dist
+    return closest_obj, closest_dist
 
 
 def coords_to_euclidean_distance(point1: list, point2: list, distance_unit="nm"):

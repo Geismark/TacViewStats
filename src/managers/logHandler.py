@@ -18,6 +18,7 @@ class Logger(logging.Logger):
         # setup new level 'TRACE' @val==5
         if setup_trace:
             add_logging_level("TRACE", 5)
+            add_logging_level("DETAIL", 1)
 
         debug_log1, debug_log2 = [], []
 

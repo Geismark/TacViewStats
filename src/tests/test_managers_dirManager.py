@@ -66,8 +66,9 @@ class TestDirManager(unittest.TestCase):
         cwd_to_test_data = cwd_to_test_data.replace("\\", "/")
 
         files_any, counters = get_files(cwd_to_test_data)
-        self.assertEqual(counters, [2, 4, 1, 1], msg=f"{counters=}")
-        self.assertEqual(len(files_any), 4)
+        self.assertEqual(counters, [3, 7, 3, 2], msg=f"{counters=}")
+        self.assertEqual(len(files_any), 7)
+        self.assertEqual(len(files_any), counters[1])
         file0_name = "/Tacview-20230620-222105-DCS-PG-AA-Trainer-Modern-v2.6.zip.acmi"
         file1_name = "/TEST_DIR.txt.acmi"
         file2_name = "/TEST_ZIP_TRIMMED.mod.zip.acmi"

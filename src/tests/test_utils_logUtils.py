@@ -10,8 +10,7 @@ from src.utils.logUtils import (
 )
 import logging
 from src.utils.configUtils import config
-from src.managers.logHandler import Logger, logger
-from glob import glob
+from src.managers.logHandler import Logger
 
 
 class TestUtilsLogUtils(unittest.TestCase):

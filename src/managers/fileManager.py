@@ -1,11 +1,11 @@
 from src.managers.logHandler import logger
 import zipfile
 import os
-from src.utils.fileUtils import FileData, DCSObject, coords_to_distance
+from src.utils.fileUtils import FileData
 from src.managers.lineHandler import (
     global_line,
     object_line,
-    time_line,
+    time_stamp_line,
     obj_removed_line,
 )
 from src.utils.timeUtils import get_timer
@@ -13,6 +13,10 @@ from src.utils.timeUtils import get_timer
 
 # FUTUREDO do all zip checks before starting any reading?
 def is_zip(file: str) -> bool:
+    """Return bool of whether file is a zip file.\n
+    Works regardless of file extension.\n
+    Will throw an error if file is not a zip but contains .zip extension.
+    """
     if not os.path.isfile(file):
         raise FileNotFoundError(f"{file=}")
 
@@ -26,12 +30,13 @@ def is_zip(file: str) -> bool:
 
 
 def read_files(files: list[str], AuthorIsUser: bool):
-    files_data = {}
+    all_files_data = {}
     logger.info(f"Total files: {len(files)}   -   {get_timer()}")
     for index, file in enumerate(files):
-        logger.info(f"Reading file {index} {get_timer()}  -   {file}")
-        files_data[index] = FileData()
-        file_data = files_data[index]
+        logger.info(f"Reading file {index} Time: {get_timer():.2f}  -   {file}")
+        all_files_data[index] = FileData()
+        file_data = all_files_data[index]
+        file_data.file_size = int(os.path.getsize(file) / 1024)  # get size in KB
         file_data.file_name = file.split("\\")[-1]
         # files_data[index] = file_data = FileData()     # TODO will this work?
         # TODO check each file is actually a TacView File (both zip and non-zip)
@@ -43,7 +48,7 @@ def read_files(files: list[str], AuthorIsUser: bool):
                 contents = zipped_file.namelist()
                 if len(contents) != 1:  # FUTUREDO assert -> continue
                     # all acmi zips should only have 1 .txt.acmi (or .mod) file
-                    # but assert will stop entire program, rather than just skipping (but good for testing)
+                    # TODO: but assert will stop entire program, rather than just skipping (but good for testing)
                     # continue
                     raise ValueError(
                         f"ZIP has multiple compressed files\n{file=}\n{contents=}"
@@ -58,25 +63,27 @@ def read_files(files: list[str], AuthorIsUser: bool):
                 file_formatted = [line for line in open_file]
         logger.debug(f"\n\t{file_data.file_name=}\n\t{file_data.is_zip=}\n")
         process_file(file_data, file_formatted, AuthorIsUser)
-    return files_data
+    return all_files_data
 
 
 def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
+    file_data.file_length = len(file)
     if file_data.is_zip:
         file_start = "∩╗┐FileType="
     else:
         file_start = "ï»¿FileType="  # I have no idea what these characters are, I assume same as the .zip just extracted
+    last_file_tick_processed = 0
     line_continued = False  # FUTUREDO distinguish between comments/briefing/debriefing
+
     for index, line in enumerate(file):
         line = line.rstrip("\n")
         if index == 0:
             if not line.startswith(file_start):
                 raise TypeError(
-                    f"File does not start with ∩╗┐\n\t{file_start=}\n\t{line=}"
+                    f"File does not start with appropriate zip file header:\n\tZIP:{file_data.is_zip} {file_start=} {line=}"
                 )
-            file_data.file_type = line[
-                len(file_start) :
-            ]  # '∩╗┐' accounts for (I assume) the .zip identifier, not present if extracted
+            file_data.file_type = line[len(file_start) :]
+            # '∩╗┐' accounts for (I assume) the .zip identifier, not present if extracted
             # TODO check if actually acmi file
         elif (
             line_continued
@@ -94,10 +101,15 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
         elif line.startswith("0,"):
             global_line(line, file_data)
         elif line.startswith("#"):
-            time_line(line, file_data)
+            last_file_tick_processed = time_stamp_line(
+                line, file_data, last_file_tick_processed
+            )
+            # TODO: add time stamp in logs at logging.value = 1
+            # logger.trace(f"TIME: {file_data.time_stamp}")
         elif line.startswith("-"):
             obj_removed_line(line, file_data)
         else:
+            # logger.trace("UPDATE OBJECT")
             object_line(line, file_data)
     return
 

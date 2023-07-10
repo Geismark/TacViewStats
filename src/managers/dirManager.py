@@ -1,5 +1,4 @@
 from src.managers.logHandler import logger
-from src.managers.logHandler import logger
 import os
 import glob
 import tkinter as tk
@@ -8,6 +7,7 @@ from tkinter import filedialog
 
 def directory_dialog(dialog_single_file, init_dir=None, init_file=None):
     # https://stackoverflow.com/questions/9319317/quick-and-easy-file-dialog-in-python
+    # TODO: multiple files can be selected
     root = tk.Tk()
     root.withdraw()  # required - hides the root window
     if dialog_single_file:
@@ -35,6 +35,9 @@ def get_directory(
 
 
 def get_files(folder_dir: str):
+    """Returns list of any files found in folder directory,
+    alongside list of extensions found:\n
+    [.zip, .acmi, .txt, .mod]"""
     if os.path.isfile(folder_dir):
         files_any = [folder_dir]
     else:

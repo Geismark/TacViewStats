@@ -7,6 +7,8 @@
 		"dlat",
 		"dlon",
 		"Haversine",
+		"initialdir",
+		"initialfile",
 		"latlon",
 		"latlong",
 		"Veness"
