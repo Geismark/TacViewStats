@@ -7,6 +7,7 @@
 from src.managers.logHandler import logger
 from math import radians, cos, sin, asin, sqrt
 from src.classes.DCSObject import DCSObject
+from src.data.valueReferences import closest_obj_alt_division
 
 
 def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]:
@@ -55,7 +56,7 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
             abs(obj_pos[0] - other_pos[0]),
             abs(obj_pos[1] - other_pos[1]),
             abs(obj_pos[2] - other_pos[2])
-            / 100_000,  # FUTUREDO find appropriate alt division value, OR change to euclidean/haversine
+            / closest_obj_alt_division,  # FUTUREDO find appropriate alt division value, OR change to euclidean/haversine
         ]
         avg_dist = sum(current_dist_list)
         if closest_dist is None or avg_dist < closest_dist:

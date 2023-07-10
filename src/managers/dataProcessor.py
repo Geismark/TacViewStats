@@ -3,6 +3,7 @@ from src.classes.FileData import FileData
 from src.utils.coordUtils import get_closest_obj
 from src.data.typeReferences import killer_types
 from src.utils.processingUtils import check_is_type, check_lists_share_element
+from src.data.valueReferences import max_kill_distance
 
 
 # TODO MASSIVE TIME SINK
@@ -52,7 +53,7 @@ def process_file_tick(file: FileData):
         # TODO: currently only checks for kills, NOT HITS
         # TODO: get closest objects within range/radius
         # TODO: get working coordinates to distance function
-        if dist < 0.005:
+        if dist < max_kill_distance:
             if check_is_type(ref_obj, killer_types) and not check_is_type(
                 closest_obj, killer_types
             ):
