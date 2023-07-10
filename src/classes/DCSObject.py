@@ -115,6 +115,9 @@ class DCSObject:
         lat_ref, long_ref = self.file_obj.get_coord_reference()
         return [self.lat + float(lat_ref), self.long + float(long_ref), self.alt]
 
+    def get_prev_pos(self):
+        return [self.lat_old, self.long_old, self.alt_old]
+
     def get_death_pos(self):
         """Get relative position of this object at death as provided by the file."""
         return self.death_position
@@ -333,3 +336,43 @@ class DCSObject:
             if type not in all_known_types:
                 logger.critical(f"Unknown type: {type=}")
         self.type = type_list
+
+    def info(
+        self,
+        basic=True,
+        combat=False,
+        position=False,
+        times=False,
+        side=False,
+        all=False,
+    ):
+        if all:
+            basic, combat, position, times, side = True, True, True, True, True
+        b, c, p, t, s = "", "", "", "", ""
+        if basic:
+            b = f"ID: {self.id} "
+            b += f"Type: {self.type} "
+            b += f"Name: {self.name} "
+            b += f"State: {self.state} "
+            b += f"Pilot: {self.pilot} "
+        if combat:
+            c = f"Launches: {[launch.id for launch in self.launches.values()] if self.launches else None} "
+            c += f"Launcher: {self.launcher.id if self.launcher else None} "
+            c += f"Kills: {[kill.id for kill in self.kills.values()] if self.kills else None} "
+            c += f"Killer: {self.killer.id if self.killer else None} "
+            c += f"Killer Weapon: {self.killer_weapon.name if self.killer_weapon else None} "
+        if position:
+            p = f"Position: {self.get_pos()} "
+            p += f"Previous: {self.get_prev_pos()} "
+            p += f"Origin: {self.origin} "
+            p += f"Death: {self.get_death_pos()} "
+            p += f"LatLong Ref: {self.file_obj.get_coord_reference()} "
+        if times:
+            t += f"Time Stamp: {self.file_obj.time_stamp} "
+            t += f"Spawn: {self.spawn_time_stamp} "
+            t += f"Death: {self.death_time_stamp} "
+        if side:
+            s = f"Coalition: {self.coalition} "
+            s += f"Country: {self.country}"
+        info = "\n".join([b, c, p, t, s])
+        return info
