@@ -46,6 +46,7 @@ class FileData:
         self.final_time_stamp = None
         # self.server_events = []
         self.category = None  # unsure what this is, needs testing/researching
+        self.uid_counter = 0
 
     def __str__(self):
         return self.file_name
@@ -66,9 +67,10 @@ class FileData:
         if not isinstance(id, str):
             raise TypeError("id is not a string")
         if id in self.objects:
-            raise ValueError("Object already exists")
-        new_object = DCSObject(self, id, state=init_state)
+            raise ValueError("Object already exists in alive object dictionary")
+        new_object = DCSObject(self, id, self.uid_counter, state=init_state)
         self.objects[id] = new_object
+        self.uid_counter += 1
         return new_object
 
     def get_coord_reference(self):

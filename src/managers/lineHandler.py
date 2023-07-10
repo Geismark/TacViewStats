@@ -41,8 +41,7 @@ def object_line(line: list, file_data: FileData):
         acmi_obj_attr_list = acmi_old_obj_to_attr
     else:
         new = True
-        obj_data = file_data.new_obj(id)
-        obj_data.state = "Alive"
+        obj_data = file_data.new_obj(id, init_state="Alive")
         acmi_obj_attr_list = acmi_new_obj_to_attr
     acmi_obj_attr_list = acmi_obj_to_attr_all  # FUTUREDO could use shorter dictionary to reduce time/memory? Unsure if it would have any effect
     for attr_line in attrs:

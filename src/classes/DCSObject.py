@@ -10,7 +10,7 @@ from src.data.typeReferences import (
 
 
 class DCSObject:
-    def __init__(self, file_obj, id: str, state: str = "Alive"):
+    def __init__(self, file_obj, id: str, uid: int, state: str = "Alive"):
         if not isinstance(id, str):
             raise TypeError(f"DCSObject init id is not string: {id=} {type(id)=}")
         if not isinstance(state, str):
@@ -30,6 +30,11 @@ class DCSObject:
             file_obj  # FileData object of the TacView file this object belongs to
         )
         self.id = str(id)  # the ID of this object (same as the one used in the TV file)
+        if uid != file_obj.uid_counter:
+            raise ValueError(
+                f"DCSObject init uid is not equal to file_obj.uid_counter: {uid=} {file_obj.uid_counter=}"
+            )
+        self.uid = uid  # the unique ID of this object (from counter within file_obj)
         self.lat = (
             None  # the most recent latitude of this object (doesn't include reference)
         )
