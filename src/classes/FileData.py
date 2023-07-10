@@ -1,6 +1,7 @@
 """Module DocString"""  # TODO add module docstrings
 
 from src.classes.DCSObject import DCSObject
+from src.data.typeReferences import valid_DCSObject_states
 from src.managers.logHandler import logger
 
 
@@ -39,6 +40,7 @@ class FileData:
         self.objects = {}  # all objects currently alive within the file
         self.dying_objects = {}  # all objects currently currently in death processing
         self.dead_objects = {}  # all objects that have died
+        self.all_ids = {}  # uid:id dictionary
         self.first_time_stamp = None
         self.time_stamp = (
             0  # the most recent timestamp processed whilst reading the file
@@ -71,6 +73,7 @@ class FileData:
         new_object = DCSObject(self, id, self.uid_counter, state=init_state)
         self.objects[id] = new_object
         self.uid_counter += 1
+        self.all_ids[new_object.uid] = new_object.id
         return new_object
 
     def get_coord_reference(self):
@@ -85,15 +88,61 @@ class FileData:
                 )
         return [self.latitude_reference, self.longitude_reference]
 
-    def get_obj_by_id(self, id):
-        if id in self.objects:
+    def get_obj_by_id(self, id, *states):
+        """Returns the most recently initialized object with given id"""
+        if states == ():
+            states = valid_DCSObject_states
+        if "Alive" in states and id in self.objects:
             return self.objects[id]
-        elif id in self.dying_objects:
+        elif "Dying" in states and id in self.dying_objects:
             return self.dying_objects[id]
-        elif id in self.dead_objects:
+        elif "Dead" in states and id in self.dead_objects:
             return self.dead_objects[id]
         else:
             return False
+
+    def get_obj_by_uid(self, uid):
+        if uid in self.objects:
+            return self.objects[uid]
+        elif uid in self.dying_objects:
+            return self.dying_objects[uid]
+        elif uid in self.dead_objects:
+            return self.dead_objects[uid]
+        else:
+            raise ValueError(f"Object not found: {uid=}")
+
+    def get_all_by_ids(self, ids: list[str], states_to_search: list = None):
+        """Returns all objects with given id(s), ordered from most recent to oldest by init time stamp."""
+        if states_to_search is None:
+            states_to_search = valid_DCSObject_states
+
+        get_alive, get_dead, get_dying = False, False, False
+        if "Alive" in states_to_search:
+            get_alive = True
+        if "Dying" in states_to_search:
+            get_dying = True
+        if "Dead" in states_to_search:
+            get_dead = True
+        all_objs = self.get_all_objs(alive=get_alive, dying=get_dying, dead=get_dead)
+
+        unordered_obj_list = []
+        for id in ids:
+            unordered_obj_list += [obj for obj in all_objs if obj.id == id]
+
+        ordered_obj_list = sorted(
+            unordered_obj_list, key=lambda obj: obj.spawn_time_stamp
+        )
+        return ordered_obj_list
+
+    def get_all_objs(self, alive=True, dying=True, dead=True):
+        all_obj_list = []
+        if alive:
+            all_obj_list += list(self.objects.values())
+        if dying:
+            all_obj_list += list(self.dying_objects.values())
+        if dead:
+            all_obj_list += list(self.dead_objects.values())
+        return all_obj_list
 
     def check_is_FileData(self):
         if isinstance(self, FileData):
