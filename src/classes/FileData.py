@@ -37,10 +37,12 @@ class FileData:
         self.latitude_reference = (
             None  # the base latitude that all recorded data is added to
         )
-        self.objects = {}  # all objects currently alive within the file
-        self.dying_objects = {}  # all objects currently currently in death processing
-        self.dead_objects = {}  # all objects that have died
-        self.all_ids = {}  # uid:id dictionary
+        self.objects = {}  # id:obj all objects currently alive within the file
+        self.dying_objects = (
+            {}
+        )  # id:obj all objects currently currently in death processing
+        self.dead_objects = {}  # id:obj all objects that have died
+        self.all_objects = {}  # uid:obj all objects in file (all states)
         self.first_time_stamp = None
         self.time_stamp = (
             0  # the most recent timestamp processed whilst reading the file
@@ -73,7 +75,7 @@ class FileData:
         new_object = DCSObject(self, id, self.uid_counter, state=init_state)
         self.objects[id] = new_object
         self.uid_counter += 1
-        self.all_ids[new_object.uid] = new_object.id
+        self.all_objects[new_object.uid] = new_object.id
         return new_object
 
     def get_coord_reference(self):
@@ -102,12 +104,8 @@ class FileData:
             return False
 
     def get_obj_by_uid(self, uid):
-        if uid in self.objects:
-            return self.objects[uid]
-        elif uid in self.dying_objects:
-            return self.dying_objects[uid]
-        elif uid in self.dead_objects:
-            return self.dead_objects[uid]
+        if uid in self.all_objects:
+            return self.all_objects[uid]
         else:
             raise ValueError(f"Object not found: {uid=}")
 
