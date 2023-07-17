@@ -95,7 +95,8 @@ class DCSObject:
         for value in check_list:
             if not str_is_float(value):
                 raise TypeError(f"transform is not numeric: {lat=} {long=} {alt=}")
-        self.lat_old, self.long_old, self.alt_old = self.get_pos()
+        self.lat_old, self.long_old, self.alt_old = self.lat, self.long, self.alt
+        # do this manually to prevent issues with get_pos with reused ids
         if lat != "":
             self.lat = float(lat)
         if long != "":
@@ -207,19 +208,17 @@ class DCSObject:
     def update_to_dead(self):
         # FUTUREDO may want to always go through dying first?
         # ensure id or obj not already found in dead_objects
-        if (
-            self.id in self.file_obj.dead_objects
-            or self in self.file_obj.dead_objects.values()
-        ):
+        if self in self.file_obj.dead_objects.values():
             raise ValueError(
                 f"New dead object is already in dead_objects: {self.id=} {self.state=} {self.type=}\n\t{self.file_obj.dead_objects.keys()=}"
             )
         # validate state and found in correct object dictionary
-        if not (self.check_state("Alive") or self.check_state("Dying")):
+        if not (self.check_state("Alive", "Dying")):
             raise ValueError(
                 f"New dead object is not in appropriate object dictionary: {self.id=} {self.state=}"
                 + f"\n\tIn objects: {True if self.id in self.file_obj.objects else False}"
                 + f"\n\tIn dying_objects: {True if self.id in self.file_obj.dying_objects else False}"
+                + f"\n\tIn dead_objects: {True if self.id in self.file_obj.dead_objects else False}"
             )
         # check death position value and time stamp value is /not/ set
         if self.check_state("Alive"):
@@ -281,8 +280,8 @@ class DCSObject:
             if (
                 (self.state != "Alive")
                 or (self.id not in self.file_obj.objects)
-                or (self.id in self.file_obj.dying_objects)
-                or (self.id in self.file_obj.dead_objects)
+                # or (self.id in self.file_obj.dying_objects)
+                # or (self.id in self.file_obj.dead_objects)
             ):
                 raise TypeError(
                     f"State is Alive but doesn't have appropriate attributes or not in correct dictionary:\n\t{self.id=} {self.state=} {self.type=} {self.name=}\n\t{self.file_obj.objects.keys()=}\n\t{self.file_obj.dying_objects.keys()=}\n\t{self.file_obj.dead_objects.keys()=}"
@@ -290,9 +289,9 @@ class DCSObject:
         elif state == "Dying":
             if (
                 (self.state != "Dying")
-                or (self.id in self.file_obj.objects)
+                # or (self.id in self.file_obj.objects)
                 or (self.id not in self.file_obj.dying_objects)
-                or (self.id in self.file_obj.dead_objects)
+                # or (self.id in self.file_obj.dead_objects)
             ):
                 raise TypeError(
                     f"State is Dying but doesn't have appropriate attributes or not in correct dictionary:\n\t{self.id=} {self.state=} {self.type=} {self.name=}\n\t{self.file_obj.objects.keys()=}\n\t{self.file_obj.dying_objects.keys()=}\n\t{self.file_obj.dead_objects.keys()=}"
@@ -300,8 +299,8 @@ class DCSObject:
         elif state == "Dead":
             if (
                 (self.state != "Dead")
-                or (self.id in self.file_obj.objects)
-                or (self.id in self.file_obj.dying_objects)
+                # or (self.id in self.file_obj.objects)
+                # or (self.id in self.file_obj.dying_objects)
                 or (self.id not in self.file_obj.dead_objects)
             ):
                 raise TypeError(
@@ -312,9 +311,9 @@ class DCSObject:
     def check_skip_dying_type(self):
         for skip_type in skip_dying_types:
             if skip_type in self.type:
-                if self.state == "Alive":
-                    self.update_to_dead()
-                    # FUTUREDO later may wish to change this to allow detecting missiles being trashed by decoys
+                # if self.state == "Alive":
+                #     self.update_to_dead()
+                # FUTUREDO later may wish to change this to allow detecting missiles being trashed by decoys
                 return True
         return False
 

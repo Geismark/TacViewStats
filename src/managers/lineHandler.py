@@ -30,7 +30,7 @@ def object_line(line: list, file_data: FileData):
     attrs = attr_split(line)
     id = str(attrs[0])
     new = False
-    obj_by_id = file_data.get_obj_by_id(id)
+    obj_by_id = file_data.get_obj_by_id(id, "Alive")
     if obj_by_id:
         obj_data = obj_by_id
         if (
@@ -82,16 +82,13 @@ def object_line(line: list, file_data: FileData):
                     f"Missile launch, no other unit: {obj_data.id=} {obj_data.name} {obj_data.spawn_time_stamp=} {obj_data.death_time_stamp=}"
                 )
             elif max_avg_dist < avg_unit_dist:
-                logger.debug(
+                logger.warning(
                     f"Missile launch, no unit within range - {max_avg_dist=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
             else:
                 launcher_obj.add_launch(obj_data)
                 logger.trace(
                     f"Missile launch success - {max_avg_dist=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
-                )
-                logger.critical(
-                    f"New launch: {obj_data.id=} {obj_data.name=} {obj_data.launcher} {obj_data.type}\n\t{launcher_obj.id=} {launcher_obj.name=} {launcher_obj.launches=} {launcher_obj.type}"
                 )
 
 
@@ -112,7 +109,7 @@ def obj_removed_line(line: list, file_data: FileData):
     obj = file_data.get_obj_by_id(obj_id)
     if obj:
         if obj.check_skip_dying_type():
-            return
+            obj.update_to_dead()
         elif obj.check_state("Alive"):
             obj.update_to_dying()
         else:
@@ -120,7 +117,7 @@ def obj_removed_line(line: list, file_data: FileData):
                 f"Attempting to remove object that is not alive and not skip dying:\n\t{obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=}\n\t{line=}"
             )
         logger.trace(
-            f"REMOVE LINE OBJECT: {obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=} {obj.file_obj.time_stamp=}\n\t{line}"
+            f"REMOVE LINE OBJECT: id = {obj.id} Type = {obj.type} Name = {obj.name} Death Time = {obj.death_time_stamp} File Time = {obj.file_obj.time_stamp}"
         )
 
     else:

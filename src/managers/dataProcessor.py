@@ -34,11 +34,7 @@ def process_file_tick(file: FileData):
         if not check_lists_share_element(ref_obj.type, killer_types):
             continue
 
-        if (
-            ref_obj.check_skip_dying_type()
-            or ref_obj.check_state("Dead")
-            or ref_obj.check_skip_data_processing_type()
-        ):
+        if ref_obj.check_skip_data_processing_type() or ref_obj.check_state("Dead"):
             continue
             # both above and below unfortunately (potentially?) necessary, as objects in ref_list change during this loop
 
