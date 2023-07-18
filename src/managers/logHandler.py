@@ -33,7 +33,9 @@ class Logger(logging.Logger):
         if config.LOGGING.to_file:
             output_dir, debug_log1 = setup_config_output_dir()
             output_file_path, debug_log2 = prepare_output_directory(output_dir)
-            self._file_handler = logging.FileHandler(filename=output_file_path)
+            self._file_handler = logging.FileHandler(
+                filename=output_file_path, encoding="utf-8"
+            )
             level, formatter = get_file_logger_config()
             self._file_handler.setLevel(level)
             self._file_handler.setFormatter(formatter)
