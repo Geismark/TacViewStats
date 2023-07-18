@@ -30,7 +30,7 @@ def is_zip(file: str) -> bool:
 
 
 def read_files(files: list[str], AuthorIsUser: bool):
-    '''Takes a list[str] of file paths and returns a dict of index:FileData objects, having passed each file to process_file().'''
+    """Takes a list[str] of file paths and returns a dict of index:FileData objects, having passed each file to process_file()."""
     all_files_data = {}
     logger.info(f"Total files: {len(files)}   -   {get_timer()}")
     for index, file in enumerate(files):
@@ -68,7 +68,7 @@ def read_files(files: list[str], AuthorIsUser: bool):
 
 
 def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
-    '''Parses a list of lines from a file and updates the FileData object.'''
+    """Parses a list of lines from a file and updates the FileData object."""
     file_data.file_length = len(file)
     if file_data.is_zip:
         file_start = "∩╗┐FileType="
