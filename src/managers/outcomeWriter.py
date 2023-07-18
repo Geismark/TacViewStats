@@ -1,6 +1,5 @@
 import os
 from src.managers.logHandler import logger
-from src.utils.coordUtils import get_closest_obj
 
 
 def write_outcome(files_data: dict):

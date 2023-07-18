@@ -4,11 +4,15 @@
 	},
 	"python.formatting.provider": "none",
 	"cSpell.words": [
+		"chcp",
+		"clobberings",
+		"codepage",
 		"dlat",
 		"dlon",
 		"Haversine",
 		"initialdir",
 		"initialfile",
+		"Kuznetsov",
 		"latlon",
 		"latlong",
 		"Veness"
