@@ -20,15 +20,28 @@ def process_file_tick(file: FileData):
         if not obj.check_skip_data_processing_type()
     ]
     for ref_obj in dying_ref_list:
+        # if dying grace period is over, update to dead
         if (file.time_stamp - ref_obj.death_time_stamp) > 10:
             ref_obj.update_to_dead()
             logger.trace(f"Dying process delay expired: {ref_obj.info()}")
             continue
+        # ensure ref_obj is dying (i.e.: hasn't died since dying_ref_list was created)
+        if not ref_obj.check_state("Dying"):
+            continue
+
+        # if there is more than 1 object, find closest object and distance
         if len(dying_ref_list) > 1:
             closest_list = [o for o in dying_ref_list if o.check_state("Dying")]
             closest_obj, dist = get_closest_obj(ref_obj, closest_list)
-        elif len(dying_ref_list) <= 1:
-            logger.detail(f"ref_list len < 1: {len(dying_ref_list)=}")
+        # if len == 1 only the current object remains, can skip rest of processing
+        elif len(dying_ref_list) == 1:
+            logger.detail(f"ref_list len == 1: {len(dying_ref_list)=}")
+            return
+        # if len == 0, something has gone wrong, as if no Dying objects remain, this point shouldn't be reached
+        elif len(dying_ref_list) == 0:
+            raise ValueError(
+                f"ref_list len == 0: {[[o.id, o.uid, o.state] for o in dying_ref_list]=}"
+            )
             return
         else:
             return
