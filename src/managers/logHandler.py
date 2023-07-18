@@ -15,7 +15,7 @@ class Logger(logging.Logger):
     def __init__(self, name, setup_trace=True):
         get_timer()  # placed here to ensure timer starts no matter which module is run
         super().__init__(name, 0)
-        # setup new level 'TRACE' @val==5
+        # setup custom levels - MUST COME FIRST to allow colour changes
         if setup_trace:
             add_logging_level("TRACE", 5)
             add_logging_level("DETAIL", 1)
@@ -39,6 +39,7 @@ class Logger(logging.Logger):
             self._file_handler.setFormatter(formatter)
             self.addHandler(self._file_handler)
 
+        # Now logger is initialised, we can log saved logs from above
         for log in debug_log1 + debug_log2:
             logging.Logger.debug(self, log)
 

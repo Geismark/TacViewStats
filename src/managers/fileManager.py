@@ -30,6 +30,7 @@ def is_zip(file: str) -> bool:
 
 
 def read_files(files: list[str], AuthorIsUser: bool):
+    '''Takes a list[str] of file paths and returns a dict of index:FileData objects, having passed each file to process_file().'''
     all_files_data = {}
     logger.info(f"Total files: {len(files)}   -   {get_timer()}")
     for index, file in enumerate(files):
@@ -67,6 +68,7 @@ def read_files(files: list[str], AuthorIsUser: bool):
 
 
 def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
+    '''Parses a list of lines from a file and updates the FileData object.'''
     file_data.file_length = len(file)
     if file_data.is_zip:
         file_start = "∩╗┐FileType="
@@ -104,12 +106,9 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
             last_file_tick_processed = time_stamp_line(
                 line, file_data, last_file_tick_processed
             )
-            # TODO: add time stamp in logs at logging.value = 1
-            # logger.trace(f"TIME: {file_data.time_stamp}")
         elif line.startswith("-"):
             obj_removed_line(line, file_data)
         else:
-            # logger.trace("UPDATE OBJECT")
             object_line(line, file_data)
     return
 

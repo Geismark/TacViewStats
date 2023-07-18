@@ -4,6 +4,12 @@
 # T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw
 # T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw | U | V | Heading
 
+
+# ======================================== NOTE ========================================
+# This file is a complete mess - please ignore for now, will be completed in the future
+# ======================================== NOTE ========================================
+
+
 from src.managers.logHandler import logger
 from math import radians, cos, sin, asin, sqrt
 from src.classes.DCSObject import DCSObject
@@ -20,7 +26,7 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
             f"Reference object is not alive/dying/dead: {obj.id=} {obj.state=}"
         )
     if obj.check_state("Dead"):
-        logger.debug(f"Trying to get closest obj of dead obj: {obj.id=}")
+        logger.warning(f"Trying to get closest obj of dead obj: {obj.info(all=True)}")
         return None, None
     if len(other_objs) <= 1:
         logger.trace(f"len(other_objs) <= 1: {len(other_objs)=}")
@@ -66,6 +72,7 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
 
 
 def coords_to_euclidean_distance(point1: list, point2: list, distance_unit="nm"):
+    """Not currently implemented/working as intended - will be revisited"""
     # euclidean - accuracy with midpoint?: https://math.stackexchange.com/a/29162
     # euclidean: https://math.stackexchange.com/a/29162
     """From [lat, long, alt]x2 -> euclidean (3d straight line) distance"""
@@ -126,6 +133,7 @@ def coords_to_haversine_distance(point1: list, point2: list, distance_unit="nm")
     # code1:https://stackoverflow.com/a/15737218
     # optimise: https://stackoverflow.com/a/21623206
 
+    """Not currently implemented/working as intended - will be revisited"""
     """From [lat, long, alt]x2 -> Haversine (curved across 3d sphere) distance"""
     distance_unit = distance_unit.lower()
     # TODO need to go through this function again, hasn't been checked since transform updates have been fixes (and accuracy has never been tested)
@@ -183,6 +191,7 @@ def coords_to_haversine_distance_updated(
     # optimise: https://stackoverflow.com/a/21623206
     # UPDATED: https://www.omnicalculator.com/other/latitude-longitude-distance#obtaining-the-distance-between-two-points-on-earth-distance-between-coordinates
 
+    """Not currently implemented/working as intended - will be revisited"""
     """From [lat, long, alt] points to Haversine (curved across 3d sphere) distance"""
     distance_unit = distance_unit.lower()
     for p in point1 + point2:

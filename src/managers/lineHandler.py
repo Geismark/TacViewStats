@@ -2,7 +2,6 @@ from src.managers.logHandler import logger
 from src.utils.fileUtils import (
     FileData,
     attr_split,
-    get_launcher,
 )
 from src.data.acmiAttrDicts import (
     acmi_old_obj_to_attr,
@@ -21,12 +20,14 @@ from src.utils.coordUtils import get_closest_obj
 
 
 def global_line(line: list, file_data: FileData):
+    """Takes a global line and updates the FileData object."""
     for attr_pointer, attr_var_name in acmi_global_to_attr.items():
         if line.startswith(attr_pointer):
             setattr(file_data, attr_var_name, line[len(attr_pointer) :])
 
 
 def object_line(line: list, file_data: FileData):
+    """Parses an object update line and updates the relevant attributes in the FileData object."""
     attrs = attr_split(line)
     id = str(attrs[0])
     new = False
@@ -54,7 +55,9 @@ def object_line(line: list, file_data: FileData):
             ):  # TODO how to make this more efficient?
                 if acmi_pointer == "T=":
                     if obj_data.check_state("Dead"):
-                        logger.critical(f"{obj_data.__dict__}")
+                        logger.critical(
+                            f"Updating object attributes with check_state(Dead):\n\t{obj_data.__dict__}"
+                        )
                     transform_line = attr_line[2:]
                     transformers = transform_line.split("|")
                     obj_data.update_transform(
@@ -65,7 +68,6 @@ def object_line(line: list, file_data: FileData):
                 else:
                     setattr(obj_data, obj_attr_name, attr_line[len(acmi_pointer) :])
     if new:
-        # logger.debug(f"NEW OBJECT:\n\t\tName: {obj_data.name}   Type: {obj_data.type}   ID: {obj_data.id}")
         if obj_data.file_obj != file_data:
             raise ValueError(
                 f"New object FileDate != file_data passed to object_line {obj_data.file_obj=} {file_data=}"
@@ -78,11 +80,11 @@ def object_line(line: list, file_data: FileData):
             )  # FUTUREDO update get_launcher logic
 
             if launcher_obj == None:
-                logger.error(
+                logger.warning(
                     f"Missile launch, no other unit: {obj_data.id=} {obj_data.name} {obj_data.spawn_time_stamp=} {obj_data.death_time_stamp=}"
                 )
             elif max_avg_dist < avg_unit_dist:
-                logger.warning(
+                logger.debug(
                     f"Missile launch, no unit within range - {max_avg_dist=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
             else:
@@ -90,20 +92,24 @@ def object_line(line: list, file_data: FileData):
                 logger.trace(
                     f"Missile launch success - {max_avg_dist=} {avg_unit_dist=}\n\tMissile: {obj_data.id} {obj_data.type} {obj_data.name} {obj_data.pilot}\n\tLauncher: {launcher_obj.id} {launcher_obj.type} {launcher_obj.name} {launcher_obj.pilot}"
                 )
+        logger.detail(f"NEW OBJECT: {obj_data.info()}")
 
 
 def time_stamp_line(line: list, file_data: FileData, last_file_tick_processed: int):
+    """Takes a time stamp line and updates the FileData object.\n\nCalls process_file_tick if set amount of time in recording has passed."""
+    seconds_per_process = 1
     new_time = float(line[1:])
     file_data.set_time(new_time)
     if (file_data.time_stamp == 0) or (
-        file_data.time_stamp > last_file_tick_processed + 1
+        file_data.time_stamp > last_file_tick_processed + seconds_per_process
     ):
         process_file_tick(file_data)
-        last_file_tick_processed += 1
+        last_file_tick_processed += seconds_per_process
     return last_file_tick_processed
 
 
 def obj_removed_line(line: list, file_data: FileData):
+    """Parses an object removal line and updates the FileData and DCSObject objects."""
     # TODO add killed-by logic/checking (will be delayed - check dying unit against recently dead units)
     obj_id = line[1:]
     obj = file_data.get_obj_by_id(obj_id)
@@ -116,10 +122,9 @@ def obj_removed_line(line: list, file_data: FileData):
             raise ValueError(
                 f"Attempting to remove object that is not alive and not skip dying:\n\t{obj.id=} {obj.type=} {obj.name=} {obj.death_time_stamp=}\n\t{line=}"
             )
-        logger.trace(
-            f"REMOVE LINE OBJECT: id = {obj.id} Type = {obj.type} Name = {obj.name} Death Time = {obj.death_time_stamp} File Time = {obj.file_obj.time_stamp}"
-        )
+        logger.detail(f"REMOVE LINE OBJECT: {obj.info(times=True)}")
 
     else:
-        logger.error(f"{file_data.objects.items()=}\n\t{obj_id=} {line=}")
-        raise ValueError(f"Removed object is not within file_data: {obj_id=}")
+        raise ValueError(
+            f"Attempting to remove object id that is not within file_data: {line=}\n{file_data.objects.items()=}"
+        )

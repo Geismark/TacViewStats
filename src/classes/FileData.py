@@ -52,10 +52,8 @@ class FileData:
         self.category = None  # unsure what this is, needs testing/researching
         self.uid_counter = 0
 
-    def __str__(self):
-        return self.file_name
-
     def set_time(self, time: float):
+        """Updates current time stamp to input.\n\nCannot input an earlier timestamp than what is currently set."""
         if not isinstance(time, float) and not isinstance(time, int):
             raise TypeError(f"Time is not a float(/int): {time=}")
         if time < self.time_stamp:
@@ -68,6 +66,7 @@ class FileData:
             self.first_time_stamp = self.time_stamp
 
     def new_obj(self, id: str, init_state="Alive"):
+        """Returns a new DCSObject with given id and state; sets obj.uid from internal FileData UID counter.\n\nObject also placed in correct dictionary"""
         if not isinstance(id, str):
             raise TypeError("id is not a string")
         if id in self.objects:
@@ -79,6 +78,7 @@ class FileData:
         return new_object
 
     def get_coord_reference(self):
+        """Returns lat/long references. Raises ValueError/TypeError if not set."""
         if self.latitude_reference == None or self.longitude_reference == None:
             if self.latitude_reference == self.longitude_reference == None:
                 raise ValueError(
@@ -101,9 +101,10 @@ class FileData:
         elif "Dead" in states and id in self.dead_objects:
             return self.dead_objects[id]
         else:
-            return False
+            return None
 
     def get_obj_by_uid(self, uid):
+        """Returns DCSObject with the given UID (regardless of state)"""
         if uid in self.all_objects:
             return self.all_objects[uid]
         else:
@@ -113,6 +114,8 @@ class FileData:
         """Returns all objects with given id(s), ordered from most recent to oldest by init time stamp."""
         if states_to_search is None:
             states_to_search = valid_DCSObject_states
+        elif isinstance(ids, str):
+            ids = [ids]
 
         get_alive, get_dead, get_dying = False, False, False
         if "Alive" in states_to_search:
@@ -133,6 +136,7 @@ class FileData:
         return ordered_obj_list
 
     def get_all_objs(self, alive=True, dying=True, dead=True):
+        """Returns list of all objects in file"""
         all_obj_list = []
         if alive:
             all_obj_list += list(self.objects.values())
@@ -143,9 +147,9 @@ class FileData:
         return all_obj_list
 
     def check_is_FileData(self):
+        """Returns True if file is a FileData object, False otherwise"""
+        # useful as cannot import FileData in some files (e.g.: if they import DCSObject)
         if isinstance(self, FileData):
             return True
         else:
             return False
-
-    # TODO: return list of objects from specified object dictionaries
