@@ -156,3 +156,55 @@ class FileData:
             return True
         else:
             return False
+
+    def info(
+        self,
+        metadata=True,
+        context=False,
+        time=False,
+        objects=False,
+        coords=False,
+        extras=False,
+        all=False,
+    ):
+        """Returns a string containing all FileData attributes and their values"""
+        if all:
+            metadata, time, objects, coords, extras = True, True, True, True, True
+        m, cx, t, o, cd, e = "", "", "", "", "", ""
+        if metadata:
+            m += f"Name: {self.file_name}\n\t"
+            m += f"Type: {self.file_type}\n\t"
+            m += f"Version: {self.file_version}\n\t"
+            m += f"Length: {self.file_length}\n\t"
+            m += f"Size: {self.file_size}\n\t"
+            m += f"Recorder: {self.recorder}\n\t"
+            m += f"Source: {self.source}\n\t"
+        if context:
+            cx += f"Mission Title: {self.mission_title}\n\t"
+            cx += f"Author: {self.author}\n\t"
+            cx += f"Server: {self.server}\n\t"
+            cx += f"Comments: {self.comments}\n\t"
+            cx += f"Briefing: {self.briefing}\n\t"
+            cx += f"Debriefing: {self.debriefing}\n\t"
+        if time:
+            t += f"Mission Date: {self.mission_date}\n\t"
+            t += f"Mission Start Time: {self.mission_start_time}\n\t"
+            t += f"Record Date: {self.record_date}\n\t"
+            t += f"Record Start Time: {self.record_start_time}\n\t"
+            t += f"First Time Stamp: {self.first_time_stamp}\n\t"
+            t += f"Time Stamp: {self.time_stamp}\n\t"
+            t += f"Final Time Stamp: {self.final_time_stamp}\n\t"
+        if coords:
+            cd += f"Longitude Reference: {self.longitude_reference}\n\t"
+            cd += f"Latitude Reference: {self.latitude_reference}\n\t"
+        if objects:
+            o += f"All Objects: {len(self.all_objects)}\n\t"
+            o += f"Alive Objects ({len(self.objects.keys())}): {list(self.objects.keys())}\n\t"
+            o += f"Dying Objects ({len(self.dying_objects.keys())}): {list(self.dying_objects.keys())}\n\t"
+            o += f"Dead Objects ({len(self.dead_objects.keys())}): {[obj.id for obj in self.dead_objects.values()]}\n\t"
+        if extras:
+            e += f"Category: {self.category}\n\t"
+            e += f"UID Counter: {self.uid_counter} "
+
+        info = "\n\t" + "".join([m, cx, t, o, cd, e])
+        return info
