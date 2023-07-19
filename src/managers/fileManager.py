@@ -83,7 +83,7 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
             if not line.startswith(file_start):
                 if line.startswith("FileType="):
                     logger.debug(
-                        f"File starts without encoding keyword: {line=} ZIP: {file_data.is_zip()} Name: {file_data.file_name}"
+                        f"File starts without encoding keyword: {line=} ZIP: {file_data.is_zip} Name: {file_data.file_name}"
                     )
                     file_start = "FileType="
                 else:
