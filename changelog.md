@@ -19,6 +19,9 @@ All notable changes to this project will be documented in this file.
 - FileData all_objects dictionary {UID:obj}
 - (Some) DocStrings
 - FileData.info()
+- Proper decoding when reading files (utf-8-sig)
+- Added file extension checking .acmi
+
 ### Changed
 - Checking if type skips dying state longer automatically updates to dead
 - Slight improvements to logging messages (clarity) and
