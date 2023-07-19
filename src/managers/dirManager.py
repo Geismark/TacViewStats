@@ -44,7 +44,11 @@ def get_files(folder_dir: str):
         files_any = [folder_dir]
     else:
         files_any = glob.glob(f"{folder_dir}/*.*")  # lists all files in dir
-        files_any = [file for file in files_any if os.path.isfile(file)]
+        files_any = [
+            file
+            for file in files_any
+            if os.path.isfile(file) and file.endswith(".acmi")
+        ]
     f_mod, f_txt, f_zip, f_acmi = 0, 0, 0, 0
     for index, file in enumerate(files_any):
         # TODO could also split string ('.') and count - faster?
