@@ -19,6 +19,7 @@ def write_outcome(files_data: dict):
         logger.info(
             f"\n\n\tFile Name: {file_data.file_name}\n\tFile Size:   {file_data.file_size:,} KB\n\tFile Length: {file_data.file_length:,}\n"
         )
+        logger.info(file_data.info(all=True))
         for obj in (
             list(file_data.objects.values())
             + list(file_data.dying_objects.values())
