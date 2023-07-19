@@ -1,4 +1,4 @@
-# [Change Log][](#top)
+# Change Log[](#top)
 
 All notable changes to this project will be documented in this file.  
 [See Version Table](#version-table)  
@@ -7,12 +7,11 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 ### Known Issues
-- Some internal markdown links are not working
 - Comments cannot be on the same line as key:value in config.ini
 - DCSObject.origin only populated after first tick processing
 - High volumes of (gun) shells significantly impact performance
+## [0.0.1] - 19-07-2023
 
-## [[0.0.1]](#v-0-0-1) - 19-07-2023
 
 ### Added
 - Changelog - *hi there o/*
@@ -25,15 +24,14 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Previously overlooked UTF-8 logger encoding (FileHandler)
-    - Also added optional walk-through fix for (VSCode) terminal (found in [Readme](#README.md#encoding))
+    - Also added optional walk-through fix for (VSCode) terminal (found in [Readme](/README.md#terminal-encodingcodepage))
 - Changes to level used in some logging instances (previously wildly random at points)
 - Fixed instances where tick processing reference object was updated to dead in loop, but processed anyway (unlike 'other' objects)
 - Issue where get_files tried to output sub-directories as files
-### Known Issues
   
 
 
-## [Formatting](#top)
+## Formatting
 Following rough guidelines from: https://keepachangelog.com/en/1.1.0/  
 Significant changes/notes:
 - Will loosely follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html), but not strictly
@@ -44,8 +42,10 @@ Significant changes/notes:
 
 
 
-## [Version Table](#v-0-0-1)
-| Version           | Date       |
-| ----------------- | ---------- |
-| [0.0.2](#v-0-0-1) | 19-07-2023 |
-| Paragraph         | Text       |
+## Version Table
+| Version                    | Date       |
+| -------------------------- | ---------- |
+| [0.0.1](#001---19-07-2023) | 19-07-2023 |
+
+
+##### [to top](#top)
