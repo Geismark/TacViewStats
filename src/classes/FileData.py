@@ -166,6 +166,7 @@ class FileData:
         coords=False,
         extras=False,
         all=False,
+        detailed_dicts=False,
     ):
         """Returns a string containing all FileData attributes and their values"""
         if all:
@@ -199,9 +200,9 @@ class FileData:
             cd += f"Latitude Reference: {self.latitude_reference}\n\t"
         if objects:
             o += f"All Objects: {len(self.all_objects)}\n\t"
-            o += f"Alive Objects ({len(self.objects.keys())}): {list(self.objects.keys())}\n\t"
-            o += f"Dying Objects ({len(self.dying_objects.keys())}): {list(self.dying_objects.keys())}\n\t"
-            o += f"Dead Objects ({len(self.dead_objects.keys())}): {[obj.id for obj in self.dead_objects.values()]}\n\t"
+            o += f"Alive Objects: ({len(self.objects.keys())}){f' - {list(self.objects.keys())}' if detailed_dicts else ''}\n\t"
+            o += f"Dying Objects: ({len(self.dying_objects.keys())}){f' - {list(self.dying_objects.keys())}' if detailed_dicts else ''}\n\t"
+            o += f"Dead Objects: ({len(self.dead_objects.keys())}){f' - {[obj.id for obj in self.dead_objects.values()]}' if detailed_dicts else ''}\n\t"
         if extras:
             e += f"Category: {self.category}\n\t"
             e += f"UID Counter: {self.uid_counter} "
