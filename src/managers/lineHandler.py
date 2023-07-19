@@ -110,9 +110,8 @@ def time_stamp_line(line: list, file_data: FileData, last_file_tick_processed: i
 
 def obj_removed_line(line: list, file_data: FileData):
     """Parses an object removal line and updates the FileData and DCSObject objects."""
-    # TODO add killed-by logic/checking (will be delayed - check dying unit against recently dead units)
     obj_id = line[1:]
-    obj = file_data.get_obj_by_id(obj_id)
+    obj = file_data.get_obj_by_id(obj_id, "Alive")
     if obj:
         if obj.check_skip_dying_type():
             obj.update_to_dead()

@@ -41,7 +41,7 @@ class FileData:
         self.dying_objects = (
             {}
         )  # id:obj all objects currently currently in death processing
-        self.dead_objects = {}  # id:obj all objects that have died
+        self.dead_objects = {}  # uid:obj all objects that have died
         self.all_objects = {}  # uid:obj all objects in file (all states)
         self.first_time_stamp = None
         self.time_stamp = (
@@ -91,15 +91,18 @@ class FileData:
         return [self.latitude_reference, self.longitude_reference]
 
     def get_obj_by_id(self, id, *states):
-        """Returns the most recently initialized object with given id"""
+        """Returns the most recently initialized object with given id.\n\n
+        NOTE: not ideally suitable for use with dead objects."""
         if states == ():
             states = valid_DCSObject_states
         if "Alive" in states and id in self.objects:
             return self.objects[id]
         elif "Dying" in states and id in self.dying_objects:
             return self.dying_objects[id]
-        elif "Dead" in states and id in self.dead_objects:
-            return self.dead_objects[id]
+        elif "Dead" in states:
+            dead_with_id = [obj for obj in self.dead_objects.values() if obj.id == id]
+            if dead_with_id != []:
+                return dead_with_id[-1]
         else:
             return None
 

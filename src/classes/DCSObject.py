@@ -161,11 +161,11 @@ class DCSObject:
             raise TypeError(f"Victim is not DCSObject:\n\t{victim=}")
         if not self.check_is_dying():
             raise AttributeError(
-                f"Munition (self) is not in dying objects:\n\t\t{self.id=} {self.type=} {self.name=} {self.state=}\n\t\t{victim.id=} {victim.type=} {victim.name=} {victim.state=}\n\t{self.file_obj.objects.keys()}\n\t{self.file_obj.dying_objects.keys()=}\n\t{self.file_obj.dead_objects.keys()=}"
+                f"Munition (self) is not in dying objects:\n\t\t{self.info(all=True)}\n\t\t{victim.info(all=True)}"
             )
         if not victim.check_is_dying():
             raise AttributeError(
-                f"Victim is not in dying objects:\n\t\t{self.id=} {self.type=} {self.name=} {self.state=}\n\t\t{victim.id=} {victim.type=} {victim.name=} {victim.state=}\n\t{self.file_obj.objects.keys()}\n\t{self.file_obj.dying_objects.keys()=}\n\t{self.file_obj.dead_objects.keys()=}"
+                f"Victim is not in dying objects:\n\t\t{self.info(all=True)}\n\t\t{victim.info(all=True)}"
             )
         if victim.killer != None or victim.killer_weapon != None:
             raise AttributeError(
@@ -212,15 +212,15 @@ class DCSObject:
         # ensure id or obj not already found in dead_objects
         if self in self.file_obj.dead_objects.values():
             raise ValueError(
-                f"New dead object is already in dead_objects: {self.id=} {self.state=} {self.type=}\n\t{self.file_obj.dead_objects.keys()=}"
+                f"New dead object is already in dead_objects: {self.info(all=True)}"
             )
         # validate state and found in correct object dictionary
         if not (self.check_is_alive() or self.check_is_dying()):
             raise ValueError(
-                f"New dead object is not in appropriate object dictionary: {self.id=} {self.state=}"
+                f"New dead object is not in appropriate object dictionary:\n\t{self.info(all=True)}"
                 + f"\n\tIn objects: {True if self.id in self.file_obj.objects else False}"
                 + f"\n\tIn dying_objects: {True if self.id in self.file_obj.dying_objects else False}"
-                + f"\n\tIn dead_objects: {True if self.id in self.file_obj.dead_objects else False}"
+                + f"\n\tIn dead_objects: {True if self in self.file_obj.dead_objects.values() else False}"
             )
         # check death position value and time stamp value is /not/ set
         if self.check_is_alive():
@@ -239,7 +239,7 @@ class DCSObject:
         else:
             raise ValueError(f"Object is not alive or dying: {self.id=} {self.state=}")
         # update to correct object dictionary
-        self.file_obj.dead_objects[self.id] = self
+        self.file_obj.dead_objects[self.uid] = self
         # update to correct state
         self.state = "Dead"
 
@@ -279,7 +279,7 @@ class DCSObject:
 
     def check_is_dead(self):
         if self.state == "Dead":
-            if self.id not in self.file_obj.dead_objects:
+            if self.uid not in self.file_obj.dead_objects:
                 raise ValueError(
                     f"Object is dead but not in dead_objects dictionary: {self.info(all=True)}"
                 )
@@ -322,6 +322,14 @@ class DCSObject:
                 logger.critical(f"Unknown type: {type=}")
         self.type = type_list
 
+    def get_in_dicts(self):
+        """Returns a list of 3 bools indicating which object dictionaries this object is in [Alive, Dying, Dead]"""
+        return [
+            True if self.id in self.file_obj.objects else False,
+            True if self.id in self.file_obj.dying_objects else False,
+            True if self in self.file_obj.dead_objects.values() else False,
+        ]
+
     def info(
         self,
         basic=True,
@@ -329,12 +337,20 @@ class DCSObject:
         position=False,
         times=False,
         side=False,
+        dict=False,
         all=False,
     ):
         """Returns string with object information."""
         if all:
-            basic, combat, position, times, side = True, True, True, True, True
-        b, c, p, t, s = "", "", "", "", ""
+            basic, combat, position, times, side, dict = (
+                True,
+                True,
+                True,
+                True,
+                True,
+                True,
+            )
+        b, c, p, t, s, d = "", "", "", "", "", ""
         if basic:
             b = f"ID: {self.id} "
             b += f"UID: {self.uid} "
@@ -361,7 +377,12 @@ class DCSObject:
         if side:
             s = f"Coalition: {self.coalition} "
             s += f"Country: {self.country}"
+        if dict:
+            alive, dying, dead = self.get_in_dicts()
+            d = f"Alive: {alive} "
+            d += f"Dying: {dying} "
+            d += f"Dead: {dead} "
 
-        temp = [element for element in [b, c, p, t, s] if element]
-        info = "\n".join(temp)
+        temp = [element for element in [b, c, p, t, s, d] if element]
+        info = "\n\t".join(temp)
         return info
