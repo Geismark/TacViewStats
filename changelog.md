@@ -18,9 +18,14 @@ All notable changes to this project will be documented in this file.
 - UID attribute to DCSObject (int from FileData.uid_counter)
 - FileData all_objects dictionary {UID:obj}
 - (Some) DocStrings
+- FileData.info()
 ### Changed
 - Checking if type skips dying state longer automatically updates to dead
 - Slight improvements to logging messages (clarity) and
+- Simplified DCSObject check state functions
+- Updated FileData.dead_objects to {uid:obj} from {id:obj}
+  - *Alive and Dying dictionaries remain as {id:obj}*
+- 
 
 ### Fixed
 - Previously overlooked UTF-8 logger encoding (FileHandler)
