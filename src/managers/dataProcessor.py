@@ -26,12 +26,12 @@ def process_file_tick(file: FileData):
             logger.trace(f"Dying process delay expired: {ref_obj.info()}")
             continue
         # ensure ref_obj is dying (i.e.: hasn't died since dying_ref_list was created)
-        if not ref_obj.check_state("Dying"):
+        if not ref_obj.check_is_dying():
             continue
 
         # if there is more than 1 object, find closest object and distance
         if len(dying_ref_list) > 1:
-            closest_list = [o for o in dying_ref_list if o.check_state("Dying")]
+            closest_list = [o for o in dying_ref_list if o.check_is_dying()]
             closest_obj, dist = get_closest_obj(ref_obj, closest_list)
         # if len == 1 only the current object remains, can skip rest of processing
         elif len(dying_ref_list) == 1:
@@ -49,7 +49,7 @@ def process_file_tick(file: FileData):
         if not check_lists_share_element(ref_obj.type, killer_types):
             continue
 
-        if ref_obj.check_skip_data_processing_type() or ref_obj.check_state("Dead"):
+        if ref_obj.check_skip_data_processing_type() or ref_obj.check_is_dead():
             continue
             # both above and below unfortunately (potentially?) necessary, as objects in ref_list change during this loop
 
@@ -57,7 +57,7 @@ def process_file_tick(file: FileData):
             logger.trace(f"closest_obj is None - {file.dying_objects.keys()=}")
             return
 
-        if not closest_obj.check_state("Dying"):
+        if not closest_obj.check_is_dying():
             raise ValueError(
                 f"Closest object is not dying:\n\t{closest_obj.id=} {closest_obj.type=}\n\t{ref_obj.id=} {ref_obj.type=}"
             )

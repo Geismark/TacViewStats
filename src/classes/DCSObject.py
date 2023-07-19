@@ -105,9 +105,9 @@ class DCSObject:
         if alt != "":
             self.alt = float(alt)
 
-    def get_pos(self, ignore_state=False):
+    def get_pos(self, _ignore_state=False):
         """Get relative position of this object as provided by the file (exclude lat/long reference)."""
-        if not self.check_state("Alive") and not ignore_state:
+        if not self.check_is_alive() and not _ignore_state:
             raise ValueError(
                 f"Trying to get position of {self.state} object: {self.id=} {self.name=} {self.type=}"
             )
@@ -115,7 +115,7 @@ class DCSObject:
 
     def get_real_pos(self):
         """Get absolute position of this object as provided by the file (include lat/long reference)."""
-        if not self.check_state("Alive"):
+        if not self.check_is_alive():
             raise ValueError(
                 f"Trying to get real position of {self.state} object: {self.id=} {self.name=} {self.type=}"
             )
@@ -159,11 +159,11 @@ class DCSObject:
         Updates both victim and self to dead."""
         if not isinstance(victim, DCSObject):
             raise TypeError(f"Victim is not DCSObject:\n\t{victim=}")
-        if not self.check_state("Dying"):
+        if not self.check_is_dying():
             raise AttributeError(
                 f"Munition (self) is not in dying objects:\n\t\t{self.id=} {self.type=} {self.name=} {self.state=}\n\t\t{victim.id=} {victim.type=} {victim.name=} {victim.state=}\n\t{self.file_obj.objects.keys()}\n\t{self.file_obj.dying_objects.keys()=}\n\t{self.file_obj.dead_objects.keys()=}"
             )
-        if not victim.check_state("Dying"):
+        if not victim.check_is_dying():
             raise AttributeError(
                 f"Victim is not in dying objects:\n\t\t{self.id=} {self.type=} {self.name=} {self.state=}\n\t\t{victim.id=} {victim.type=} {victim.name=} {victim.state=}\n\t{self.file_obj.objects.keys()}\n\t{self.file_obj.dying_objects.keys()=}\n\t{self.file_obj.dead_objects.keys()=}"
             )
@@ -189,7 +189,7 @@ class DCSObject:
     def update_to_dying(self):
         """Update self to dying state (includes moving to appropriate dictionary)."""
         # validate state and found in correct object dictionary
-        if not self.check_state("Alive"):
+        if not self.check_is_alive():
             raise ValueError(
                 f"New dying object does not have correct state/not in correct object dictionary:\n\t{self.id=} {self.state=}"
             )
@@ -215,7 +215,7 @@ class DCSObject:
                 f"New dead object is already in dead_objects: {self.id=} {self.state=} {self.type=}\n\t{self.file_obj.dead_objects.keys()=}"
             )
         # validate state and found in correct object dictionary
-        if not (self.check_state("Alive", "Dying")):
+        if not (self.check_is_alive() or self.check_is_dying()):
             raise ValueError(
                 f"New dead object is not in appropriate object dictionary: {self.id=} {self.state=}"
                 + f"\n\tIn objects: {True if self.id in self.file_obj.objects else False}"
@@ -223,14 +223,14 @@ class DCSObject:
                 + f"\n\tIn dead_objects: {True if self.id in self.file_obj.dead_objects else False}"
             )
         # check death position value and time stamp value is /not/ set
-        if self.check_state("Alive"):
+        if self.check_is_alive():
             if self.death_position != None or self.death_time_stamp != None:
                 raise ValueError(
                     f"Old alive/new dead object already has death position: {self.id=} {self.death_time_stamp=} {self.death_position=}"
                 )
             self.set_death_coords()
             self.file_obj.objects.pop(self.id)
-        elif self.check_state("Dying"):
+        elif self.check_is_dying():
             if self.death_position == None or self.death_time_stamp == None:
                 raise ValueError(
                     f"Old dying/new dead object has no death position: {self.id=} {self.death_time_stamp=}"
@@ -259,57 +259,32 @@ class DCSObject:
             )
         self.death_time_stamp = self.file_obj.time_stamp
 
-    def check_state(self, *states_to_check):
-        """Checks if object state is one of the provided states. Checks all states if not provided."""
-        valid_states = valid_DCSObject_states
-        if len(states_to_check) == 0:
-            states_to_check = valid_states
-        else:
-            for state in states_to_check:
-                if state not in valid_states:
-                    raise ValueError(
-                        f"State to check is not Alive/Dying/Dead: {state=} {states_to_check=}"
-                    )
-        if self.state in states_to_check:
-            if self._check_is_state(self.state):
-                return True
+    def check_is_alive(self):
+        if self.state == "Alive":
+            if self.id not in self.file_obj.objects:
+                raise ValueError(
+                    f"Object is alive but not in objects dictionary: {self.info(all=True)}"
+                )
+            return True
         return False
 
-    def _check_is_state(self, state: str):
-        """Use object.check_state(*states_to_check) instead of this"""
-        if state not in valid_DCSObject_states:
-            raise ValueError(f"State to check is not Alive/Dying/Dead: {state=}")
-        if state == "Alive":
-            if (
-                (self.state != "Alive")
-                or (self.id not in self.file_obj.objects)
-                # or (self.id in self.file_obj.dying_objects)
-                # or (self.id in self.file_obj.dead_objects)
-            ):
-                raise TypeError(
-                    f"State is Alive but doesn't have appropriate attributes or not in correct dictionary:\n\t{self.id=} {self.state=} {self.type=} {self.name=}\n\tAlive: {True if self.id in self.file_obj.objects else False} Dying: {True if self.id in self.file_obj.dying_objects else False} Dead: {True if self.id in self.file_obj.dead_objects else False}"
+    def check_is_dying(self):
+        if self.state == "Dying":
+            if self.id not in self.file_obj.dying_objects:
+                raise ValueError(
+                    f"Object is dying but not in dying_objects dictionary: {self.info(all=True)}"
                 )
-        elif state == "Dying":
-            if (
-                (self.state != "Dying")
-                # or (self.id in self.file_obj.objects)
-                or (self.id not in self.file_obj.dying_objects)
-                # or (self.id in self.file_obj.dead_objects)
-            ):
-                raise TypeError(
-                    f"State is Dying but doesn't have appropriate attributes or not in correct dictionary:\n\t{self.id=} {self.state=} {self.type=} {self.name=}\n\tAlive: {True if self.id in self.file_obj.objects else False} Dying: {True if self.id in self.file_obj.dying_objects else False} Dead: {True if self.id in self.file_obj.dead_objects else False}"
+            return True
+        return False
+
+    def check_is_dead(self):
+        if self.state == "Dead":
+            if self.id not in self.file_obj.dead_objects:
+                raise ValueError(
+                    f"Object is dead but not in dead_objects dictionary: {self.info(all=True)}"
                 )
-        elif state == "Dead":
-            if (
-                (self.state != "Dead")
-                # or (self.id in self.file_obj.objects)
-                # or (self.id in self.file_obj.dying_objects)
-                or (self.id not in self.file_obj.dead_objects)
-            ):
-                raise TypeError(
-                    f"State is Dead but doesn't have appropriate attributes or not in correct dictionary:\n\t{self.id=} {self.state=} {self.type=} {self.name=}\n\tAlive: {True if self.id in self.file_obj.objects else False} Dying: {True if self.id in self.file_obj.dying_objects else False} Dead: {True if self.id in self.file_obj.dead_objects else False}"
-                )
-        return True
+            return True
+        return False
 
     def check_skip_dying_type(self):
         """Returns True if an object type is within skip_dying_type list."""
@@ -374,7 +349,7 @@ class DCSObject:
             c += f"Killer: {[self.killer.id, self.killer.type, self.killer.name] if self.killer else None} "
             c += f"Killer Weapon: {self.killer_weapon.name if self.killer_weapon else None} "
         if position:
-            p = f"Position: {self.get_pos(ignore_state=True)} "
+            p = f"Position: {self.get_pos(_ignore_state=True)} "
             p += f"Previous: {self.get_prev_pos()} "
             p += f"Origin: {self.origin} "
             p += f"Death: {self.get_death_pos()} "

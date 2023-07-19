@@ -21,11 +21,7 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
         raise TypeError(f"Reference object is not DCSObject: {type(obj)=}")
     if not isinstance(other_objs, list):
         raise TypeError(f"other_objs is not list: {type(other_objs)=} {other_objs=}")
-    if not obj.check_state():
-        raise ValueError(
-            f"Reference object is not alive/dying/dead: {obj.id=} {obj.state=}"
-        )
-    if obj.check_state("Dead"):
+    if obj.check_is_dead():
         logger.warning(f"Trying to get closest obj of dead obj: {obj.info(all=True)}")
         return None, None
     if len(other_objs) <= 1:
@@ -33,9 +29,9 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
         return None, None
     closest_obj = None
     closest_dist = None
-    if obj.check_state("Alive"):
+    if obj.check_is_alive():
         obj_pos = obj.get_pos()
-    elif obj.check_state("Dying", "Dead"):
+    elif obj.check_is_dying() or obj.check_is_dead():
         obj_pos = obj.get_death_pos()
     else:
         raise ValueError(
@@ -48,11 +44,11 @@ def get_closest_obj(obj: DCSObject, other_objs: list) -> tuple[DCSObject, float]
             raise TypeError(
                 f"Comparison object is not DCSObject: {other.id=} {type(obj)=}"
             )
-        elif other.check_state("Dead"):
+        elif other.check_is_dead():
             continue
-        if other.check_state("Alive"):
+        if other.check_is_alive():
             other_pos = other.get_pos()
-        elif other.check_state("Dying"):
+        elif other.check_is_dying():
             other_pos = other.get_death_pos()
         else:
             raise ValueError(

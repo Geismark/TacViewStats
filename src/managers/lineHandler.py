@@ -54,7 +54,7 @@ def object_line(line: list, file_data: FileData):
                 acmi_pointer
             ):  # TODO how to make this more efficient?
                 if acmi_pointer == "T=":
-                    if obj_data.check_state("Dead"):
+                    if obj_data.check_is_dead():
                         logger.critical(
                             f"Updating object attributes with check_state(Dead):\n\t{obj_data.__dict__}"
                         )
@@ -116,7 +116,7 @@ def obj_removed_line(line: list, file_data: FileData):
     if obj:
         if obj.check_skip_dying_type():
             obj.update_to_dead()
-        elif obj.check_state("Alive"):
+        elif obj.check_is_alive():
             obj.update_to_dying()
         else:
             raise ValueError(
