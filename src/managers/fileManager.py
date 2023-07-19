@@ -60,7 +60,7 @@ def read_files(files: list[str], AuthorIsUser: bool):
                     file_formatted = file_decoded.splitlines()
         else:
             file_data.is_zip = False
-            with open(file) as open_file:
+            with open(file, "r", encoding="utf-8-sig") as open_file:
                 file_formatted = [line for line in open_file]
         logger.debug(f"\n\t{file_data.file_name=}\n\t{file_data.is_zip=}\n")
         process_file(file_data, file_formatted, AuthorIsUser)
@@ -81,9 +81,15 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
         line = line.rstrip("\n")
         if index == 0:
             if not line.startswith(file_start):
-                raise TypeError(
-                    f"File does not start with appropriate zip file header:\n\tZIP:{file_data.is_zip} {file_start=} {line=}"
-                )
+                if line.startswith("FileType="):
+                    logger.debug(
+                        f"File starts without encoding keyword: {line=} ZIP: {file_data.is_zip()} Name: {file_data.file_name}"
+                    )
+                    file_start = "FileType="
+                else:
+                    raise TypeError(
+                        f"File does not start with appropriate zip file header:\n\tZIP:{file_data.is_zip} {file_start=} {line=}"
+                    )
             file_data.file_type = line[len(file_start) :]
             # '∩╗┐' accounts for (I assume) the .zip identifier, not present if extracted
             # TODO check if actually acmi file
