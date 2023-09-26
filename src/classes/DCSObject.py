@@ -51,6 +51,8 @@ class DCSObject:
         self.alt_old = (
             None  # the altitude value at the previous coordinate update of this object
         )
+        self.u = None
+        self.v = None
         self.type = (
             None  # the assigned type(s) of this object (e.g.: fixed-wing / projectile)
         )
@@ -104,6 +106,12 @@ class DCSObject:
             self.long = float(long)
         if alt != "":
             self.alt = float(alt)
+
+    def update_simple_transform(self, u: str, v: str):
+        if u:
+            self.u = float(u)
+        if v:
+            self.v = float(v)
 
     def get_pos(self, _ignore_state=False):
         """Get relative position of this object as provided by the file (exclude lat/long reference)."""

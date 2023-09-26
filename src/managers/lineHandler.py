@@ -63,6 +63,14 @@ def object_line(line: list, file_data: FileData):
                     obj_data.update_transform(
                         transformers[1], transformers[0], transformers[2]
                     )
+                    if len(transformers) == 5:
+                        obj_data.update_simple_transform(
+                            transformers[3], transformers[4]
+                        )
+                    elif len(transformers) == 9:
+                        obj_data.update_simple_transform(
+                            transformers[6], transformers[7]
+                        )
                 elif obj_attr_name == None:
                     continue  # dict.value==None -> skip this attr
                 else:

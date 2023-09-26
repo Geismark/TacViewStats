@@ -14,6 +14,7 @@ try:
     from dev.dev_vars import test_launcher_accuracy as input_dir
     from dev.dev_vars import test_kill_accuracy as input_dir
     from dev.dev_vars import test_brody as input_dir
+    from dev.dev_vars import problem as input_dir  # problem file
     from dev.dev_vars import test_dir as input_dir  # test dir
 
 
@@ -24,7 +25,7 @@ except ImportError:
 if __name__ == "__main__":
     get_timer()
 
-    input_dir = None
+    # input_dir = None
     dialog_single_file = False
 
     files_dir = get_directory(dir_path=input_dir, dialog_single_file=dialog_single_file)

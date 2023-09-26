@@ -91,6 +91,12 @@ class TestCoordUtils(unittest.TestCase):
     def test_coords_to_haversine_distance(self):
         pass
 
+    def test_coords_to_distance(self):
+        pass
+        d1 = [-133230.23, 381191.19, 2969.81]
+        d2 = [-478482.09, -5420.09, 10058.4]
+        # 279.9026765261852
+
 
 if __name__ == "__main__":
     unittest.main()

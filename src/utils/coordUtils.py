@@ -4,6 +4,7 @@
 # T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw
 # T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw | U | V | Heading
 
+# emailed the TacView team, they use 3D pythagorean theorem to calculate distance using U,V,Alt
 
 # ======================================== NOTE ========================================
 # This file is a complete mess - please ignore for now, will be completed in the future
@@ -236,70 +237,45 @@ def coords_to_haversine_distance_updated(
     return distance * convert_units
 
 
+def coords_to_distance(position1, position2, output_unit="nm"):
+    # takes [U,V,alt] and returns distance in meters
+    meter_distance = sqrt(
+        (position2[0] - position1[0]) ** 2
+        + (position2[1] - position1[1]) ** 2
+        + (position2[2] - position1[2]) ** 2
+    )
+    distance = meters_to_unit(meter_distance, output_unit)
+    return distance
+
+
+def objs_to_distance(obj1, obj2, output_unit="nm"):
+    meter_distance = sqrt(
+        (obj2.u - obj1.u) ** 2 + (obj2.v - obj1.v) ** 2 + (obj2.alt - obj1.alt) ** 2
+    )
+    distance = meters_to_unit(meter_distance, output_unit)
+    return distance
+
+
+def meters_to_unit(meters: float, unit: str):
+    if unit in ["nautical mile", "nautical miles", "nm", "nmi"]:
+        convert_units = 0.000539957
+    elif unit in ["kilometres", "kilometre", "km"]:
+        convert_units = 0.001
+    elif unit in ["mile", "miles", "mi"]:
+        convert_units = 0.000621371
+    elif unit in ["meter", "meters", "m"]:
+        convert_units = 1
+    elif unit in ["feet", "ft"]:
+        convert_units = 3.28084
+    else:
+        raise ValueError(f"{unit=}")
+    return meters * convert_units
+
+
 if __name__ == "__main__":
     units = ["nm", "km", "mi", "m", "ft"]
     unit = "nm"
 
-    # p1 = [29.4973704, 54.8285196, 4869.91]
-    # p2 = [25.9652969, 51.4766983, 10058.56]
-    # TV_shown = 277.01  # nm
-    # print(f'"E - {unit}": {coords_to_euclidean_distance(p1, p2, unit)},')
-    # print(f'"H - {unit}": {coords_to_haversine_distance(p1, p2, unit)},')
-    # print(f'"U - {unit}": {coords_to_haversine_distance_updated(p1, p2, unit)},')
-    # print(f"{TV_shown = }\n")
-    p1 = [44.1756191, 37.8692512, 0]
-    p2 = [44.4734395, 39.7265547, 9801.65]
-    TV_shown = 82.32  # nm
-    print(f'"E - {unit}": {coords_to_euclidean_distance(p1, p2, unit)},')
-    print(f'"H - {unit}": {coords_to_haversine_distance(p1, p2, unit)},')
-    print(f'"U - {unit}": {coords_to_haversine_distance_updated(p1, p2, unit)},')
-    print(f"{TV_shown = }\n")
-    p1 = [44.2305133, 37.2661646, 0]
-    p2 = [44.498904, 37.1760557, 0]
-    TV_shown = 16.58  # nm
-    print(f'"E - {unit}": {coords_to_euclidean_distance(p1, p2, unit)},')
-    print(f'"H - {unit}": {coords_to_haversine_distance(p1, p2, unit)},')
-    print(f'"U - {unit}": {coords_to_haversine_distance_updated(p1, p2, unit)},')
-    print(f"{TV_shown = }\n")
-    # p1 = [p1[0] + ReferenceLatitude, p1[1] + ReferenceLongitude, p1[2]]
-    # p2 = [p2[0] + ReferenceLatitude, p2[1] + ReferenceLongitude, p2[2]]
-    # for unit in units:
-    #     print(f'"E - {unit}": {coords_to_euclidean_distance(p1, p2, unit)},')
-    #     print(f'"H - {unit}": {coords_to_haversine_distance(p1, p2, unit)},')
-    p1 = [44.498904, 37.1760557, 0]
-    p2 = [42.774945, 40.5869716, 0]
-    TV_shown = 181.49
-    print(f'"E - {unit}": {coords_to_euclidean_distance(p1, p2, unit)},')
-    print(f'"H - {unit}": {coords_to_haversine_distance(p1, p2, unit)},')
-    print(f'"U - {unit}": {coords_to_haversine_distance_updated(p1, p2, unit)},')
-    print(f"{TV_shown = }\n")
-    p1 = [44.498904, 37.1760557, 0]
-    p2 = [45.5450485, 40.5079512, 7620.42]
-    TV_shown = 155.46
-    print(f'"E - {unit}": {coords_to_euclidean_distance(p1, p2, unit)},')
-    print(f'"H - {unit}": {coords_to_haversine_distance(p1, p2, unit)},')
-    print(f'"U - {unit}": {coords_to_haversine_distance_updated(p1, p2, unit)},')
-    print(f"{TV_shown = }\n")
-
-
-# https://www.tacview.net/documentation/acmi/en/
-# T = Longitude | Latitude | Altitude
-# T = Longitude | Latitude | Altitude | U | V
-# T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw
-# T = Longitude | Latitude | Altitude | Roll | Pitch | Yaw | U | V | Heading
-
-
-# 0,ReferenceLongitude=34
-# 0,ReferenceLatitude=40
-
-# TV_shown = 181.49 #nm
-# LHA-1 [44.498904, 37.1760557, 0]
-# a02,T=3.1760557|4.498904|-0.03
-# Admiral Kuznetsov [42.774945, 40.5869716, 0]
-# 802,T=6.5869716|2.774945|0.03
-
-# TV_shown = 155.46 #nm
-# LHA-1 [44.498904, 37.1760557, 0]
-# a02,T=3.1760557|4.498904|-0.03
-# A-50 [45.5450485, 40.5079512, 7620.42]
-# 36d02,T=6.5079512|5.5450485|7620.42
+# Distance Brody=><=A_380 279.90
+# 12203,T=4.8420852|6.5974405|2969.81|-18.3|1.2|298.6|-133230.23|381191.19|299.7,Type=Air+FixedWing,Color=Blue,Coalition=Enemies,Name=F-14A-135-GR,Country=xb,Pilot=Brody,Group=80's F-14A,Importance=1,IAS=246.3,AOA=1.3,Flaps=0,LandingGear=0,HDM=296.7,PilotHeadRoll=5.24,PilotHeadPitch=13.22,PilotHeadYaw=-25.93,AOAUnits=4.85
+# fe02,T=1.4663775|3.0186413|10058.4||4.1|177.5|-478482.09|-5420.09|180,Type=Air+FixedWing,Color=Red,Coalition=Allies,Name=A_380,Country=xr,Pilot=A380,Group=A380
