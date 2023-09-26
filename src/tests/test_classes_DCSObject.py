@@ -73,12 +73,13 @@ class TestClasses(unittest.TestCase):
         self.assertEqual(test_unit.get_real_pos(), [21 + 3, 50 + 4, 40])
 
         # DCSObject test munition init
-        test_munition = DCSObject(file_obj, "munition")
+        test_munition = file_obj.new_obj("munition")
+        # test_munition = DCSObject(file_obj, "munition", 404)
         # DCSObject add munition - much be DCSObject
         with self.assertRaises(TypeError):
             test_unit.add_launch("null")
         # DCSObject add munition - munition cannot already have launcher
-        test_munition.launcher = DCSObject(file_obj, "null")
+        test_munition.launcher = file_obj.new_obj("null")
         with self.assertRaises(ValueError):
             test_unit.add_launch(test_munition)
         test_munition.launcher = None
@@ -95,7 +96,7 @@ class TestClasses(unittest.TestCase):
         with self.assertRaises(ValueError):
             test_unit.add_launch(test_munition)
         # DCSObject add multiple munitions
-        test_munition2 = DCSObject(file_obj, "munition2")
+        test_munition2 = file_obj.new_obj("munition2")
         test_unit.add_launch(test_munition2)
         self.assertEqual(
             list(test_unit.launches.values()), [test_munition, test_munition2]

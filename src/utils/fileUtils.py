@@ -12,6 +12,7 @@ from src.utils.coordUtils import coords_to_euclidean_distance
 
 
 def attr_split(string):  # regex look-behind not (easily?) applicable
+    """Takes an acmi file line and splits it into a list of attributes and values (e.g.: 'Color=Grey')"""
     splits = [0]
     for i, char in enumerate(string):
         if char == "," and string[i - 1] != "\\":
@@ -34,6 +35,7 @@ def attr_split(string):  # regex look-behind not (easily?) applicable
 
 
 def get_launcher(origin_obj: DCSObject):
+    """Not currently implemented/working as intended - will be revisited"""
     file_data = origin_obj.file_obj
     all_objs = file_data.objects.values()
     # unlikely for launcher to die before munition register, but something to consider
@@ -71,6 +73,7 @@ def get_nearest_obj(
     is_unit=False,
     ignore_non_units=True,
 ):
+    """Not currently implemented/working as intended - will be revisited"""
     all_objs = (
         file_data.objects.values()
     )  # TODO this is an issue, may want target object that is dying/dead
@@ -103,6 +106,7 @@ def get_nearest_obj(
 
 
 def coords_to_distance(point1: list, point2: list, meters=True):
+    """Not currently implemented/working as intended - will be revisited"""
     # TODO need to go through this function again, hasn't been checked since transform updates have been fixes (and accuracy has never been tested)
     if not meters:
         raise NotImplemented
@@ -145,6 +149,7 @@ def coords_to_distance(point1: list, point2: list, meters=True):
 def obj_is_type(
     obj_data, ignore_types=[], include_types=[], is_unit=False, ignore_non_units=False
 ):
+    """Takes DCSObject (and optional ignore/include lists) and returns bool whether object types share/are exclusive from include/ignore type lists."""
     unit_types = ["Air", "Ground", "Sea"]
     non_units = [
         "Decoy",

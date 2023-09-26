@@ -1,6 +1,5 @@
 import os
 from src.managers.logHandler import logger
-from src.utils.coordUtils import get_closest_obj
 
 
 def write_outcome(files_data: dict):
@@ -15,11 +14,12 @@ def write_outcome(files_data: dict):
     file_names_dict = {
         index: list(file.file_name.split("/"))[-1] for index, file in files_data.items()
     }
-    logger.info(f"{files_data=}\n\t{file_names_dict=}")
+    logger.info(f"{len(files_data)=}\n{file_names_dict=}")
     for file_data in files_data.values():
         logger.info(
-            f"\n\nFile Name: {file_data.file_name}\n\tFile Size:   {file_data.file_size:,} KB\n\tFile Length: {file_data.file_length:,}\n"
+            f"\n\n\tFile Name: {file_data.file_name}\n\tFile Size:   {file_data.file_size:,} KB\n\tFile Length: {file_data.file_length:,}\n"
         )
+        logger.info(file_data.info(all=True))
         for obj in (
             list(file_data.objects.values())
             + list(file_data.dying_objects.values())
@@ -38,37 +38,6 @@ def write_outcome(files_data: dict):
                         )
                     else:
                         logger.critical(f"Multiple kills: {launch.kills.values()=}")
-        # incorrect = file_data.get_obj_by_id("63d02")
-        # ip = incorrect.get_death_pos()
-        # correct = file_data.get_obj_by_id("5e202")
-        # cp = correct.get_death_pos()
-        # missile = file_data.get_obj_by_id("64202")
-        # mp = missile.get_death_pos()
-        # logger.critical(
-        #     f"Incorrect: {ip} {incorrect.state} {get_closest_obj(missile, [missile, incorrect])[1]} {[ip[0]-mp[0], ip[1]-mp[1], ip[2]-mp[2]]}"
-        # )
-        # logger.critical(
-        #     f"Correct: {cp} {correct.state} {get_closest_obj(missile, [missile, correct])[1]} {[cp[0]-mp[0], cp[1]-mp[1], cp[2]-mp[2]]}"
-        # )
-        # logger.critical(f"Missile: {mp} {missile.state}")
-        # print(incorrect.__dict__)
-        # print(correct.__dict__)
-        # print(missile.__dict__)
-        # k = correct.killer_weapon
-        # print(
-        #     k.id,
-        #     k.name,
-        #     k.pilot,
-        #     k.type,
-        #     k.state,
-        #     k.death_time_stamp,
-        #     k.file_obj.time_stamp,
-        # )
-
-    # logger.info("\n")
-
-
-# seconds to minute seconds
 
 
 if __name__ == "__main__":

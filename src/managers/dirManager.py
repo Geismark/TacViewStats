@@ -6,6 +6,7 @@ from tkinter import filedialog
 
 
 def directory_dialog(dialog_single_file, init_dir=None, init_file=None):
+    """Opens a dialog to select a directory or file."""
     # https://stackoverflow.com/questions/9319317/quick-and-easy-file-dialog-in-python
     # TODO: multiple files can be selected
     root = tk.Tk()
@@ -22,6 +23,7 @@ def directory_dialog(dialog_single_file, init_dir=None, init_file=None):
 def get_directory(
     dir_path=None, dialog_single_file=False, init_dir=None, init_file=None
 ):
+    """Returns path as a directory string. If none is given, opens a dialog."""
     if not dir_path:
         dir_path = directory_dialog(
             dialog_single_file, init_dir=init_dir, init_file=init_file
@@ -42,6 +44,11 @@ def get_files(folder_dir: str):
         files_any = [folder_dir]
     else:
         files_any = glob.glob(f"{folder_dir}/*.*")  # lists all files in dir
+        files_any = [
+            file
+            for file in files_any
+            if os.path.isfile(file) and file.endswith(".acmi")
+        ]
     f_mod, f_txt, f_zip, f_acmi = 0, 0, 0, 0
     for index, file in enumerate(files_any):
         # TODO could also split string ('.') and count - faster?

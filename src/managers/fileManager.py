@@ -30,6 +30,7 @@ def is_zip(file: str) -> bool:
 
 
 def read_files(files: list[str], AuthorIsUser: bool):
+    """Takes a list[str] of file paths and returns a dict of index:FileData objects, having passed each file to process_file()."""
     all_files_data = {}
     logger.info(f"Total files: {len(files)}   -   {get_timer()}")
     for index, file in enumerate(files):
@@ -55,18 +56,18 @@ def read_files(files: list[str], AuthorIsUser: bool):
                     )
                 with zipped_file.open(contents[0]) as unzipped:
                     file_text = unzipped.read()
-                    file_decoded = file_text.decode("IBM437")  # default ZIP encoding
+                    file_decoded = file_text.decode("utf-8-sig")  # default ZIP encoding
                     file_formatted = file_decoded.splitlines()
         else:
             file_data.is_zip = False
-            with open(file) as open_file:
+            with open(file, "r", encoding="utf-8-sig") as open_file:
                 file_formatted = [line for line in open_file]
-        logger.debug(f"\n\t{file_data.file_name=}\n\t{file_data.is_zip=}\n")
         process_file(file_data, file_formatted, AuthorIsUser)
     return all_files_data
 
 
 def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
+    """Parses a list of lines from a file and updates the FileData object."""
     file_data.file_length = len(file)
     if file_data.is_zip:
         file_start = "∩╗┐FileType="
@@ -79,8 +80,18 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
         line = line.rstrip("\n")
         if index == 0:
             if not line.startswith(file_start):
-                raise TypeError(
-                    f"File does not start with appropriate zip file header:\n\tZIP:{file_data.is_zip} {file_start=} {line=}"
+                if line.startswith("FileType="):
+                    # logger.debug(
+                    #     f"File starts without encoding keyword: {line=} ZIP: {file_data.is_zip} Name: {file_data.file_name}"
+                    # )
+                    file_start = "FileType="
+                else:
+                    raise TypeError(
+                        f"File does not start with appropriate zip file header:\n\tZIP:{file_data.is_zip} {file_start=} {line=}"
+                    )
+            else:
+                logger.debug(
+                    f"File starts with encoding keyword (with BOM): {line=} ZIP:{file_data.is_zip} Name:{file_data.file_name}"
                 )
             file_data.file_type = line[len(file_start) :]
             # '∩╗┐' accounts for (I assume) the .zip identifier, not present if extracted
@@ -104,12 +115,9 @@ def process_file(file_data: FileData, file: list[str], AuthorIsUser: bool):
             last_file_tick_processed = time_stamp_line(
                 line, file_data, last_file_tick_processed
             )
-            # TODO: add time stamp in logs at logging.value = 1
-            # logger.trace(f"TIME: {file_data.time_stamp}")
         elif line.startswith("-"):
             obj_removed_line(line, file_data)
         else:
-            # logger.trace("UPDATE OBJECT")
             object_line(line, file_data)
     return
 

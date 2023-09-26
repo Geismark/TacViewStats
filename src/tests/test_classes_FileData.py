@@ -66,7 +66,7 @@ class TestClasses(unittest.TestCase):
         # FileData remove objects
         test_alive_coords = test_unit_2.get_pos()
         test_unit_2.update_to_dying()
-        self.assertTrue(test_unit_2.check_state("Dying"))
+        self.assertTrue(test_unit_2.check_is_dying())
         self.assertEqual(test_unit_2.death_time_stamp, test_obj.time_stamp)
         with self.assertRaises(ValueError):
             test_unit_2.get_pos()
@@ -75,7 +75,7 @@ class TestClasses(unittest.TestCase):
         )
         self.assertEqual(test_unit_2.get_death_pos(), test_alive_coords)
         test_unit_2.update_to_dead()
-        self.assertTrue(test_unit_2.check_state("Dead"))
+        self.assertTrue(test_unit_2.check_is_dead())
         self.assertEqual(test_unit_2.death_time_stamp, test_obj.time_stamp)
         with self.assertRaises(ValueError):
             test_unit_2.get_pos()

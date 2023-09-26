@@ -63,6 +63,7 @@ def add_logging_level(levelName, levelNum, methodName=None):
 
 
 def get_console_logger_config():
+    """Gets config attributes and returns console logger level and formatter"""
     if not config.LOGGING.to_console:
         raise ValueError("Console logging config run when to_console != True")
 
@@ -85,6 +86,7 @@ def get_console_logger_config():
 
 
 def get_file_logger_config():
+    """Gets config attributes and returns file logger level and formatter"""
     if not config.LOGGING.to_file:
         raise ValueError("File logging config run when to_file != True")
 
@@ -107,6 +109,9 @@ def get_file_logger_config():
 
 
 def setup_config_output_dir():
+    """Gets the logging output directory from config (either from root or project) and finds path.\n\n
+    Returns the path and a list of debug logs (that haven't been logged, as logger has yet to be init'd*).
+    """
     debug_logs = []
     file_path = config.FILE_LOGGING.file_output_dir
     if os.path.isdir(f"{os.getcwd()}{file_path}"):
@@ -127,6 +132,10 @@ def setup_config_output_dir():
 
 
 def prepare_output_directory(output_dir: str):
+    """Finds logging output directory from input.\n\n
+    Finds all log files and deletes oldest modified if there are too many.\n\n
+    Returns new log file name and a list of debug logs (that haven't been logged, as logger has yet to be init'd*).
+    """
     debug_logs = []
     print(f"{output_dir=}")
     if not isinstance(output_dir, str):
@@ -172,6 +181,9 @@ def prepare_output_directory(output_dir: str):
 
 # near identical to dirManager.get_files() BUT needed to initialise logger
 def get_log_files(folder_dir: str):
+    """Returns all files in a directory.\n\n
+    This function is near identical to dirManager.get_files() BUT needed to initialise logger as cannot import due to circular imports before logger init.
+    """
     if os.path.isfile(folder_dir):
         files = [folder_dir]
     else:
