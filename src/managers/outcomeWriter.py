@@ -1,9 +1,15 @@
 import os
 from src.managers.logHandler import logger
 from src.utils.timeUtils import get_date_time
-from src.utils.outputUtils import files_csv_header, objects_csv_header
+from src.utils.outputUtils import (
+    files_csv_header,
+    objects_csv_header,
+    output_csv_header,
+    output_exclude_object_types,
+)
 import pandas as pd
 import csv
+import re
 
 
 def process_outcome(files_data: dict, output_dir: str = None):
@@ -16,6 +22,7 @@ def process_outcome(files_data: dict, output_dir: str = None):
 def get_outcome_dirs(output_dir_input: str) -> tuple[str, str, str]:
     file_dir = os.path.dirname(os.path.realpath(__file__))
     cwd_dir_list = file_dir.split("\\")[:-2]
+    date, time = get_date_time()
 
     if output_dir_input:
         output_dir = output_dir_input
@@ -24,7 +31,8 @@ def get_outcome_dirs(output_dir_input: str) -> tuple[str, str, str]:
     if not os.path.isdir(output_dir):
         raise ValueError(f"Output directory is not a directory: {output_dir=}")
 
-    date, time = get_date_time()
+    output_file = f"{output_dir}/TVS_output_{date}_{time}.csv"
+
     files_data_dir = "/".join(
         cwd_dir_list + ["outputs", f"{date}_{time}_files_data.csv"]
     )
@@ -32,16 +40,19 @@ def get_outcome_dirs(output_dir_input: str) -> tuple[str, str, str]:
         cwd_dir_list + ["outputs", f"{date}_{time}_objects_data.csv"]
     )
 
-    with open(files_data_dir, "w", newline="") as f:
+    with open(output_file, "x", newline="") as f:
+        csv_writer = csv.writer(f)
+        csv_writer.writerow(output_csv_header)
+    with open(files_data_dir, "x", newline="") as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow(files_csv_header)
-    with open(objects_data_dir, "w", newline="") as f:
+    with open(objects_data_dir, "x", newline="") as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow(objects_csv_header)
 
     print(f"{len(files_csv_header)=} {len(objects_csv_header)=}")
 
-    return output_dir, files_data_dir, objects_data_dir
+    return output_file, files_data_dir, objects_data_dir
 
 
 def get_data_file_names():
@@ -84,13 +95,15 @@ def write_outcome(files_data: dict, outcome_dirs: tuple[str, str, str]):
             file_data.longitude_reference,
             len(file_data.all_objects),
             file_data.first_time_stamp,
-            file_data.time_stamp,  # is not 'reset' on end, so acts as 'final' time stamp
+            file_data.time_stamp,  # is not 'reset' on file end, so acts as 'final' time stamp
         ]
-        with open(files_dir, "a", encoding="utf-8-sig", newline="") as f:
-            csv_writer = csv.writer(f)
-            csv_writer.writerow(file_csv_data_row)
+        with open(files_dir, "a", encoding="utf-8-sig", newline="") as file_f:
+            file_csv_writer = csv.writer(file_f)
+            file_csv_writer.writerow(file_csv_data_row)
 
-        with open(objects_dir, "a", encoding="utf-8-sig", newline="") as f:
+        with open(objects_dir, "a", encoding="utf-8-sig", newline="") as obj_f, open(
+            output_dir, "a", encoding="utf-8-sig", newline=""
+        ) as outcome_f:
             for obj in (
                 list(file_data.objects.values())
                 + list(file_data.dying_objects.values())
@@ -130,8 +143,30 @@ def write_outcome(files_data: dict, outcome_dirs: tuple[str, str, str]):
                     obj.launcher.uid if obj.launcher else None,
                     object_counter,
                 ]
-                csv_writer = csv.writer(f)
-                csv_writer.writerow(object_csv_data_row)
+                obj_csv_writer = csv.writer(obj_f)
+                obj_csv_writer.writerow(object_csv_data_row)
+
+                if set(output_exclude_object_types).isdisjoint(obj.type):
+                    output_csv_data_row = [
+                        file_counter,
+                        obj.uid,
+                        obj.pilot,
+                        obj.name,
+                        obj.coalition,
+                        obj.type,
+                        len(obj.launches),
+                        len(obj.kills),
+                        obj.killer.name if obj.killer else None,
+                        obj.killer_weapon.name if obj.killer else None,
+                        obj.spawn_time_stamp,
+                        obj.death_time_stamp
+                        if obj.death_time_stamp
+                        else obj.file_obj.time_stamp,
+                        file_data.mission_title,
+                        re.split(r"[\\ | /]", file_data.file_name)[-1],
+                    ]
+                    output_csv_writer = csv.writer(outcome_f)
+                    output_csv_writer.writerow(output_csv_data_row)
         file_counter += 1
 
 
