@@ -37,3 +37,34 @@ objects_csv_header = [
     "launcher",
     "counter",
 ]
+
+output_csv_header = [
+    "FileID",
+    "UID",
+    "pilot",
+    "name",
+    "coalition",
+    "type",
+    "launches",
+    "kills",
+    "killer_name",
+    "killer_Weapon_name",
+    "spawnTimeStamp",
+    "deathTimeStamp",
+    "mission_title",
+    "file_name_short",
+]
+
+output_exclude_object_types = [
+    "Decoy",
+    "Flare",
+    "Shrapnel",
+    "Weapon",
+    "Projectile",
+    "Shell",
+    "Parachutist",
+    "Building",
+    "Navaid",
+    "Bullseye",
+    "Container",
+]
