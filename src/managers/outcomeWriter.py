@@ -7,42 +7,53 @@ from src.utils.outputUtils import (
     output_csv_header,
     output_exclude_object_types,
 )
-import pandas as pd
 import csv
 import re
+from src.utils.configUtils import config
 
 
-def process_outcome(files_data: dict, output_dir: str = None):
+def process_outcome(files_data: dict):
     logger.info(f"\n\n{' Data Output '.center(128, '~')}\n")
-    outcome_dirs = get_outcome_dirs(output_dir)
+    outcome_dirs = get_outcome_dirs()
     write_outcome(files_data, outcome_dirs)
     return
 
 
-def get_outcome_dirs(output_dir_input: str) -> tuple[str, str, str]:
+def get_outcome_dirs() -> tuple[str, str, str]:
+    output_dir_config = config.OUTPUTS.output_dir
+    references_dir_config = config.OUTPUTS.references_dir
+
     file_dir = os.path.dirname(os.path.realpath(__file__))
     cwd_dir_list = file_dir.split("\\")[:-2]
     date, time = get_date_time()
 
-    if output_dir_input:
-        output_dir = output_dir_input
+    # USER OUTPUT
+    if output_dir_config:
+        output_dir = output_dir_config
     else:
         output_dir = "/".join(cwd_dir_list + ["outputs"])
     if not os.path.isdir(output_dir):
         raise ValueError(f"Output directory is not a directory: {output_dir=}")
-
     output_file = f"{output_dir}/TVS_output_{date}_{time}.csv"
-
-    files_data_dir = "/".join(
-        cwd_dir_list + ["outputs", f"{date}_{time}_files_data.csv"]
-    )
-    objects_data_dir = "/".join(
-        cwd_dir_list + ["outputs", f"{date}_{time}_objects_data.csv"]
-    )
-
     with open(output_file, "x", newline="") as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow(output_csv_header)
+
+    # REFERENCE OUTPUTS
+    if references_dir_config:
+        files_data_dir = "/".join(
+            references_dir_config + [f"{date}_{time}_files_data.csv"]
+        )
+        objects_data_dir = "/".join(
+            references_dir_config + [f"{date}_{time}_objects_data.csv"]
+        )
+    else:
+        files_data_dir = "/".join(
+            cwd_dir_list + ["outputs", f"{date}_{time}_files_data.csv"]
+        )
+        objects_data_dir = "/".join(
+            cwd_dir_list + ["outputs", f"{date}_{time}_objects_data.csv"]
+        )
     with open(files_data_dir, "x", newline="") as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow(files_csv_header)
@@ -50,9 +61,11 @@ def get_outcome_dirs(output_dir_input: str) -> tuple[str, str, str]:
         csv_writer = csv.writer(f)
         csv_writer.writerow(objects_csv_header)
 
-    print(f"{len(files_csv_header)=} {len(objects_csv_header)=}")
+    output_directories = (output_file, files_data_dir, objects_data_dir)
 
-    return output_file, files_data_dir, objects_data_dir
+    logger.info(f"Output directories: {output_directories}")
+
+    return output_directories
 
 
 def get_data_file_names():
